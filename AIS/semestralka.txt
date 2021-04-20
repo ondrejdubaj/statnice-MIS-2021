@@ -1,0 +1,220 @@
+2018
+1. Refaktorizacia - co to je. Popisat extract method, extract variable, replace constructor with factory method. Co je potrebne vykonavat pre overenie spravnosti refaktorizacie. Kedy je vhodne refaktorizovat kod. (7b)
+2. Popiste ziadne vlastnictvo kodu. Popiste spolocne vlastnictvo kodu a porovnajte so ziadnym vlastnictvom kodu. Kto ma ake zodpovednosti a za co. Suvis s verzovanim kodu. (6b)
+3. Tradicny priklad na modelovanie. Temou bolo zadavanie skusok. PredmetCTR, Predmet, Skuska a Student. (27b)
+4, Priklad na navrhovy vzor. Notifikacie na zmeny v IS z prikladu 3. Pomenovat navrhovy vzor (1b), pouzit najviac 2 dalsie triedy alebo rozhrania na namodelovanie tohto problemu + diagram interakcie/komunikacie k vytvorenemu navrhu (3b+3b)
+5. Popiste podstatu a principy oddelenia modelu a view. Ktory dizajnovy vzor s touto problematikou suvisi + jeho popis. (2b+2b)
+
+“Prvni dve ulohy byly vetsinou v poradku. Prakticka uloha
+(SSD, kontrakty, atd.) take bez vaznejsich problemu (kdo
+vedel, co ma delat, tak to vetsinou zvladnul), snad s
+vyjimkou CRC tabulky se zodpovednostmi (dulezite je
+vysvetlit, proc prirazujete zodpovednost zrovna zvolene
+tride) a diagramu interakce (zde nutne dukladne prozumeni
+UML diagramum sekvence).
+
+Nejvetsi problemy byly s predposledni ulohou, kde drtiva
+vetsina spravne rozpoznala navrhovy vzor Observer, ale jiz
+ho nedovedla aplikovat, resp. priradit prislusnym tridam
+spravne role observer a observable, tedy, ze implementuji
+prislusna rozhrani a jsou propojene prislusnou asociaci pro
+zapamatovani zaregistrovanych observeru. Dukladna znalost
+pouziti zakladnich navrhovych vzoru je neco, co musite umet.”
+
+-------------------------------------
+2017
+AIS-radny.pdf
+
+------------------
+2015
+ais 1-5
+1) Šest vlastností SOA
+2) Vlastnictví kódu - společné/žádné - popsat, výhody, rozdíly
+3) Systém vydávání léků na předpis, byl zadán i doménový model. Úkolem bylo vytvořit SSD, určit zodpovědnosti a nakreslit Class diagram a diagram interakce 
+4) Třída Clock, která představuje hodiny, a její metodu tick(), kterou volá interní časovač (posun o sekundu). Pak jsou různé třídy, které různě zobrazují čas pomocí gui (digitalClock, analogClock). Napsat k tomu vhodný návrhový vzor a nakreslit třídy
+5) Popsat Liskov Substitution a Model/View při návrhu sw
+
+opravny
+asi 1-6
+-----------------
+2014
+1. Monopoly 
+a) nakresli domenovy model
+b) rozpis vyuzitych metod a jejich prirazeni do trid a zapis zavislosti (doporuceno pouzit vzory GRASP)
+c) nakreslit diagram trid a diagram interakce
+
+2. Co znamena ze prvek B je zavisly na prvku A?
+Co je mysleno prvky? 
+Jaky maji mezi sebou vztahy?
+Vypsat alespon tri typy takovych zavislost + demonstrovat diagrmama trid
+
+3. Refaktorizace
+Popis
+Co znamena a k cemu se pouzivaj ExtractMethod, IntroduceExplainingVariable a ReplaceConstructorWithFactoryMethod
+Alespon 3 duvody proc refaktorizujem + podminka
+
+4. Singleton
+Proc, jak, nac
+Popsat na prikladu
+Priklad demonstrovat diagramem trid a sekvencakem
+
+5. Kontajner + komponenta v JavaEE
+Popsat na co to je + jaky to ma mezi sebou vztahy
+Priklady v JaveEE
+
+--------------------------
+2013
+Otazky Riadny termin 2013/2014
+1. Uvazujte bankomat s displayom, klavesnicou, snimacom karty a zberac bankoviek. Bankomat zapina a vypina operator. Pouzivatel vlozi kartu a zadava pin. Vlozenim karty zacina transakcia. Bankomat komunikuje s IS banky, kde posiela PIN a udaje o karte. Karta obsahuje ID karty, ID uctu, a PIN. V pripade, ze zacne prebiehat transakcia, tak nie je mozne vypnut automat. Mozne 3 razy zadat zly pin potom dojde k zablokovaniu automatu a automat nevyda kartu. Pouzivatel moze v ramci transakcie prezerat stav uctu a vyberat peniaze. Pri vybere penazi zadava sumu, ktora musi byt nasobkom 100 Kc. Automat pri transakcii posiela poziadavky na IS banky. Po vybere penazi, automat vyda peniaze a vrati kartu pouzivatelovi.
+a. Nakreslite Use-Case diagram a pre kazdy pripad pouzitia definujte pociatocne a koncove obmedzenia. 3b
+b. Nakreslite model domeny (nic nepridavajte). 2b
+c. Nakreslite diagram chovania pre dane zadanie a napiste nazov vhodneho diagramu chovania (Prvdepodobne stavovy diagram). 8b
+d. Nakreslit SSD, vyznacit nejake kontrakty pre systemove operacie, zostrojit diagram tried a este nieco.
+
+2. Pouzit navrhovy vzor a zostrojit diagram tried a komunikacie. - Composite 12b
+3. SOA - Popiste ako sa odlisuje IS s SOA architekturou od IS bez SOA architektury. Zamerte sa na dekompoziciu, zivotny cyklus komponent, komunikovanie sluzieb a databazove ulozisko.
+4. Agilny vyvoj. Popiste 2 najdolezitejsie charakteristiky modelu agilneho vyvoja. Popiste co je to TDD a ake prinosy ma vzhladom ku agilnemu vyvoju. Popiste co je Refaktorizacia a ake prinosy ma vzhladom ku agilnemu vyvoju.
+
+Časté chyby:
+1a) Model případů použití:
+- samostatné případy pro vložení karty, zadání částky apod.
+- samostatný případ pro zadáni PIN bez vazby na ostatní (asi
+nikdo nejde k bankomatu proto, aby zadal PIN a odešel (bez
+karty)), u některých se vazba projevila alespoň v podobě
+předpokladu pro jiný případ použití.
+- někteří naopak měli vložení karty a zadání správného PIN
+jako předpoklad (ale nikde nepopsaný)
+- IS banky neuveden jako sekundární aktér (toleroval jsem)
+- naopak někdy uváděny i případy použití v IS banky, tj.
+mimo hranice námi vyvíjeného systému.
+
+1b) Model domény
+- neznalost, o jaký model vůbec jde
+- chybějící názvy asociací a násobnosti
+- jen některé z důležitých konceptů (často chyběla např.
+karta, transakce atd.)
+
+1c) Model chování
+- diagram sekvence - popisuje interakci, nikoliv celkové
+chování -> netoleroval jsem
+- diagram aktivity - popisuje proces, ne celkové chování, je
+ale podstatně bližší správnému řešení -> při uvedení
+správného názvu a dostatečně výstižném diagramu jsem dával
+polovinu bodů
+
+1d) Návrh řešení - největší problémy
+- neznalost systémového modelu sekvencí (SSD)
+- neznalost způsobu popisu kontraktů syst.operací -
+zpravidla "vnější pohled" (co dělá uživatel) místo pohledu
+"dovnitř" (co má udělat SW)
+- návrhový d. tříd 
+- chybějící třída v roli řadiče, neřešení, že někde musí
+být uložena načtená data (karta, PIN, částka výběru) a že
+tato data musí mít k dispozici objekt odesílající zprávu IS
+banky pro ověření, případně provedení výběru,
+- z formálních - neorientované asociace (někdy s názvy
+jako u konceptuálního modelu), bez názvů atributů (u šipek)
+- tady jsem byl značně tolerantní
+- velice často uveden nějaký d. sekvence a d.tříd bez vztahu
+k zadání (nebylo zřejmé, zda má ukazovat nějaké systémové
+operace nebo interakci SW tříd), často i bez vzájemného
+vztahu (co vypadalo, že by mohly být syst. operace, nebylo
+uvedeno u příslušné třídy)
+- viditelná návaznost, kterou jsem tady očekával, tj.
+systémové operace (tj. požadované reakce na vstupní události
+z pohledu celého systému) -> operace řadiče ( v návrhovém
+d. tříd) -> popis interakce (slovní nebo d.sekvence) byla
+snad jen v jedné písemce. To jsem očekával a předpokládal,
+že budu klidně tolerovat nedokončení této otázky.
+
+2) Příklad na použití návrhového vzoru
+- chybně zvolený návrhový vzor (Strategy, Chain of
+responsibility, Observer)
+- správně zvolený návrhový vzor, ale jeho nedostatečná
+znalost
+- předpoklad, že prvky složeniny už jsou jenom atomické
+prvky
+- v d. tříd u složeniny kolekce uvedena jen jako atribut, ne
+orientovaná asociace
+- u d. sekvence ukázána interakce jen pro případ, že
+adresátem zprávy (např. move(...)) je složenina.
+
+3) SOA
+- odchýlení se od otázky nebo neuvedení všech požadovaných
+odpovědí (typicky opomenutí srovnání SOA oproti stavu "bez
+SOA" a chybějící odpověď na část "komunikaci mezi
+komponentami systému a na přístup k úložišti dat)
+- často uvedeno vše, co se nějak vztahovalo k SOA (což bylo
+také uznáno), ale i tak zůstaly některé části otázky
+nezodpovězeny (což znamenalo srážku bodů).
+
+4) Agilní vývoj
+- místo charakteristik modelu životního cyklu uvedeny obecné
+charakteristiky agilního vývoje
+- význam TDD a refaktorizace obecně, ne speciálně pro agilní
+vývoj (proč tam tyto techniky vznikly a jsou potřebné)
+V obou případech jsem ale za toto výrazněji nepostihoval.
+-------------
+
+. termín:
+Refaktorizace kdy jak proc 3 (alespon) typy... 10b
+Registr sluzeb + jaka sluzba (nevim co) 6b
+Vsechny UML2.0 diagramy popis kde kdy co zobrazuji 11b
+UP modely a artefakty vsechny kdy kde proc 10b
+Priklad na navrhove vzory - bylo zadani ze ktereho se melo poznat kteremu NV vyhovuje a aplikovat ho - diagram komunikace/sekvence + trid 14b
+
+2. termín:
+diagram aktivit,
+validace verifikace
+testování - typy
+Software Quality Assurance
+příklad na návrhový vzory - composite
+kontejner, komponenta - typy
+
+3. termín:
+1) co je to polymorfismus, rozhraní, abstraktní třída a zapouzdření (charakteristika, plus pokud to šlo, tak nakreslit v UML)
+2) FURPS+ (popsat složky + metriky)
+3) kontejnery a komponenty v java EE (stejná jako na prvním opravném)
+4) Příklad na uml diagram - zjistit který použít, popsat jeho dvě hlavní části a jejich vlastnosti, nakreslit pro daný scénár
+5) příklad na návrhové vzory, máme třídu Clock, která představuje hodiny, a její metodu tick(), kterou volá interní časovač (posun o sekundu). Pak jsou různé třídy, které různě zobrazují čas pomocí gui (digitalClock, analogClock). OBSERVER
+
+dalsi 3 termin:
+
+1) Zvolit vhodny UML diagram, popsat jej a nakreslit podle scenare - jednalo se o aktivitu (16b)
+2) FURPS+ a jeho metriky (10b)
+3) Popsat model domeny a systemovy sekvencni diagram vzhledem k unifikovanemu procesu, co to je, kam bychom je zaradili, zda jsou povinne atp. (8b)
+4) (14b)
+a) Vysvetlit princip proc se oddeluje vrstva modelu od pohledu, k cemu slouzi ty 2 casti
+b) Popsat navrhovy vzor observer/publish-subscribe, k cemu se pouziva, nakreslit jeho diagram trid, diagram sekvence
+5) Co je to refaktorizace, k cemu se pouziva (3b)
+
+loni 1.termin:
+docela zdlouhavy popis problemu, pro ktery je potreba navrhnout reseni -> nakreslit diagram trid, sekvencni a pridat popis plu pouzite navrhove vzory (tady jich bylo mozne vymyslet vice, ale docela se nabizel chain of responsibility)
+- popis sekvencniho diagramu a diagramu komunikace, nakreslit priklad, jejich rozdily, pouziti atd.
+- postup pri navrhu SOA, popsat jednotlive faze
+- nejaka otazka na externi prednasku
+- vysvetlit, nakreslit vhodny diagram pro polymorfismus, zapouzdreni, interface, abstraktni tridu
+
+takze 1. opravny:
+
+1.Activity diagram
+2.SQA, testovani, verifikace, validace, Black-box, White box
+3.JAVA EE
+4.MVC
+5.Priklad - nakreslit diagram (tried a sekvencni)
+
+2 + V-Model
+3 + kontajnery a komponenty
+5 + nakreslit navrhhovy vzor a spravne pomenovat, diagram tried s operaciami popisanymi + diagram sekvencny alebo komunikacie
+
+1)Vytvorit diagram tried, sekvencny diagram podla dlhsieho zadania, kde ale vysvetlil, ze co tam chce. Ak sa dalo, tak pouzit vhodne navrhove vzory.
+2)Vysvetlit zavislost tried a dalsie boli asi zavislosti komponent a zavislosti vrstiev, nakreslit a vysvetlit typy zavislosti, ktore sa mozu vyskytnut.
+3) Nieco s EJB
+4) Test driven development, vysvetlit + jeho vyhody
+5) Co je zodpovednost vzhladom k navrhu. Napisat dva principy GRASP aj popis,
+
+Co se týče toho EJB, tak chtěl napsat, co je EJB komponenta a EJB kontejner. Dále typy EJB beans a v čem se liší.
+
+
+
+

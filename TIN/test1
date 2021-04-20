@@ -1,0 +1,84 @@
+2017
+------------------
+1)
+M = ({q0, q1, q2}, {a,b}, δ, q0, {q0, q2})
+δ: δ(q0, a) = q0
+δ(q0, b) = q0
+δ(q1, a) = q1
+δ(q1, b) = q2
+δ(q2, a) = q2
+δ(q2, b) = q0
+Definovat množinově jazyk přijímaný automatem a sestrojit pravou lineární gramatiku G tak, že L(M) = L(G)
+
+2)
+Formálně definovat přechod 
+a) DKA
+b) NZA
+
+3)
+L = {a^i b^j a^j b^i c^k | i, j > 0 && k >= 0 }
+a) Formálně definovat ZA přijímající jazyk
+b) Sestrojit BKG generující jazyk
+
+4)
+M = ({q0, q1, q2}, {a, b}, δ, q0, {q2})
+δ: δ(q0, a) = {q1}
+δ(q0, b) = {q1}
+δ(q1, a) = {q1, q2}
+δ(q1, b) = {q2}
+δ(q2, a) = ∅
+δ(q2, b) = ∅
+Determinizujte pomocí algoritmu z přednášky.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+2016
+-----------------------------------
+odtadialto su polsemky, nie vsetky veci tam budu
+
+
+-----------------------------------
+1) Formálně definujte DKA, přechod, konfiguraci, relaci nerozlišitelnosti a kdy je DKA minimální. Definovat DKA, který přijímá jazyk {a^n b^n, n <= 3}.
+
+2) Zadana gramatika G = {{S, A, B, C, D, E, F, G}, {a, b, c, d, e, f, g}, P, S}
+kde pravidla v P byly:
+S -> A | B
+A -> ABA | AG | aE
+B -> Cd | bF
+C -> cC | c
+D -> dCd
+E -> A
+F -> BC | fA
+G -> g | gG
+
+Odstrante zbytecne symboly algoritmem z prednasek. Pokud pouzijete jiny postup, tak dokazte, ze to funguje. 
+
+3) Byl zadán ZA popisující jazyk a^n b^m c^m, kde n, m >= 1. Meli jsme nejdriv zjistit ten jazyk. Potom dokazte zda se jedna nebo nejedna o regularni jazyk.
+
+4) Rozhodněte a dokažte zda je třída regulárních jazyků nad abecedou {a, b}* uzavřena vzhledem k unární operaci ◊L.
+◊L = { w in L |#a = #b OR #a + #b > 5 }
+------------------------------------------
+
+Skupina B 
+1) Formálně definujte ZA, přechod, konfiguraci, Deterministický ZA +
+Opět jak ve skupině A- formálně definovat ZA, který přijímá jazyk {a^m b^n, c^n, n >= 1} tak,
+že se budeme držet matematického zápisu ...čili nakreslit a popsat množinu (nejsem si moc jistý s tím jazykem)
+
+2) Algoritmicky převeďte KA na minimální DKA. Jako výsledek uveďte diagram. (viz příloha)
+
+
+3) Dokažte, zda zadaná bezkontextová gramatika generuje regulární jazyk.
+G = (N, Sigma, P, S) regulární? 
+P: S -> aS | AB
+A -> bAc | bc
+B -> a | aB
+
+4) Rozhodněte a dokažte, zda je třída regulárních jazyků nad abecedou Sigma = {a,b} uzavřena na unární operaci "diamond" (byl nakreslený kosočtverec) definovanou:
+
+"diamond" L = {win | w= w^R OR #a(w) + #b(w) > 5},
+
+kde #a(w) je počet symbolů "a" v řetězci w a w^R značí reverzi řetězce (např ab^R = ba)
+------------------------------------------
+
+
+
+

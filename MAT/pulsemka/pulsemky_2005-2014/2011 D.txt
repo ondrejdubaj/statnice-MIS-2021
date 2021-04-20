@@ -1,0 +1,15 @@
+2011 D
+
+1. dokaz platnosti formule: 
+All x fi => (Exist x ( fi => psi) => Exist x psi )
+2. prenexny tvar formule, vysledok znegovat a upravit na tvar bez implikacie:
+All x Exist y p(x,y) => (All x p(z,x) AND Exist y All z p(z,y) )
+3. majme univerzalnu algebru A = (Z, +, * , 8) typu (2,2,0) kde + je operacia scitania a *(x,y) = min {|x|,|y-2|}. 
+Aku podalbebru generuje <{4}> ??
+posledne dva som nemal na pomocny papier tak iba kolko si pamatam
+4. majme grupu (C',*), kde C' je mnozina nenulovych komplexnych cisel a * je operacia nasobenia.
+Majme relaciu x ~ y <=> |x| = |y|. Je to kongruencia ??
+5. euklidovym algoritmom zistite NSD polynomov (iba pre ilustraciu) x^5 + x^3 + 2x^2 + x +1 a x^4 + 3x^3 + 3x^2 + 3x + 2
+
+
+

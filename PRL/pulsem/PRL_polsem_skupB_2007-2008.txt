@@ -1,0 +1,16 @@
+1. u ternarneho stromu plati pre diameter. connectivity, bisection nasledujuci vztah (2b)
+	4 odpovede (napr. diameter < connectivity < bissection, ....)
+
+2. Ktora z nasled. moznosti ma optimalnu cenu (2b)
+	a), b),c) rozne dvojice algoritmov
+	d) ziadna z moznosti nie je spravna
+
+
+3. Flynnova klasifikacia popisuje (2b) 
+ paralelne algoritmy
+ paralelne architektury
+ nejake NP uplne problemy
+ este nieco
+
+
+4. popiste vektorovy procesor + obrazok (4b)

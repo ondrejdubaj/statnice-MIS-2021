@@ -1,0 +1,5 @@
+1. Akou jednotkou sa meria entropia? Sh
+2. Symetricky binarny kanal, rychlost 9600 Bd, p()=1 error bitu, aka bude rychlost? 9600 Bd (asi)
+3. Vyrobit Huffmanov strom pre 5 pismen s danou pravdepodobnostou a spocitat strednu dlzku spravy.
+4. Podla stromu z 3. zakodovat spravu pozozstavajucu z 3 znakov.
+5. Konvolucny kod, zistit aka bola originalna sprava

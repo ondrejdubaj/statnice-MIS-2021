@@ -1,0 +1,87 @@
+2017-2018
+Skupina A - bohužel přesné zadání nevím, tak aspoň typy příkladů:
+1) dán jazyk, realizace R, formule ψ, ω a φ a teorie T = {ψ, φ} obsahující dvě z těchto formulí. Rozhodnout:
+a) φ je splnitelná v R
+b) φ && not ψ je splnitelná v R
+c) ω je důsledek T
+2) predikátová formule, udělat důkaz - něco ve stylu ∀x p(x) -> ((∀x∀y (p(x) -> q(x,y))) -> q(x,y)). Návod - předpoklad, substituce, odloučení (opakovat víckrát), dvakrát věta o dedukci.
+3) klasický příklad ve zbytkové třídě Z11
+4) Zadána množina polynomů Z[x] s koeficienty nezáporných celých čísel s operacemi + a *. Zadáno zobrazení f(x) = x * p(x). Rozhodnout, zda toho zobrazení je endomorfismus do 
+a) grupy (Z[x], +, 0, -) ale ne do pologrupy (Z[x], *)
+b) pologrupy (Z[x], .) ale ne do grupy (Z[x], +, 0, -)
+c) okruhu (Z[x], +, 0, -, *)
+
+
+1) Byl dán jazyk a realizace R nad R+ taková, že 
+fR(x) = 1/x
+qR(x,y) = x*y
+pR(x) = x > 1
+a formule ψ, ω, φ, χ a teorie T = {ψ, φ} obsahující dvě z těchto formulí. Rozhodnout:
+a) φ je splnitelná v R
+b) χ && not ψ je splnitelná v R
+c) ω je důsledek T
+
+φ = pR(fR(fR(x))) -> pR(x)
+ψ = gR(x,x) = fR(x) (tady si nejsem jistej, jestli to bylo fR(x) nebo fR(fR(x)), ale ve výsledku to dává to stejné)
+χ = gR(fR(x),fR(y)) = fR(gR(x,y))
+ω = (∀y(pR(gR(x,y)))) -> pR(x)
+
+2) Dokázat formuli ∀x(p(x)) -> (∀y∀x(p(x) -> g(x,y))) -> g(x,y)
+Návod: zvolte vhodný předpoklad, substituci, odloučení (vše opakovat vícekrát), a 2 věty o dedukci
+
+3) Ve zbytkové třídě Z13 vypočítat příklad (2 - 3/7) / (1/4 - 8)
+
+4) typické jak v A, pouze rozdíl zobrazení:
+Zadána množina polynomů Z[x] s koeficienty nezáporných celých čísel s operacemi + a *. Zadáno zobrazení f(x) = (p(x))^2. Rozhodnout, zda toho zobrazení je endomorfismus do 
+a) grupy (Z[x], +, 0, -) ale ne do monoidu (Z[x], *, 1)
+b) monoidu (Z[x], * , 1) ale ne do grupy (Z[x], +, 0, -)
+c) okruhu (Z[x], +, 0, -, *, 1)
+
+
+
+
+
+
+2016-2017
+1. Mějme jazyk L s rovností, nulárními funkčními symboly m,n a binárními funčkními symboly f,g.
+Uvažujme realizaci M jazyka L, jejímž univerzem je množina N_0 nezáporných celých čísel s operacemi f_M (x,y) = x+y), g_m (x,y) = min(x,y), m_M = 0, n_M = 3. 
+Uvažujme teorii T = {f(x,m) = x, f(x,g(y,z)) = g(f(x,y), f(x,z)), f(x,y) = n -> (x=n V y=n), g(x,y) = n <=> x =y}
+a formuli: Fí = f(g(x,m),y) = f(n,z)
+(i) Najděte ohodnocení proměnných e takové, že M |= Fí[e].
+(ii) Rozhodněte, zda M |= Fí.
+(iii) Rozhodněte, zda M |= T.
+Buď R realizace jazyka L s univerzem Z, kde f_R(x,y) = xy a n_R = 0. Určete m_R a g_R tak, aby platilo: R |= T.
+
+2. V jazyce teorie (ostře) uspořádaných množin obohaceném o unární predikátový symbol p vyjádřete formuli v prenexním tvaru tvrzení, že množina prvků splňujících vlastnost reprezentovanou symbolem p nemá maximální prvek.
+
+3. Buď (Q^2, +, (.) ) okruh. (vsuvka: (.) značí operaci kolečko s tečkou.), kde + je sčítání po složkách a operace (.) je definována vztahem :
+(a,b) (.) (c,d) = (ad + bc, 5ac + bd)
+Zjistěte, zda je (Q^2, +, (.) ) těleso nebo dokonce pole. Najděte vhodné reálné číslo s tak, aby předpis f(a,b) = as +b definoval homomorfismus okruhů f: (Q^2, +, (.) ) -> (R, +, .) 
+
+4. Najděte všechny největší společné dělitele polynomů 6x^5+3x^4+x+4 a 3x^3+5x^2+2x+1 nad Z_7.
+
+Skupina A bílý papír
+
+1. Mějme jazyk L s rovností, nulárními funkčními symboly m,n a binárními funčkními symboly f,g.
+a) Uvažujme realizaci M jazyka L, jejímž univerzem je množina ℕ_0 nezáporných celých čísel s operacemi f_M (x,y) = x+y), g_M (x,y) = min(x,y), m_M = 0, n_M = 3.
+Uvažujme teorii T = {f(x,m) = x, f(x,g(y,z)) = g(f(x,y), f(x,z)), f(x,y) = n -> (x=n V y=n), g(x,y) = n <-> x =y}
+a formuli: φ ≡ f(g(x,m),y) = f(n,z)
+(i) Najděte ohodnocení proměnných e takové, že M |= φ[e].
+(ii) Rozhodněte, zda M |= φ.
+(iii) Rozhodněte, zda M |= T.
+b) Buď R realace jazyka L s univerzem ℤ, kde f_R(x,y) = xy a n_R = 0. Určete m_R a g_R tak, aby platilo: R |= T.
+
+2. V jazyce teorie (ostře) uspořádaných množin obohaceném o unární predikátový symbol p vyjádřete formuli v prenexním tvaru tvrzení, že množina prvků splňujících vlastnost reprezentovanou symbolem p nemá maximální prvek.
+
+3. Buď (Q^2, +, ⊗) okruh , kde + je sčítání po složkách a operace ⊗ je definována vztahem :
+(a,b) ⊗ (c,d) = (ac + 3bd, ad + bc)
+Zjistěte, zda je (Q^2, +, ⊗) těleso nebo dokonce pole. Najděte vhodné reálné číslo r tak, aby předpis f(a,b) = a + br definoval homomorfismus okruhů f: (Q^2, +, ⊗) -> (R, +, .)
+
+4. Najděte všechny největší společné dělitele polynomů x^5+2x^4+4x+1 a 3x^3+6x^2+5x+3 nad Z_7.
+
+
+
+
+
+2015-2016
+

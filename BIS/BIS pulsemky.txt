@@ -1,0 +1,127 @@
+2012/2013
+
+Pulsemestrálka vypadal nejak takhle (jen približne):
+
+1) praktické príklady z pohledu bezpecnosti IS následujících pojmu: duvernost, dostupnost, hrozby opatrení
+
+2) príklad logické bomby (principiálne, v pseudokodu, C++, Java, ...) na dva rádky
+
+3) rozdíl mezi cervem a virem
+
+4) alespon 2 typy rootkitu
+
+5) 3 príklady fyzického bezpecnostního opatrení a 3 príklady administrativního opatrení
+
+6) jaké nedostaky melo TCSEC a jak se je podarilo odstranit
+
+7) jaký je vstup pro analýzu rizik
+
+8) zpráva M, která má délku L = 32. Klíc K má také délku L a je generován pseudonáhodným generátorem a je iniciován pomocí 128b císla. Otázka znela, jestli jde o Vernamovu šifru a zduvodnit odpoved
+
+
+2013/2014
+
+A:
+    c) honeypot systémy
+    d) phishing
+     
+    2. Bell-Lapaduv model - obrázek a charakteristika
+     
+    3. 3 základní požadavky na bezpecnost systému (duvernost, integrita a dostupnost) a strucne charakterizovat
+     
+    4. Kerckhoffuv princip a uvést šifru, která tento princip nesplnuje
+     
+    5. Napsat 2 typy viru a charakterizovat
+     
+    6. ARP Flooding
+     
+    7. Základní postup analýzy rizik a její vstupy a výstupy
+     
+    8. Co to jsou skryté kanály a uvést 2 typy pametove skrytých kanálu
+     
+    9. Co musí splnovat kryptografická hashovací funkce
+
+B:
+    1. Strucne charakterizujte:
+    a) spam
+    b) bezpecnosti incident
+    c) FIXME
+    d) FIXME
+     
+    2. Bibuv model - obrázek a charakteristika
+     
+    3. rozdil mezi symetrickou a asymetrickou kryptografii
+     
+    4. Kerckhoffuv princip a uvést šifru, která tento princip splnuje
+     
+    5. popisat 2 metody skryvania malware
+     
+    6. MAC spoofing
+     
+    7. Popsat generece analýzy rizik a jeji rozdily
+     
+    8. Co to jsou skryté kanály a uvést 2 typy casove skrytých kanálu
+     
+    9. co musi splnovat vernamova sifra 
+
+2014/2015
+
+9 otazok za 1-2 body
+
+uviest dve personalne, administrativne a fyzicke bezp. opatrenia
+vlastnosti hashovacej funkcie
+RSA vypocet d, zadane p,q,e
+blokova sifra v rezime OFB, 64b blok, 9 blokova sprava, pri zasifrovani nastane chyba v 1 bite 3. bloku, v 2 bitoch 5. bloku a 3 bitoch 6. bloku. Ako bude vyzerat dekodovana sprava na urovni blokov?
+neco s ISO 27001
+definovat: phishing, botnet, transpozicni sifra, nepopiratelnost?
+co znamena a naco sa pouziva Certificate Revocation List
+nakreslit vztah medzi: bezpecnostny incident, hrozba, zranitelnost, aktiva
+
+
+2015/2016
+
+1. Definujte alespon 4 zakladni bezpecnostni funkce (2b)
+2. Vysvetlete nasledujici pojmy (Vulnerabilities, Threats, Assets, Measures) (2b)
+3. Popiste 4 typu malwaru (2b)
+4. Jaky je rozdil mezi Autentizaci a Autorizaci (1b)
+5. Popiste utoky zero-day a buffer-overflow (4b)
+6. Co je to Botnet (2b)
+7. Co je to Honeypot (2b)
+
+2016/2017
+skupina A:
+1. Nakreslit a popsat Bell-LaPaduluv model duvernosti (2b)
+2. Vysvetlit pojmy: steganografie, honeypot,zranitelné místo, virus (2b)
+3. Popsat útok XSS a obranu proti nemu (1b)
+4. Popsat Kerckhoffuv princip, splnuje jej Vernamova šifra? Oduvodnete (1b)
+5. Byla zadána nejaká šifra a meli jsme ji pomocí sloupcové transpozice dešifrovat... klíc (6-1-4-5-2) nebo tak nejak (2b)
+6. K cemu slouží fyzická a personální bezpecnostní opatrení +3 príklady ke každé. (2b)
+7. Dlouhý popis, jak chce A komunikovat s B ... znají pouze verejné klíce pomocí certifikacní autority. Jak by mela Alice zašifrovat zprávu? Jaké cíle bezpecnostní politiky splnuje váš postup? Všechny je popište(3b)
+8. máte na vstupu zprávu M o 12ti bitech, rozdelenou do bloku M1= 1110, M2= 1011, M3= 1001. Inicializacní vektor = 1000, klíc = 1101. Nakresle funkcnost CBC a následne vypocítejte, jak vypadá výsledná zpráva C složená z bloku C1, C2, C3. Funkce je XOR (tak jsem zjistil, že neumím XOR :D :D ) (2b)
+
+skupina B:
+1. Bibuv diagram
+2. pojmy: Botnet, Phishing, Hrozba, Logicka bomba, steganografie
+3. Popsat utok SQL injection a obranu
+4. stejne, jen jestli splnuje Vigenerova sifra a oduvodnit
+5. stejne
+6. administrativni a technicka
+7. stejne
+8. stejne, jen OFB
+
+2017/2018
+Skupina A
+
+1. Vymenovat a popisat utoky na ¹ifry (COA, KPA, CPA).
+2. Kerckhoffov princip
+3. Typy bezpeènostnych opatreni (fyzické, technické, administratívne, personálne)
+4. Common Criteria - co to je, aku najväè¹iu výhodu to ma.
+5. Ala skupina B, text: IPSUM THIS IS RIGHT BIS LOREM
+6. Tri spôsoby skryvania malware (spoofing, polymorphism, ¹ifrovanie)
+
+1. Vymenova» a popísa» bezpeènostné ciele (3b)
+2. Èo sú to skryté kanály a aké typy existujú + príklady k typom (3b)
+3. ÈO je nejake ALE (1b) 
+4. Kerckhoffov princíp (1b)
+5. Zadaná ¹ifra RPTIGIIOMSIBESNSHSLMUIRT a nájs» k nej kµúè + plain text + postup (resenie viz priloha) (3b)
+6. Typy bezpeènostných opatrení, vymenovat, vysvetlit, a uviest priklad (4b)

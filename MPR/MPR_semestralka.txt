@@ -1,0 +1,258 @@
+1. Možné topologie organizačního uspořádání (výhody/nevýhody) - 2/35
+- Funkcionální topologie - zaměstnanci seskupování dle oborů(funkce), koordinace se provádí mezi jednotlivými funkcemi
+ - výhody: 
+  - efektivní využívání zdrojů
+  - úzká specializace v jednotlivých funkcích
+  - experti, kteří problematiku dobře znají
+  - jasné kontrolní mechanizmy vrcholového řízení
+ - nevýhody: 
+  - těžko se měří efektivnost projektu
+  - vyskytují se problémy v projektech, které vyžadují více funkcí
+
+- Projektová topologie - pracovní místa se sdružují podle projektů
+ - výhody: 
+  - plná koncentrace na projekt
+  - nezávislost managementu projektu
+  - jasné vztahy podřízenosti a nadřízenosti
+  - pružnost
+  - jednodušší koordinace
+  - snadné měření výkonnosti
+ - nevýhody: 
+  - duplicita zdrojů v každém projektu
+  - malá specializace členů týmu
+  - riziko nevyužití kapacity vysoce kvalifikovaných odborníků
+  - nejistota členů projektového týmu
+
+- Maticová topologie - typicky pro organizace s vysokým objemem produktů
+ - výhody: 
+  - efektivní a účelné využívání zdrojů
+  - pružnost při přesunu lidí mezi projekty
+ - nevýhody:
+  - pracovníci mají dva nadřízené
+  - problémy při rozhodování o přidělování zdrojů na projekty
+  - náročné vymezování pravomocí a zodpovědností
+
+2. Prováděcí procesy projektového řízení - 3/8
+= koordinace lidí a dalších zdrojů tak, aby mohl být realizován plán projektu
+
+- Realizace plánu projektu (realizace činností podle plánu projektu)
+  - provádění plánu projektu realizací činností, které jsou v něm zahrnuty, implementace schválených změn
+- Zabezpečování kvality (pravidelné vyhodnocování plnění projektu)
+  - pravidelné revize požadavků na kvalitu a výsledky kontrolních měření kvality
+- Nábor pracovníků
+  - získávání potřebných lidských zdrojů a jejich přidělování pro práci na daném projektu
+- Vytvoření projektového týmu
+  - posilování kompetencí zainteresovaných stran podílet se na projektu jako jednotlivci i jako tým
+- Vedení týmů
+  - sledování výkonů členů týmu, rozvoj dovedností jednotlivců a skupin s cílem zlepšit plnění projektu
+- Řízení komunikace
+  - proces vytváření, sběru, ukládání, zabezpečení a poskytování informací zainteresovaným stranám dle plánu komunikace
+- Poptávání (získávání cenových nabídek)
+  - získávání informací (nabídek a návrhů) od potenciálních dodavatelů
+  - hodnocení dodavatelů
+- Kontrola obstarávání
+  - zajišťování toho, aby výkony dodavatele odpovídaly smluvním požadavkům
+- Řízení zapojení zainteresovaných stran
+  - komunikace a práce se zainteresovanými stranami při seznamování se s jejich potřebami, očekáváními, požadavky a zajištění jejich podpory během všech fází projektu
+
+3. Typy rizik projektu - 10/16
+- rizika technická, kvality nebo provedení
+- rizika řízení projektu
+- obchodní rizika
+- externí rizika
+
+4. Kvalitativní charakteristiky SW produktů - 7/42
+- Funkčnost - popisuje, co sw dělá
+ - Způsobilost softwarového produktu poskytovat funkce, které uspokojují stanovené a předpokládané potřeby, pokud je software používán za specifikovaných podmínek
+  - vhodnost - sw vykonává funkce, které zákazník potřebuje
+    - Způsobilost softwarového produktu poskytovat vhodnou množinu funkcí pro specifikované úlohy a uživatelské cíle.
+  - přesnost - sw poskytuje přesné výsledky
+    - Způsobilost softwarového produktu poskytovat správné nebo odsouhlasené výsledky nebo účinky s nezbytným stupněm přesnosti.
+  - Interoperability = schopnost spolupráce - sw spolupracuje s jinými systémy
+    - Způsobilost softwarového produktu být v interakci s jedním nebo několika specifikovanými systémy.
+  - bezpečnost dat - chránění informací
+    - Způsobilost softwarového produktu chránit informace a data tak, aby je neautorizované osoby nebo systémy nemohly číst nebo modifikovat a autorizovaným osobám nebo systémům nebyl k nim odmítnut přístup.
+  - soulad funkčnosti - dodržování norem
+    - Způsobilost softwarového produktu dodržovat normy, konvence nebo pravidla v zákonech a podobných předpisech vztahující se k funkčnosti.
+
+- Bezporuchovost 
+ - Způsobilost udržovat specifikovanou úroveň výkonu, pokud je používán za specifikovaných podmínek.
+   - zralost - schopnost vyhnout se poruchám
+     - Způsobilost softwarového produktu vyhnout se poruchám jako výsledku vad v softwaru.
+   - odolnost proti vadám - způsobilost zapezpečení proti vadám
+     - Způsobilost softwarového produktu udržovat specifikovanou úroveň výkonu v případech vad v softwaru nebo při porušení specifikovaného rozhraní.
+   - obnovitelnost - schopnost obnovit data v případě poruchy
+     - Způsobilost softwarového produktu znovu zajistit specifikovanou úroveň výkonu a obnovit data přímo postižená v případě poruchy.
+   - soulad bezporuchovosti - způsobilost dodržovat normy o bezporuchovosti
+     - Způsobilost softwarového produktu dodržovat normy, konvence nebo pravidla vztahující se k bezporuchovosti.
+
+- Použitelnost - aby sw byl srozumitelný
+ - Způsobilost softwarového produktu být srozumitelný, zvládnutelný, používaný a atraktivní pro uživatele, pokud je používán za specifikovaných podmínek.
+   - srozumitelnost - umožnění uživateli pochopení
+     - Způsobilost softwarového produktu umožnit uživateli porozumět, zda je software vhodný a jak může být použit pro konkrétní úlohy a podmínky používání.
+   - zvládnutelnost - umožnění naučit uživatele používat sw
+     - Způsobilost softwarového produktu umožnit uživateli naučit se jej používat.
+   - provozovatelnost - umožnonit řízení sw
+     - Způsobilost softwarového produktu umožnit uživateli provozovat produkt a řídit jeho provozování.
+   - atraktivnost - přitažlivost sw
+     - Způsobilost softwarového produktu být pro uživatele přitažlivý.
+   - soulad použitelnosti - zase ty normy vzhledem k použitelnosti
+     - Způsobilost softwarového produktu dodržovat normy, konvence, pokyny pro styl nebo pravidla vztahující se k použitelnosti.
+
+- Účinnost - poskytování výkonu
+ - Způsobilost softwarového produktu poskytovat vhodný výkon s ohledem na množství použitých zdrojů, a za stanovených podmínek.
+   - chování v čase - vhodné odezvy
+     - Způsobilost softwarového produktu poskytovat vhodné časy odezvy, časy zpracování a poměry průchodnosti, pokud software vykonává svou funkci za stanovených podmínek.
+   - využití zdrojů - použití vhodných zdrojů
+     - Způsobilost softwarového produktu používat vhodné množství a typy zdrojů, pokud software vykonává svou funkci za stanovených podmínek.
+   - soulad účinnosti
+     - Způsobilost softwarového produktu dodržovat normy nebo konvence vztahující se k účinnosti.
+
+- Udržovatelnost - možnost modifikace
+ - Způsobilost softwarového produktu být modifikován. Modifikace mohou zahrnovat nápravy, zlepšování nebo adaptace softwaru na změny v prostředí, v požadavcích a ve specifikacích funkcí.
+   - analyzovatelnost - umožnění diagnozy
+     - Způsobilost softwarového produktu být diagnostikován kvůli nedostatkům nebo příčinám poruch v softwaru nebo pro identifikaci částí, které mají být modifikovány.
+   - změnitelnost - umožnění implementace změny
+     - Způsobilost softwarového produktu umožnit, aby byla specifikovaná modifikace implementována.
+   - stabilita - stabilní po modifikacích
+     - Způsobilost softwarového produktu vyhnout se neočekávaným účinkům modifikací softwaru.
+   - testovatelnost - umožnění testů změn
+     - Způsobilost softwarového produktu umožnit, aby byl modifikovaný software validován.
+   - soulad udržovatelnosti
+     - Způsobilost softwarového produktu dodržovat normy nebo konvence vztahující se k udržovatelnosti.
+
+- Přenositelnost - změna prostředí
+ - Způsobilost softwarového produktu být přenesen z jednoho prostředí do jiného prostředí (organizační, hardwarové, softwarové).
+   - adaptibilita - schopnost přizpůsobit se novému prostředí
+     - Způsobilost softwarového produktu být adaptován do rozdílných specifikovaných prostředí bez použití jiných činností nebo prostředků než těch, které jsou pro tento účel uvažovaným softwarem poskytovány.
+   - instalovatelnost - instalace ve specifických podmínkách
+     - Způsobilost softwarového produktu být instalován ve specifikovaném prostředí.
+   - koexistence - existence s jiným sw
+     - Způsobilost softwarového produktu koexistovat s jiným nezávislým softwarem ve společném prostředí sdílejícím společné zdroje.
+   - nahraditelnost - nahrazení jiného sw pro stejný účel
+     - Způsobilost softwarového produktu být používán místo jiného specifikovaného softwarového produktu pro stejný účel ve stejném prostředí.
+   - soulad přenositelnosti
+     - Způsobilost softwarového produktu dodržovat normy nebo konvence vztahující se k přenositelnosti.
+
+--------- 
+Jakost při používání
+- efektivnost - jak přesně a uplně bylo dosaženo požadavkům
+- výkonnost - kolik zdrojů je nutné k činnosti
+- zabezpečení - míra bezpečnosti
+- uspokojení - jak je uživatel spokojen
+
+5. Vývojové fáze týmu
+ 1. formování
+   - identifikace úloh a cílů týmu,
+   - stanovení základních pravidel,
+   - testování vztahů - často dlouhé diskuse,
+   - tato etapa se vyznačuje optimizmem, zanícením pro společnou věc, ale též pochybnostmi splnění cíle včas.
+   - analýza charakteru úkolu a cest jejího řešení, odhady pracnosti, rozdělení práce.
+   - získání dalších členů týmu, vytvoření podtýmů.
+ 2. krystalizace
+   - vymezování a upřesňování jednotlivých dílčích úloh a cílů,
+   - diskuse a spory o způsobech řešení,
+   - diskuse a spory o přidělování činností a rolí,
+   - vyjasnění postojů jednotlivých členů týmu,
+   - boj o postavení, určení vedoucí úlohy, vytvoření jádra týmu,
+   - najímání dalších členů a formování podtýmů podle rozsahu práce.
+ 3. vyjasnění
+   - přijetí zásad řešení, volba norem a pravidel práce,
+   - předběžný návrh struktury týmu,
+   - přijetí cílů členů týmu,
+   - vytváření soudržnosti v týmu.
+ 4. realizace
+   - definitivní stanovení struktury týmu a podtýmů,
+   - definitivní přijetí rolí,
+   - vlastní provedení úkolů (nejvyšší výkonnost, úzká spolupráce).
+ 5. ukončení
+   - ukončení úkolů (souvisí často s ukončením projektu).
+
+6. Logicky ramec - strucna charakteristika,vysvetlit riadky a stlpce schematu L.R.
+- Logický rámec je metoda, která:
+  - umožňuje logickou prezentaci výsledků analýz a cílů projektu
+  - reflektuje vztahy mezi jednotlivými úrovněmi cílů
+  - indikuje ukazatele dosažení těchto cílů
+  - prezentuje předpoklady, které byly uvažovány při přípravě projektu
+ -> Výsledkem tvorby logického rámce je tabulka sumarizující nejdůležitější aspekty projektu.
+- Logická rámcová matice:
+  - dokument ve formě tabulky 4x4
+  - popisuje strategii projektu
+  - obsahuje popis vlastního projektu v souvislosti s vnějšími předpoklady
+  - stanovuje metriky pro hodnocení kvality
+- Formát logického rámce projektu
+  - logika rámce:
+    - vertikální logika (intervenční) identifikuje náplň projektu, vyjasňuje vztahy a specifikuje důležité předpoklady a rizika
+    - horizontální logika souvisí s měřením výsledků, využívaných zdrojů, klíčových ukazatelů dosažení výsledků a zdrojů, ze kterých lze výsledky ověřit
+
+7. Plánovací procesy projektoveho rizeni
+- vytvoření plánu řízení projektu
+  - převzetí výsledků jiných plánovacích procesů a jejich začlenění do jednoho dokumentu
+- plánování řízení rozsahu
+  - proces vytvoření plánu řízení rozsahu, který dokumentuje dohody, jakým způsobem bude definován, potvrzován a kontrolován rozsah projektu
+- sběr požadavků
+  - definice a dokumentace potřeb zainteresovaných stran
+- definování rozsahu
+  - vytváření detailního popisu projektu a produktu
+- vytváření WBS (Hierarchická struktura prací)
+  - rozložení hlavních dodávek na menší lépe zvládnutelné části
+- plánování řízení časového rozvrhu
+  - proces stanovení postupů a dokumentace pro plánování, vytvoření, řízení, provádění a kontrolu časového rozvrhu projektu.
+- definování činností
+  - stanovení konkrétních činností, které musí být provedeny s cílem vytvořit různé výstupy projektu
+- řazení činností
+  - stanovení a dokumentování závislostních vazeb
+- odhadování zdrojů
+  - určování, jaké zdroje (pracovníci, materiál, zařízení) a v jakých množstvích jsou třeba
+- odhadování dob trvání činností
+  - odhadování počtu pracovních období potřebných pro dokončení jednotlivých činností
+- sestavení časového rozvrhu
+  - analyzování pořadí činností, dob trvání činností, požadavků na zdroje a omezení rozvrhu
+- plánování řízení nákladů
+  - proces stanovení postupů a dokumentace pro plánování, řízení, spotřebu a kontrolu nákladů projektu
+- odhadování nákladů
+  - stanovení odhadu nákladů na zdroje potřebné pro provádění činností na projektu
+- sestavení rozpočtu
+  - přidělování odhadovaných nákladů jednotlivým činnostem
+- plánování řízení kvality
+  - identifikace požadavků na kvalitu, které normy se vztahují na projekt a produkt
+  - dokumentace postupů, jak bude prokazován v projektu soulad s požadavky na kvalitu
+- plánování řízení lidských zdrojů
+  - proces identifikace a dokumentace projektových rolí, odpovědností, požadovaných dovedností, určování vztahů podřízenosti a nadřízenosti, vytvoření plánu řízení personálu
+- plánování řízení komunikace
+  - proces vypracování vhodného přístupu a plánu komunikace, který spočívá ve stanovení komunikačních a informačních potřeb zainteresovaných stran s využitím dostupných komunikačních prostředků a znalostí organizace
+- plánování řízení rizik
+  - rozhodnutí jak přistupovat k rizikům a jak plánovat řízení rizikových aktivit v projektu
+- identifikace rizik
+  - určení, která rizika mohou projekt pravděpodobně ovlivnit a dokumentování jejich charakteristik
+- kvalitativní analýza rizik
+  - posouzení dopadů a pravděpodobnosti výskytu identifikovaného rizika
+- kvantitativní analýza rizik
+  - měření pravděpodobnosti a následků rizik a odhadování jejich dopadů na cíle projektu
+- plánování reakcí na rizika
+  - vytváření alternativ a určování akcí k posílení příležitostí a zmírnění dopadů rizik na projektové cíle
+- plánování řízení obstarávání
+  - určování, co, kdy a od koho nutno obstarat
+- plánování řízení zainteresovaných stran
+  - nastavení vhodné strategie pro efektivní zapojení zainteresovaných stan v průběhu celého životního cyklu projektu. Strategie je založena na analýze jejich potřeb, zájmech a potencionálním dopadu vlivu zaintere
+
+
+8. Fáze projektu
+???
+
+9. Pojmy
+- Projekt je jedinečný časově, nákladově a zdrojově omezený proces realizovaný za účelem vytvoření definovaných výstupů (naplnění projektových cílů) v požadované kvalitě a v souladu s platnými standardy a odsouhlasenými požadavky.
+- Produkt je konkrétní, pojmenovaný výsledek činnosti, etapy, projektu. Produktem může být i provedení služby.
+- Program je skupina věcně souvisejících, společně řízených projektů a organizačních změn, které byly společně spuštěny za účelem dosažení cíle programu.
+- Portfolio projektů je soubor projektů a případně programů, které nemají společný cíl, a které byly dány dohromady za účelem řízení, kontroly, koordinace a optimalizace.
+- Riziko je nejistá událost nebo podmínka, která pokud nastane, má negativní nebo pozitivní vliv na dosažení cíle projektu.
+- Role je funkční zodpovědnost, zastávaná jednou nebo více osobami nebo organizačními jednotkami.
+- Projektové řízení je uplatnění znalostí, dovedností, nástrojů a technik v projektových činnostech s cílem splnit nebo překročit potřeby zájmových skupin a jejich očekávání od projektu.
+- a mnoho dalších ... 
+
+----- Prakticky: 
+10. Simplexová metoda
+???
+
+11. Nakreslit síťový diagram (zadané činnosti, časy, návaznosti v tabulce) a určit kritickou cestu a rezervy ostatnich činností.
+???

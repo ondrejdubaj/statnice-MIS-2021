@@ -1,0 +1,87 @@
+pøedn 9 - 03 malware, IDS - celkovì základní pojmy, rozdíly, ne detaily
+    * fáze útoèníka struènì
+    * rozdìlení malwarù (virus, èerv a spol)
+    * rootkity (typy, detekce)    
+    * obfuskaèní techniky, jejich rozdíly a principy
+    * vìdìt 0-day útok
+    * analýza malwaru
+    * signatury
+    * IDS a IPS znát rozdíly, princip, rozdìlení, nevýhody
+    * APT a NBA vìdìt co to je
+    * honeypot, honeynet, rozdíly interakce
+    * aplikaèní firewall        
+
+Takže skupina A:
+1) narozeninový paradox
+2) co je to exploit a jak zabránit SQL injection
+3) Fiestelova šifra, vysvìtlit + obrázek
+4) typy honeypotù (3)
+5) statický malware a další typy
+6) aktivní/pasivní autentizace u pasu
+7) mode counter, obrázek + vysvìtlit (wifi - slajd 22 nejaky kec a 33 obrazek, ktery chteli)
+8) popsat GTK (Hole 196), jaké útoky lze na nìj provádìt. (wifi slajd 40)
+
+Skupina B:
+1) Vigenere & Vernam - i z hlediska analýzy
+2) co je to exploit a jak zabránit SQL injection
+3) DES - obrázek vysvìtlit
+4) typy honeypotù (3)
+5) dynamický malware a další typy
+6) Basic Access Control u elektron. pasù
+7) CBC, obrázek + vysvìtlit
+8) popsat GTK (Hole 196), jaké útoky lze na nìj provádìt.
+
+Opravny A:
+1 Co muze zarucovat dostupnost a duvernost
+2 Jak lze provest utok na pametovy skryty kanal
+3 Jaky je princip utoku Caffe Latte
+4 Vysvetlit strom CA a krizovou certifikaci
+5 Ktery z rezimu blokovych sifer lze pouzit jako PRNG a nakreslit a popsat
+6 Jake jsou zabezpecovaci protokoly standardu 802.1x, nejbezpecnejsi popsat a popsat utoky na nej
+7 Jak se muze malware vyhnout detekci
+8 Popsat utok Relay na cipove karty
+9 Vertical scan
+
+5 otazek po 10b, 4 po 5b.
+
+Opravny B:
+- co zaruèuje dostupnost a integritu
+- nakreslit a popsat strom CA a køížovou certifikaci
+- které režimy blokových šifer nezaruèují (nebo možná zaruèují) integritu a nakreslit schémata
+- popsat nebo nakreslit útok Caffe Latte
+- popsat èasový skrytý kanál a možný útok
+- jake protokoly jsou použity ve standardu 802.1x pro autentizaci, jakým zpùsobem autentizace probíhá a popsat útok na nejbezpeènìjší z nich
+- zpùsoby jakým se malware vyhýbá detekci (aspoò 3) a jeden detailnìji popsat
+- temper evident + priklad zarizeni
+- horizontalni skenovani, a na co se vyuziva
+
+RSA
+Ahoj, pokusím se, ale øekl bych, že to zadání má být trochu jinak: p a q by mìla být prvoèísla. Takže bych to vidìl napø. takto:
+
+p = 11
+q = 7
+n = p * q = 77
+--------------------
+Phi(n) = (p-1) * (q-1) = 10 * 6 = 60
+volba 1 < e < Phi(n): 2 ne, 3 ne, 4 ne, 5 ne, 6 ne, 7 ok (60 % e != 0)
+výpoèet d:
+
+(d * e) % Phi(n) = 1
+(7 * d) % 60 = 1
+Teï budu zkoušet násobky 60 (+ 1) a hledám takové èíslo, které bude dìlitelné 7.
+61 ne, 121 ne, 181 ne, 241 ne, 301 ano (301 / 7 = 43)
+Takže: d = 43
+Pevnì vìøím, že to jde nìjak sofistikovanìji... :-)
+
+Teï jenom ovìøení, že to funguje (na to potøebuji kalkulaèku, takže na zkoušce by to byl problém):
+Øeknìmì, že chceme m = 2
+
+1) m = 2
+c = m^e % n
+c = 2^7 % 77
+c = 51
+
+2) c = 51
+m = c^d % n
+m = 51^43 % 77
+m = 2    

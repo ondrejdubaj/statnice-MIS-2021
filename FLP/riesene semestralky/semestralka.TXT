@@ -1,0 +1,114 @@
+--------------------------------------------
+------------------- 2009 -------------------
+--------------------------------------------
+  
+  HASKELL
+    1) V Haskellu nadefinovat typ pro Ord coords => QuadTree coords data (kvaternarni vyhledavaci strom pro 2D prostor), 
+      operaci insert (vlozeni hodnoty do stromu na dane souradnice; v pripade, ze dany uzel uz existuje, tak prepsat data), 
+      ktera vraci novy strom a operaci search, ktera vyhledava data na danych souradnicich a vraci Maybe data. (10b)
+    2) V Haskellu napsat funkci stat :: FilePath -> IO(), ktera na standardni vystup vytiskne histogram zastoupeni 
+      jednotlivych znaku (0-255, znaky se neuvadi, pouze "cary", co sloupec, to radek). Sirka okna je omezena, takze 
+      velikost histogramu bude umerna sirce okna. (15b)
+  PROLOG
+    3) V Prologu nadefinovat predikat foldl(Functor, ValueForEmptyList, ListOfValues, Result), ktery nad seznamem 
+      ListOfValues provede operaci foldl. (8b)
+    4) Vytvorte a popise reprezentaci lambda vyrazu v Prologu a vytvorte dva predikaty: freeVars, ktery "vraci" 
+      mnozinu volnych promennych v zadanem vyrazu (tj kazda promenna se tam vyskytuje nejvyse jednou) a predikat 
+      substitute, ktery na zadanem vyrazu provede zadanou substituci (pokud substituci nelze provest, pak predikat 
+      selhava). (20b)
+    5) V Prologu nadefinujte predikat sublist(List, SubList), ktery je pravdivy, pokud SubList je podseznamen 
+      seznamu List (sublist([1,2,3,4], X) musi postupne "vracet" vsechny podseznamy seznamu [1,2,3,4]). (7b)
+
+--------------------------------------------
+------------------- 2010 -------------------
+--------------------------------------------
+
+ŘÁDNÝ
+
+  Haskell
+  -------
+  1) Mame k dispozici map, fold*, filter, zip, ++. Vytvorte datovou strukturu pro reprezentaci Lambda Kalkulu. 
+    Vytvorte funkci, ktera zjisti volne promenne a platnou substituci.
+  2) Mame k dispozici holy Haskell. Vytvorte sum::[Int]->Int ktery v pripade prazndeho seznamu vraci 0 
+    jinak s vyuzitim fold* soucet prvku seznamu. Dokazte funkcnost reseni.
+  3) Vytvorte funkci, ktera ma parametry file1 a file2 a na vystup zobrazi radky z prvniho 
+    souboru co jsou v druhem v puvodnim poradi
+  
+  Prolog
+  ------
+  1) Vytvorte predikat, ktery ma jako parametry rozmer sachovnice, vychozi misto a cilove misto. 
+    Vraci pocet vsech acyklickych cest kone mezi nimi.
+  2) Asociace pameti asociace(id, key, value), kdyz se zada key tak hleda value, kdyz se zada value 
+    tak hleda klic a kdyz se zada oboje tak pridava do databaze. (bez pouziti seznamů?)
+  3) Predikat subset(+Set, ?Subset) ktery overi, zda druhy parametr je podmnozina prvniho (seznam).
+
+
+1. OPRAVA
+
+  Funkcionalna cast: 
+    1) V lambda kalkule mame vyrazy TRUE, FALSE, mocnina ( \ f n.f^m n), Succ, Pred, isZero a if/ternarny operator ( ? : ) a 
+      operator pevneho bodu Y. Definujte vyraz gt, ktory zisti, ci je 1. parameter vacsi ako druhy.
+    2) V holom Haskelli (len zoznamy, Bool-y, negacie) definujte funkciu negAll->[Bool]->[Bool] s pomocou map, 
+      ktora neguje zoznam boolovskych hodnot. Dokazte, ze pracuje spravne, not x znacte x' a predpokladajte, ze pracuje spravne. 
+    3) Definujte v Haskelli strukturu pre binarny vyhladavaci strom nad neznamymi datami s klucom v triede Ord. 
+      Imlementujte funkciu, ktora dostane strom ako parameter a vrati ho plne vyvazeny. Pouzijte funkcie v Prelude, okrem sortBy a sort. 
+  
+  Logicka cast:
+    1) Predikat, ktory overi mnozinovy rozdiel parametrov (zoznamy). 
+    2) Mame 2D priestor(rozmery zadane parametrami, myslim). Pohybovat sa mozno uhlopriecne, okrem miest, 
+      kde je splneny predikat Switch, na tychto sa mozno pohybovat aj vodorovne a zvisle. Na miesta, kde je splneny predikat 
+      Barrier, nie je mozne vstupit. Najdite najkratsiu cestu z A do B, ktore su zadane.
+    3) Je dany zoznam predikatov. Overte, ze aspon N znich je splnenych pre zoznam zadanych parametrov. atLeast(+Preds, +Params, +N). 
+    4) Zo zoznamu zoznamov vyberte ten, ktoreho dlzka sa najviac blizi cislu presne v polovici medzi dlzkou najkratsieho 
+      a najdlhsieho zoznamu zo zoznamu na vstupe, pouzite volne funkcie length(+L, ?dlzka) a abs(+cislo, ?abs_hodnota).
+
+2. OPRAVA
+  HASKELL
+    - dukaz funkce zipWith (+) xs xs ze je vysledek roven dvojnasobku xs
+    - lambda + vyvazeni modulu, neco se substituci (vraceni seznamu s prvky ve kterych lze substituce provest), + alpha redukce
+    - prace se soubory, prekopirovani z jednoho souboru do druheho, pricemz pri kopiorvani probehne operace, 
+      ze opakujici znaky v radku se nahradi jen jednim znakem a cislice v radcich se sectou, to se provede se vsema radkama 
+      a na vystup se vytiskne vysledna suma. (mozna to bylo trochu jinak, ale proste nak podobne)
+  PROLOG
+    - predikat pro disjunktni prvky dvou mnozin (+A,+B,?Disjunkce).
+    - operace na databazi pomoci predikatu, bylo dano neco jako osoba(jmeno, prijmeni,RC,...), kdekdo(RC,EC), adresa(Ulice, CP,EV...).. 
+      kde EV = evidentni cislo, RC = rodne cislo, a meli se vytvorit ruzne predikaty (3), uz nevim presne jake, 
+      ale proste dotazy, pri zadani osoby vrati bydliste, pri zadani bydliste vrati osoby co tam bydli...
+    - cesty, zadan orientovany graf, propojeni v grafu odkudkam(O,K). kde O a K sou uzly, zjistit zda se z uzlu U da dostat do smycky v grafu 
+      (i vlastni) - cycle(U), a druhy zjisti zda jsou dva uzly od sebe izolovane, isolated(U1,U2).
+  
+  
+TIPY:
+  ---------------
+  prolog/haskell:
+  strom: vytvor balancovany, pridaj, najdi, tree2list a zmaz- zmaz si myslim ze bude na tretom
+  
+  haskell:
+  dokaz, file
+  
+  prolog: praca so zoznamom
+  variacie: prace s predikatmi/databaza/grafy
+  
+  lambda calcul, normalny asi uz nie, v haskeli uz asi vsetko bolo, tak mozno prolog
+  
+  tazko povedat, ja uz som sa neucil ani na 1.opravny, iba som si presiel stromy prolog/haskell:
+
+  -------------------
+  
+  Pokud jde o obsah opravky, tak z minulych semestralek sem vypozoroval ze vicemene typove jednotlive priklady odpovidaji vzdy nasledujicimu:
+  
+  Haskell:
+  1) lambda kalkul - nejspise neco v ciste lambde (mult, div), nebo taky muze objevit implementace alfa redukce
+  2) dukaz - vyjadreni nejake funkce pomoci standardni (map, filter, fold*) a nasledny dukaz funkcnosti
+  3) priklad - vetsinou byva nejaka IO operace, ale myslim ze by se klidne mohl vyskytnout i nejaky ten slozitejsi stom, nebo SQL databaze
+  
+  Prolog:
+  1) dynamicke predikaty - nejaky priklad na vyuziti assert/retract
+  2) prohledavani stavoveho prostoru
+  3) priklad - vetsinou prace se seznamy, mozna i vyjadreni lambda kalkulu  
+
+ODKAZY:
+  Fituska (loni, predloni, ...)
+  https://gist.github.com/2634678
+  http://www.stud.fit.vutbr.cz/~xkalab00/flp:start
+  http://www.stud.fit.vutbr.cz/~xkalab00/flp:reseni

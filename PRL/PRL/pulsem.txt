@@ -1,0 +1,41 @@
+pulsemestralka PDA
+1999-11-20
+
+  
+1.  Architektury
+  CRCW
+  EREW
+  COMMON CRCW
+Máš zadanou architekturu PRAM a máš dáno N procesorù (se sdílenou
+pamìtí). Máš n èísel, kde n = N. Je dán optimání algoritmus vynásobení
+n èísel mezi sebou.
+Napiš, jak dlouho bude tento algoritmus trvat
+
+a) exp èas
+b) konstantní
+c) logaritmický
+d) lineární
+e) n*log2 n
+f) kvadratický
+
+- pøiøazení èasu k architektuøe
+- jiná úloha : max v poli èísel.
+ 
+ 
+2.  Popis architektury : 
+a) DATAFLOW
+b) VLIW
+ 
+ 
+3.  MERGE -  SPLITTING SORT
+neformálnì algoritmus, odvodit èas, složitost a cenu
+ 
+ 
+4.  ZÁPISOVÉ KONFLIKTY CRCW + popis
+common, arbitrary, priority
+ 
+ 
+5.  Vysvìtlit a popsat, výhody a nevýhody, zaøadit do topologie
+a) hyperkostka
+b) torus
+ 

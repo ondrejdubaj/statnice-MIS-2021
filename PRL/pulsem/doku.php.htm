@@ -1,0 +1,753 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head><title>mit:prl [DokuWiki]</title>
+
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <meta name="generator" content="DokuWiki Release 2005-09-22e">
+  <link rel="start" href="http://fit.chytrak.cz/wiki/">
+  <link rel="contents" href="http://fit.chytrak.cz/wiki/doku.php?id=mit:prl&amp;do=index" title="">
+  <link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://fit.chytrak.cz/wiki/feed.php">
+  <link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://fit.chytrak.cz/wiki/feed.php?mode=list&amp;ns=mit">
+  <link rel="alternate" type="text/html" title="Plain HTML" href="http://fit.chytrak.cz/wiki/doku.php?id=mit:prl&amp;do=export_html">
+  <link rel="alternate" type="text/plain" title="Wiki Markup" href="http://fit.chytrak.cz/wiki/doku.php?id=mit:prl&amp;do=export_raw">
+  <link rel="stylesheet" media="screen" type="text/css" href="doku.php_subory/style_002.css">
+  <meta name="date" content="2007-05-16T11:01:47+0200">
+  <meta name="robots" content="index,follow"><!-- Kerio Popup Killer - script has been inserted by KPF -->
+  
+
+<script type="text/javascript">
+<!--
+var NoPopupsDone = 0;var CurrWindowOpen = window.open;var CurrWindowOpen2 = window.open;var orig_setTimeout = window.setTimeout;var orig_setInterval = window.setInterval;if ( window.showModelessDialog ) { var orig_showModelessDialog = window.showModelessDialog;} if ( window.showModalDialog ) { var orig_showModalDialog = window.showModalDialog;} 
+var cnt = 0;var popupType = "direct";var KPF_LOG_URL = "http://127.0.0.1:44501/pl.html?";var KPF_TIMEOUT = 100;var onUnloadFlag = false;var KPF_CompleteLoaded = false;
+function nullMethod() {}function nullWindow() {	 this.window = new Object(); this.document = new Object(); this.document.open=this.document.close=this.document.write=this.document.writeln=nullMethod; this.alert=this.back=this.blur=this.captureEvents=this.clearInterval=this.clearTimeout=this.close=this.confirm=this.dump=this.escape=this.focus=this.forward=this.GetAttention=this.getSelection=this.home=this.moveBy=this.moveTo=this.open=this.print=this.prompt=this.releaseEvents=this.resizeBy=this.resizeTo=this.scroll=this.scrollBy=this.scrollByLines=this.scrollByPages=this.scrollTo=this.setCursor=this.setInterval=this.setTimeout=this.sizeToContent=this.stop=this.unescape=this.updateCommands=nullMethod;}
+function destroyIframe(ifr){ if (ifr != document.getElementById("kpfLogFrame"))   { var x = ifr.parentNode.removeChild(ifr);    delete x;  };}
+function sendStream(s, idx, kpf_pt){ try {        var ifr = document.getElementById("kpfLogFrame");   var tmp = ifr.cloneNode(true);   tmp.id  = "ifr_" + idx;   var s2 = "srv=" + document.location + "&url=" + s + "&pty=" + kpf_pt;   tmp.src = KPF_LOG_URL + escape(s2);   document.body.appendChild(tmp); } catch (e) {   orig_setTimeout("sendStream('" + s + "', " + idx + ",'" + kpf_pt + "')", KPF_TIMEOUT); }}
+function sendUrl(url){ if (onUnloadFlag)   sendStream(url, cnt++, popupType); else  {  try {   orig_setTimeout("sendStream('" + url + "', cnt++,'" + popupType + "')", KPF_TIMEOUT);  }   catch (e)   {}	  }}
+function newOpen(url, name, atr) {wnd = new nullWindow();wnd.focus = nullWindow;wnd.opener = this.window;sendUrl(url);return(wnd); }
+function newOpen2(url, name, atr) { sendUrl(url); return(new nullWindow());}
+function stopPopups(kpf_pt) { popupType = kpf_pt; CurrWindowOpen = window.open; window.open = newOpen2; }
+function startPopups(kpf_pt) { window.open = CurrWindowOpen;  popupType = kpf_pt;}
+function my_setTimeout(one, two) { if (typeof(one) == "function") {    function myFun(){}    myFun=one;    function newFun() {     stopPopups('ontimer');      myFun();      startPopups('direct');    }	    try {      return orig_setTimeout(newFun,two);    }    catch (e)  {      try {	    return eval("newFun()");      }      catch(e) { }    }   }  else {    try {      return orig_setTimeout("stopPopups('ontimer');"+one+"; startPopups('direct');", two);    }    catch (e)  {      try {        return eval("stopPopups('ontimer');"+one+"; startPopups('direct');");      }      catch(e) { }    }  }}
+function my_setInterval(one, two) {  if (typeof(one) == "function") {    function myFun(){}    myFun=one;    function newFun() {      stopPopups('ontimer');      myFun();      startPopups('direct');    }	    try {      return orig_setInterval(newFun,two);    }    catch (e) { }  }  else {    try {      return orig_setInterval("stopPopups('ontimer');"+one+";startPopups('direct');", two);    }     catch (e) { }  }}
+function my_onload() { var my_retcode = true; stopPopups("onload"); if(orig_onload)  my_retcode = orig_onload(); startPopups("direct"); KPF_CompleteLoaded = true; return my_retcode; }
+function my_unload() {  var my_retcode = true; var cnt = 0; stopPopups("onunload"); onUnloadFlag = true; if(orig_onunload)   my_retcode = orig_onunload(); startPopups("direct"); return my_retcode;}
+function my_windowopen(url, name, atr){ if ( (! KPF_CompleteLoaded) || (document.all && event != null && event.type == "mouseover") )  {  if ( ! KPF_CompleteLoaded) {   popupType = "direct";  }  else {   popupType = "mouseover";  }  sendUrl(url);  popupType = "direct"; } else {   try {   return CurrWindowOpen2(url, name, atr);  }   catch (e)   {}  }}
+function my_showModelessDialog (url , arguments , features) { if (!NoPopupsDone) {   var wnd = new nullWindow();  popupType = "direct_dialog";  sendUrl(url);  popupType = "direct";  return wnd; } if (popupType!="direct" | (event && event.type == "mouseover") ) {   var curr_popup = popupType;  if (event && event.type == "mouseover") {   popupType = "mouseover";  }    popupType = popupType+"_dialog";  sendUrl(url);  popupType = curr_popup;  return ( new nullWindow() ); } else {   return ( orig_showModelessDialog(url , arguments , features) );  } }
+function my_showModalDialog (url , arguments , features) { if (!NoPopupsDone) {   popupType = "direct_dialog";  sendUrl(url);  popupType = "direct";  return ""; } if (popupType!="direct" | (event && event.type == "mouseover") ) {   var curr_popup = popupType;  if (event && event.type == "mouseover") {   popupType = "mouseover";  }    popupType = popupType+"_dialog";  sendUrl(url);  popupType = curr_popup;  return ""; } else {   return ( orig_showModalDialog(url , arguments , features) );  } }
+function nopopups() { if(!NoPopupsDone)   {  NoPopupsDone = 1;  orig_onload = window.onload;  orig_onunload = window.onunload;  window.onload = my_onload;  window.onunload = my_unload;  window.open = my_windowopen;  }}
+window.setTimeout = my_setTimeout;window.setInterval = my_setInterval;window.open = newOpen;if ( orig_showModelessDialog ) { window.showModelessDialog = my_showModelessDialog;}if ( orig_showModalDialog ) { window.showModalDialog = my_showModalDialog;}
+//-->
+</script><!-- Kerio Popup Killer - end of the script inserted by KPF -->
+
+<script language="javascript" type="text/javascript" charset="utf-8">
+    var alertText   = 'Please enter the text you want to format.\nIt will be appended to the end of the document.'
+    var notSavedYet = 'Unsaved changes will be lost.\nReally continue?'
+    var DOKU_BASE   = '/wiki/'
+  </script>
+  <script language="javascript" type="text/javascript" charset="utf-8" src="doku.php_subory/script.js"></script>
+  <script language="javascript" type="text/javascript" charset="utf-8" src="doku.php_subory/tw-sack.js"></script>
+  <script language="javascript" type="text/javascript" charset="utf-8" src="doku.php_subory/ajax.js"></script>
+  <script language="javascript" type="text/javascript" charset="utf-8" src="doku.php_subory/domLib.js"></script>
+  <script language="javascript" type="text/javascript" charset="utf-8" src="doku.php_subory/domTT.js"></script>
+  <link rel="stylesheet" type="text/css" href="doku.php_subory/style.css">
+
+  <link rel="shortcut icon" href="http://fit.chytrak.cz/wiki/lib/images/favicon.ico">
+  <link rel="stylesheet" media="screen" type="text/css" href="doku.php_subory/layout.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="doku.php_subory/design.css">
+
+  
+  <link rel="stylesheet" media="print" type="text/css" href="doku.php_subory/print.css"><!--[if gte IE 5]>
+  <style type="text/css">
+    /* that IE 5+ conditional comment makes this only visible in IE 5+ */
+    /* IE bugfix for transparent PNGs */
+    //DISABLED   img { behavior: url("/wiki/lib/scripts/pngbehavior.htc"); }
+  </style>
+  <![endif]--></head><body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="pagename">
+        [[<a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:prl&amp;do=backlink" onclick="return svchk()" onkeypress="return svchk()">mit:prl</a>]]
+      </div>
+      <div class="logo">
+        <a href="http://fit.chytrak.cz/wiki/doku.php?id=" onclick="return svchk()" onkeypress="return svchk()" name="top" accesskey="h" title="[ALT+H]">DokuWiki</a>      </div>
+    </div>
+  
+    
+    <div class="bar" id="bar_top">
+      <div class="bar-left" id="bar_topleft">
+        <form class="button" method="post" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="mit:prl" type="hidden"><input value="Edit this page" class="button" title="ALT+E" accesskey="e" type="submit"></form>        <form class="button" method="get" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="revisions" type="hidden"><input name="id" value="mit:prl" type="hidden"><input value="Old revisions" class="button" title="ALT+O" accesskey="o" type="submit"></form>      </div>
+  
+      <div class="bar-right" id="bar_topright">
+        <form class="button" method="get" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="recent" type="hidden"><input name="id" value="" type="hidden"><input value="Recent changes" class="button" title="ALT+R" accesskey="r" type="submit"></form>        <form action="/wiki/doku.php?id=" accept-charset="utf-8" class="search" name="search" onsubmit="return svchk()"><input name="do" value="search" type="hidden"><input id="qsearch_in" accesskey="f" name="id" class="edit" onkeyup="ajax_qsearch.call('qsearch_in','qsearch_out')" type="text"><input value="Search" class="button" type="submit"><div id="qsearch_out" class="ajax_qsearch" onclick="this.style.display='none'"></div></form>&nbsp;
+      </div>
+    </div>
+
+        <div class="breadcrumbs">
+      Trace: <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:pdb:pulsemka" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:pdb:pulsemka">pulsemka</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:pdb:zdroje" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:pdb:zdroje">zdroje</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:pdb" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:pdb">pdb</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:mat:vb" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:mat:vb">vb</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:mat:1t0607" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:mat:1t0607">1t0607</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:mat" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:mat">mat</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:sin" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:sin">sin</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:wap" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:wap">wap</a> <span class="bcsep">»</span> <a href="http://fit.chytrak.cz/wiki/doku.php?id=start" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="start">start</a> <span class="bcsep">»</span> <span class="curid"><a href="http://fit.chytrak.cz/wiki/doku.php?id=mit:prl" onclick="return svchk()" onkeypress="return svchk()" class="breadcrumbs" title="mit:prl">prl</a></span>          </div>
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    
+<p>
+1) Vypocetni model PRAM s N procesory. Jaka bude casova slozitost
+optim. algor., ktery spocita log. AND posloupnosti n prvků (pro n=N) v
+pripade EREW PRAM, CREW PRAM, common CRCW PRAM 4 body
+</p>
+
+<p>
+log,log, log [shenny] (ten CRCW nevim na 100% - bral jsem to podle alg. reduce - ten sice dela + ale muze delat i AND a ma log)
+</p>
+<hr noshade="noshade" size="1">
+
+<p>2) Vypocetni model PRAM s N procesory. Jaka bude casova slozitost
+optim. algor., ktery zjisti zda prvek X (vsechny procesory jej znaji)
+se nachazi v neserazene posloupnosti (ve ktere nejou stejne prvky) n
+prvků (pro n=N) v pripade EREW PRAM, CREW PRAM, common CRCW PRAM 4 body
+</p>
+
+<p>
+log,log, konstantni [shenny]<br>
+ spis konst, konst, konst (protoze X vsechny procesory znaji a v posloupnosti nejou stejne prvky)
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+3) Operace inp(”a”) v jazyce Linda je<br>
+ a) neblokujici<br>
+ b) blokujici<br>
+ c) zalezi na tom zda se n-tice “a” nacazi na nastence<br>
+ 2 body<br>
+
+</p>
+
+<p>
+neblokujici [shenny]<br> (jj, ve slidech to neni, ale vygooglil
+jsem: The inp() and rdp() calls are predicate versions of in() and
+rd(). The predicate versions will return 1 if a match is found and 0
+otherwise. The non-predicate versions will block until a match is
+found. [chip]) </p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 4) pokud mame linearni seznam implementovan tak, jak bylo uvedeno na prednasce
+</p>
+
+<p>
+ma operace “List Ranking” cas. slozitost: a) konstantni b) logaritmickou c) linearni 2b
+</p>
+
+<p>
+log [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p> 5) pokud mame Eulerovy graf implementovan tak, jak bylo uvedeno na
+prednasce ma operace “Euler Tour” cas. slozitost: a) konstantni b)
+logaritmickou c) linearni 2b
+</p>
+
+<p>
+konstantni? [shenny]  rekl bych ze <strong>linearni</strong> [keith]
+</p>
+
+<p>
+hm, rekl bych ze konst... Koukni na slide 33 te prednasky Compute Etour [shenny]
+</p>
+
+<p>
+je konstantni v nejhorsim pripade muze dopadnout logaritmicky [hRT]
+</p>
+
+<p>
+Jste rychlejsi ;0) Ve skriptech je O[c], takze konstantni ;0) takze to shrnme: <strong>Euler tour ma KONSTANTNI slozitost</strong> ;)
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 6) strucne definujte “k-obarveni seznamu” 4b
+</p>
+
+<p>
+Je to prirazeni hodnoty vrcholu, tzv. namapovani C: V → {0,1,..,k-1}, pricemz naslednik ma jinou hodnotu nez aktualni prvek. 
+</p>
+
+<p>
+[keith]
+</p>
+
+<p>Neboli cesky, je to obarveni jednotlivych prvku seznamu pomoci
+k-barev tak, ze zadna barva sousedicich prvku seznamu neni stejna.
+[hRT]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+7) zapiste algoritmus “log n-obarveni seznamu” (5 radku) 6b
+</p>
+
+<p>
+Nemysli tim tohle? 
+</p>
+<pre class="code">for every vertex v do in parallel
+  k=least significant position in which
+      Index[v] and Index[succ(v)]  disagree
+  Color[v]=2k+k-th bit of Index[v]
+end for</pre>
+
+<p>
+ [Raduli]
+</p>
+
+<p>
+mysli [hRT]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>Cool Slovne popiste operace “jump over” (List Ranking) a “splice
+out” (Optimal List Ranking) , upozornete na rozdil mezi nimi a
+nakreslete jejich obrazek 4b
+</p>
+
+<p>
+<strong>Jump Over (přeskočení):</strong>  Procesor, starající se o prvek, provede rozhodnutí, jestli jeho následník bude spát, či nikoliv. <strong>Splice Out (vypletení):</strong>  Procesor, starající se o prvek, provede rozhodnutí, zda <u>jeho vlastní prvek</u>
+bude spát, či nikoliv. Tzn. složitější, než jump over, neboť procesor
+musí svému předchůdci nastavit ukazatel tak, aby jeho prvek přeskočil
+(tedy musí upravit jeho hodnotu). Je nutné tedy zavést navíc i pole
+předchůdců. [A.J.Rimmer[BDP]]
+</p>
+
+<p>
+<u>jump over</u> prezkoci dany procesor, následník prezkoceneho bude následník předchůdce prezkoceneho, pro jednosmerne seznamy  <u>splice out</u> – to stejne ale pro obousměrný seznam, s tim ze následník prezkoceneho bude ukazovat na předchůdce preskoceneho [terran]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+9) Slovne popiste a doplnte obr., jak lze pomoci asynchr. kanalu nasimulovat synchr. kanal s omezenou kapacitou n zprav 6b. 
+</p>
+<pre class="code">send(ch, msg) ⇒ send(ch1, msg)
+                receive(ch2, dummy)
+receive(ch, msg) ⇒ receive(ch1, msg)
+                   send(ch2, „ack“)
+init(ch) ⇒ n_times { send(ch2, „ack“)
+                     ....
+                     send(ch2, „ack“)
+                   }</pre>
+
+<p>
+ [keith], [chip]
+</p>
+
+<p>nebo spis to popsat slovne, ze jde o dva asynchronni kanaly - pres
+jeden se posilaji data a pres druhy potvrzeni a popripade jeste nejake
+kecy [Raduli]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 10) Slovne popiste problem ctenari-pisari a kategorie jeho reseni. (pripadne obr.) 7b.
+</p>
+
+<p>
+v jendom okamziku muze cist vice ctenaru pokud nidko nepise. Pokud nekdo pise, muze psat jen jeden a nikdo nesmi cist [shenny]
+</p>
+
+<p>
+kategorie reseni (asi):
+</p>
+<ul>
+<li class="level1"><div class="li"> 2 fronty čekajících (čtenářů a písařů) → vyhladovění písařů</div>
+</li>
+<li class="level1"><div class="li"> přidání další fronty čtenářů → živé řešení (není vyhladovění)</div>
+</li>
+</ul>
+
+<p>
+[chip]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 11) <strong>semantika Monitoru</strong> a syntax operaci <strong>wait</strong> a <strong>signal</strong>. 9b
+</p>
+
+<p>Monitor je synchronizační primitivum, speciální konstrukce
+programovacího jazyka, sdružující funkce a proměnné, a zaručující, že
+funkce v monitoru v každém okmažiku vykonává nejvýše jeden proces, a že
+k proměnným v monitoru nelze přistupovat zvenku.
+</p>
+
+<p>Monitor poskytuje operace “wait” (pro zablokování aktivního procesu
+- v takovém případě může do monitoru vstoupit jiný proces) a “signal”
+(pro vzbuzení zablokovaného procesu – v tom případě se volající proces
+musí buď zablokovat, nebo opustit monitor, aby neporušil podmínku
+vzájemného vyloučení procesů v monitoru) [A.J.Rimmer[BDP], ofic.zdroj
+Wiki]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+12) Slovne popiste princip algoritmu ticket algoritm a vytvorte jeho implementaci pomoci atomicke funkce fetch_and_add:<br>
+ 10b. 
+</p>
+<pre class="code">FA(var, incr) = &lt;t = var; var = var + incr; return t&gt;
+
+shared var ...
+repeat
+  turn[i] = FA(number, 1);
+  while turn[i] &lt;&gt; next do skip;
+  critical section
+  next = next + 1; {need not be atomic}
+until false;</pre>
+
+<p>
+ [keith]
+</p>
+<hr noshade="noshade" size="1">
+<hr noshade="noshade" size="1">
+
+<p>
+ 1. časová slo itost opt. algoritmu, který spočte součet posl. M = N prvků
+</p>
+
+<p>
+log [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+2. Procesory znají prvek X, zjistěte časovou slo itost: prvek je/není v posloupnosti a) EREW b)CREW c)Common CRCW
+</p>
+
+<p>
+log, log, konst [shenny]
+</p>
+
+<p>zde jde jen o cteni jestli tam ten prvek je podle me tedy i CREW by
+mel byt konst kdo se prida? :) [hRT] Tady jde o zápis výsledku do
+paměti. Prvky porovnáš v konst, ale na zápis musíš čekat až každý
+procesor, který prvek nalezne, do paměti zapíše. Nebo je to blbost?
+[honzik]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+3. Linda: Rdp(”a”) je operace: a) blokující b) neblokující c) zále í na tom, zda je n-tice “a” na nástěnce
+</p>
+
+<p>
+neblokujici (snad - rd je blokujici) [shenny]
+</p>
+
+<p>
+urcite neblokujici vsechny co konci na p (vraci predikat) a tedy neblokuji 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 4. Log n-obarveni seznamu má čas slo itost a) konst. b) log. c) lineární
+</p>
+
+<p>
+konst [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 5. Opt. alg na transformaci matice MxM má čas slo itost: a) konst. b) log. c) lineární
+</p>
+
+<p>
+konst [shenny] jenom poznamka... nejedna se o transformaci, ale o transpozici matice :) [sewer]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+6. Slovní popis obědvajících filozofů + mo ná ře ení
+</p>
+
+<p>
+reseni dame tam semafor, ke stolu pustime je 4. Jeden z nich se urcite naji a pusti vidlicku, ⇒ dalsi se naji atd  [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+7. Popi te slovně dvě architektury SIMD + obrázky
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+8. <strong>Popiste slovně + obrázek downsweep</strong> V kořeni stromu je hodnota 0. Každý uzel předává svému levému synovi <u>svou</u> hodnotu. Každému pravému synovi předává svou_hodnotu + hodnotu levého syna. 
+</p>
+
+<p>a tady jsem to nechápal sám, takže po lopatě : první strom si
+představme jako: vrchol s hodnotou 25 (beru podle slajdů) levý syn: 11,
+pravý syn:14. </p>
+
+<p>
+Podle něj tedy downsweep bude vypadat: vrchol : 0. levý syn: 0. pravý
+syn: 11. ta jedenáctka se tedy vzala nikoliv z levého syna “downsweep
+stromu” (tam je 0), ale “původního stromu” (tam číhá ta 11ka). Stejně
+tak se pokaždé pravému synovi přičte k hodnotě otce ta hodnota, která
+byla v původním stromu na místě syna levého. <u>Pokud jsem nechápal pouze já a je to OT, smažte.</u> [A.J.Rimmer[BDP]] 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+9. Důkaz správnosti íření hodnot stromem při downsweep
+</p>
+
+<p>
+dukaz je zrejmy. provadime indukci.
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+10. S pou itím sufix sums napi te proceduru na number of descendants
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+11. Granularita + příklady
+</p>
+<ol>
+<li class="level1"><div class="li"> na urovni uvnitr instrukce</div>
+</li>
+<li class="level1"><div class="li"> mezi instrukcema (zretezeni instrukci, ..)</div>
+</li>
+<li class="level1"><div class="li"> mezi prikazy (fpu, ...)</div>
+</li>
+<li class="level1"><div class="li"> mezi bloky procesu (vlakna, ..)</div>
+</li>
+<li class="level1"><div class="li"> mezi procesy (procesy nemivaji vestsinou sdilenou pamet)</div>
+</li>
+</ol>
+<hr noshade="noshade" size="1">
+
+<p>
+12. Poloformálně popi te pipiline merge sort, slo itost, cena
+</p>
+
+<p>
+Uka te na posl. 3, 6, 1, 4 + obrázek. 
+</p>
+<hr noshade="noshade" size="1">
+<hr noshade="noshade" size="1">
+
+<p> 1) 4b Mějme výpočetní model PRAM s N procesory. Jak je výpočetní
+slo itost optimálního algoritmu, který má spočítat maximum posloupnosti
+n prvků (pro n=N) v případě: a) EREW b)CREW c)common CRCW
+</p>
+
+<p>
+log, log, log [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p> 2) 4b Mějme výpočetní model PRAM s N procesory. Jaká bude časová
+slo itost opt. algoritmu, který má zjistit, zda se prvek x (který v
+echny procesory znají) nachází v seřazené posloupnosti ( ve které jsou
+prvky se stejnou hodnotou) n prvků (pro n=N) v případě: a) EREW b) CREW
+c) common CRCW
+</p>
+
+<p>
+log, log, konst [shenny]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+3) 2b Operace in(”a”, f(1)) v jazyce Linda je: a) neblokující b) blokující c) zále í na implementaci funkce f
+</p>
+
+<p>
+blokujici?[Raduli]
+</p>
+
+<p>
+ano, blokujici
+</p>
+
+<p>
+<strong>in</strong>() - cte a odebira z nastenky, blokujici, <strong>inp()</strong> - cte, odebira, neblokuje
+</p>
+
+<p>
+<strong>rd a rdp</strong> to same ale jen ctou, neodebiraji. 
+</p>
+
+<p>
+[keith]
+</p>
+
+<p>
+<strong>inp a rdp</strong> se od in a rd liší v tom, že jsou <u>neblokující</u>
+.Pouze zjištují jejich přítomnost na nástěnce a podle našlo-nenašlo
+vrací true-false. Používají se u nestabilních architektur, nebo u
+nestejně rychlých procesorů. [A.J.Rimmer[BDP], citace Hanáček]
+</p>
+
+<p>podle me odpoved neni tak jednoznacna nevim co si o tom myslet. ANO
+in je blokujici, ale pouze v pripade ze to co se hleda na nastence
+neni. Potom teda podle me by se dalo uvazovat i to ze zalezi na te fci.
+Jestli pozaduje neco co na nastence je blokovat to nebude. [hRT]
+</p>
+
+<p>
+To se tak rika, napr. getchar() je taky blokujici, ale pokud neni prazdny vstupni buffer tak neblokuje. [honzik]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>4) 2b Pokud máme lineární seznam implementován tak, jak bylo uvedeno
+na předná ce, má operace “Predecessor computing” (spočte pole Pred,
+které obsahuje předchůdce jednotlivých uzlů) časovou slo itost: a)
+konstantní b) logaritmickou c) lineární
+</p>
+
+<p>
+konstantni [Raduli]
+</p>
+
+<p>5) 2b Pokud máme lineární seznam implementován tak, jak bylo uvedeno
+na předná ce, má operace “Parallel sufix sums” (spočte pole Val, které
+obsahuje sumy v ech sufixů seznamu) Časovou slo itost: a) konstantnÝ b)
+logaritmickou c) lineárnÝ
+</p>
+
+<p>
+log [Raduli]
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ 6) 4b Slovně popi te problém obědvajících filozofů a typy jeho mo ných ře ení
+</p>
+
+<p>
+7) 7b Slovně popi te architekturu MSIMD (multiple SIMD) a doplňte ji obrázkem
+</p>
+
+<p>
+Cool 4b Zdůvodněte, proč nemá základní algoritmus List ranking optimální cenu
+</p>
+
+<p>
+9) 6b Zapi te první fázi (jumping phase) algoritmu Random mating (tj. není nutné zapisovat fázi rekonstrukce)
+</p>
+
+<p>
+10) 7b S vyu itím procedury Suffix sums zapi te alg., který přiřadí uzlům stromu jejich čísla v pořadí průchodu preordru
+</p>
+
+<p>
+11) 12b Uveďte jednotlivé úrovně granulového paralelismu (na jaké úrovni je mo no provádět výpočet paralelní) i s příklady.
+</p>
+
+<p>12) 7b Poloformálně popi te řadící alg. Minimum Extraction sort na
+stromové struktuře procesorů, doplňte obr., uveďte čas. slo itost a
+příklad
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+- Zapište Petersonův algoritmus vzájemého vyloučení pro 2 procesory
+</p>
+
+<p>
+- Definuj K-ruling.
+</p>
+
+<p>
+- Co se může stát při malém počtu procesorů u algoritmu RANDOM MATING?
+</p>
+
+<p>
+- Popsat poloformálně ENUMSORT. Odvodit časovou složitost, cenu.
+</p>
+
+<p>
+- Algoritmus RANDOM MATING. Obrázek, popis. Zdůvotnit cenu. 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+- <strong>Deifnice k-obarveni</strong>.
+</p>
+
+<p>při počtu prvků n v seznamu, ex. log n počtu barev (hodnot). Máme k
+dispozici k hodnot (barev). K-obarvení je tedy zobrazení, které každému
+uzlu seznamu přiřadí nějakou barvu tak, aby platilo, že barvy dvou
+sousedních uzlů v seznamu jsou různá. [A.J.Rimmer[BDP]] </p>
+<hr noshade="noshade" size="1">
+
+<p>
+- Jumping phase z Random mating. - Number of descendants pomoci suffix sum. 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+ - Flynova klasifikace + uvest reprezentujici typicke architektury  
+</p>
+
+<p>
+- Cinnost vektorovych procesoru - obrazek - Popsat cinnost zretezenych procesoru + obrazek
+</p>
+
+<p>
+- Paralerismus na urovni vlaken
+</p>
+
+<p>
+- Popiste PRAM architekturu (obrazek + komentar), jeji strukturu a princip cinnosti. 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+- Popiste  <strong>reseni konfliktu zapisu u CRCW</strong>
+</p>
+
+<p>
+  <em>COMMON</em> - Procesory mohou zapisovat, ale hodnoty musí
+být shodné.Např: Pokud mají zapsat výsledek “našli-nenašli”. Zapíší
+pouze ti, kteří našli. Ekvivalentně při výpočtu OR-AND. Zapisují pouze
+“1”(OR), či “0”(AND).
+</p>
+
+<p>
+<em>ARBITRARY</em> - Zapisované hodnoty mohou být různé, ale zapíše se
+pouze jedna z nich. Např : Při vyhledávání (najde se hodnota na více
+místech, zapíše se pouze jeden výskyt).
+</p>
+
+<p>
+<em>PRIORITY</em> - Procesory mají určenou prioritu. V proměnné bude hodnota od pcsru s vyšší prioritou.[A.J.Rimmer[BDP]] 
+</p>
+<hr noshade="noshade" size="1">
+
+<p>
+- Defnujte principy synchronizacniho mechanismu MONITOR a uvedte jeho zakladni operace (signal, wait) <strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong><strong></strong>***
+</p>
+
+<p>
+- Slovný popiÜte architekturu VLIW a popis dopl˛te obrßzkem
+</p>
+
+<p>
+- popiÜte syntaxi monitoru a semantiku operacÝ wait a signal
+</p>
+
+<p>
+- Syntax monitoru a semantika WAIT a SIGNAL.
+</p>
+
+<p>
+- Nadefinuj pomocÝ AWAIT semafor.
+</p>
+
+<p>
+- Zpusoby implementace distribuovaneho vzajemneho vylouceni.
+</p>
+
+<p>
+- Slovne popsat ctenari-pisari, kategorie, obrazky.
+</p>
+
+<p>
+- Urovne granularity paralelismu, prikladu, obrazky.<br>
+  1)uvnitr instrukci - INTRA INSTRUCTION (nejjemnejsi) <br>
+  2)mezi instrukcemi - INTER INSTRUCTION (nektere instrukce par., ale neni to videt na urovni prog. jazyka) <br>
+  3)mezi prikazy (vektorove pocitace, FPU)<br>
+  4)mezi bloky procesu (vlakna a thready)<br>
+  5)mezi procesy (mohou byt oddelene kompilovany, zpravidal bez sdilene pameti)<br>
+  [HNT]<br>
+  
+</p>
+
+<!-- cachefile /3w/chytrak.cz/f/fit/wiki/data/cache/7/7b90cdd84da391a7c02a20f8f761a2e3.xhtml used -->
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+      <div class="doc">
+        mit/prl.txt · Last modified: 2007/05/16 11:01 by 147.229.208.63      </div>
+    </div>
+
+   
+    <div class="bar" id="bar_bottom">
+      <div class="bar-left" id="bar_bottomleft">
+        <form class="button" method="post" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="mit:prl" type="hidden"><input value="Edit this page" class="button" title="ALT+E" accesskey="e" type="submit"></form>        <form class="button" method="get" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="revisions" type="hidden"><input name="id" value="mit:prl" type="hidden"><input value="Old revisions" class="button" title="ALT+O" accesskey="o" type="submit"></form>      </div>
+      <div class="bar-right" id="bar_bottomright">
+                                <form class="button" method="get" action="/wiki/doku.php" onsubmit="return svchk()"><input name="do" value="index" type="hidden"><input name="id" value="mit:prl" type="hidden"><input value="Index" class="button" title="ALT+X" accesskey="x" type="submit"></form>        <a href="#top"><input class="button" value="Back to top" onclick="window.scrollTo(0, 0)" type="button"></a>&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc" align="center">
+  <a target="_blank" href="http://fit.chytrak.cz/wiki/feed.php" title="Recent changes RSS feed"><img src="doku.php_subory/button-rss.png" alt="Recent changes RSS feed" border="0" height="15" width="80"></a>
+
+  <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="doku.php_subory/button-cc.gif" alt="Creative Commons License" border="0" height="15" width="80"></a>
+
+  <a target="_blank" href="https://www.paypal.com/xclick/business=andi%40splitbrain.org&amp;item_name=DokuWiki+Donation&amp;no_shipping=1&amp;no_note=1&amp;tax=0&amp;currency_code=EUR&amp;lc=US" title="Donate"><img src="doku.php_subory/button-donate.gif" alt="Donate" border="0"></a>
+
+  <a target="_blank" href="http://www.php.net/" title="Powered by PHP"><img src="doku.php_subory/button-php.gif" alt="Powered by PHP" border="0" height="15" width="80"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="doku.php_subory/button-xhtml.png" alt="Valid XHTML 1.0" border="0" height="15" width="80"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="doku.php_subory/button-css.png" alt="Valid CSS" border="0" height="15" width="80"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="doku.php_subory/button-dw.png" alt="Driven by DokuWiki" border="0" height="15" width="80"></a>
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+</div>
+
+<img src="doku.php_subory/indexer.gif" alt="" height="1" width="1"><!-- Kerio Popup Killer - script has been appended by KPF -->
+<iframe id="kpfLogFrame" src="doku.php_subory/pl.htm" onload="destroyIframe(this)" style="display: none;">
+</iframe>
+<script type="text/javascript">
+<!--
+	nopopups();
+//-->
+</script>
+<!-- Kerio Popup Killer - end of the script appended by KPF-->
+</body></html>

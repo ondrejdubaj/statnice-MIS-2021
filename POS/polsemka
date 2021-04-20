@@ -1,0 +1,26 @@
+1. Uživatelský vs. systémový režim, kdy se mezi nimi přepíná a jak
+2. Porovnat režii přepínání vlaken (všechny implementace a ve kterých lze využít na jeden program více procesorů) a procesů
+3. Uvaznuti, blokování, hladovění
+4. Princip implementace vzájemného vyloučení v jádře, jak se řeší zátěž společně paměťové sběrnice
+5. Binární vs obecný semafor, jaké implementace jsou v Unixu
+
+--------------------------
+
+1) Proc je potreba uzivatelsky a systemovy rezim, kdy a jak dochazi k prepnuti rezimu.
+2) Rozdil vlakna a procesy, jednotka paralelismu, vznik, zanik
+3) kratkodobe vylouceni u jednoprocesorovych systemu. Jak? Lze pouzit aktivni cekani + zduvodnete
+4) jake problemy jsou se signaly v unixu, jak to resi posix
+5) Implementovat pomoci wait, signal, broadcast mutex_lock a mutex_unlock zasilani zprav obecne, aby se zprava neztratila.
+
+-----------------------------------------------------
+
+
+Prečo je potrebný uživateľský a systémový režim? Kedy a ako dochádza k prepnutiu kontextu a režimu?
+Akými spôsobmi môžu byť implementované vlákna v systéme? V ktorých prípadoch je možné využívať viac procesorov jedným programom?
+Akým spôsobom je riešené krátkodobé vzájomné vylúčenie v multiprocesorových systémoch? Je možné použiť aktívne čakanie, a v akých prípadoch?
+Prečo nie je všeobecný (obecný) semafor vhodný na použitie pre vzájomné vylúčenie? Na aké účely je naopak vhodný?
+Pomocou Posix threads implementovať synchronizačný nástroj bariéra (prototypy funkcií boli zadané). 
+
+-------------------
+
+

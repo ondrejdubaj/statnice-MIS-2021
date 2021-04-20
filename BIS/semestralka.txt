@@ -1,0 +1,171 @@
+17/18
+Skupina A:
+1) jaké chceme bezpečnostní cíle u Wi-Fi, jak jsou zaručeny u WPA2-PSK
+2) WPA2 Hole-192, jaké jsou předpoklady abychom exploit mohli využít, jak s ním využijeme ARP poisoning
+3) autentizace u 802.1x, jací jsou účastníci a jejich role
+4) zranitelná místa, hrozby, aktiva, opatření v kontextu informačních systémů
+5) co je scavenging, jak mu předcházet
+6) identifikace, autentizace a rozdíl mezi nimi
+7) SQL injection - dán SQL příkaz u nějakého user inputu, jak bychom to využili
+8) Bibův model, doplnit tabulku
+9) spočítat ALE
+10) Vernamova šifra, popsat atd
+11) rozdíly mezi symetrickými a asymetrickými algoritmy co se týče rychlosti, počtu klíčů a bezpečnostních funkcí, které zabezpečují
+12) RSA - z čeho je vytvořen, jak šifrovat, jak dešifrovat, kdy šifrujeme veřejným a kdy soukromým klíčem
+13) banner grabbing - co to je, jak ho řešit
+14) stack based buffer overflow - co to je, jak ho řešit
+----------------------------
+16/17
+Skupina B
+1) Vysvetlit co to je: hrozba, zranitelne misto, riziko, aktiva, bezp. opatreni
+2) Co to je Malware. Dale popsat: Rootkit, Phishing, Cerv, ... jeste neco ale uz si nemuzu vzpomenout
+3) Pokud vylesime algoritmus RSA tak, ze cinitel p bude prvocislo a cinitel q budou dve prvocisla vynasobena navzajem ale o bitove delce polovicni nez cinitel p, bude porad fungovat generace klicu? Diskutujte bezpecnost tohoto pristupu 
+4) Vypocet ALE, byla zadana cena rizika a 2 nabidky jeho snizeni a naklady na porizeni kazde z nabidek a vypocitat, ktera nabidka je vyhodnejsi pro firmu
+5) K cemu slouzi preventivni opatreni. Dale popsat co to je fyzicke a logicke opatreni a ke kazdemu uvest alespon 2 priklady
+6) Co je to footprinting a popsat aktivni footprinting? (neco takovyho, to jsem nemel)
+7) Popsat fyzickou ochranu cipove karty - vyjmenovat 3 typy a ke kazdemu napsat priklad
+8) Popsat aktivni ochranu elektronickeho pasu - cemu ne/zabranuje?
+9) Co je to WEP? K cemu se pouziva? Jake jsou jeho slabiny? Dale popiste co to je MAC filtering a vysvetlete, proc se neda povazovat za bezpecnou funkci.
+10) Pen tester provede banner grabbing. K cemu se technika pouziva? K cemu se daji zjistene informace vyuzit? Jak se da baner grabingu zabranit?
+11) Porovnat asymetricke a symetricke algoritmy z pohledu: rychlosti, poctu klicu, delky klicu, bezp. funkci. Nasat nazvy 2 asymetrickych algoritmu
+12) Kus kodu:
+int Sth() {
+ char buffer[128];
+ gets(buffer);
+ return (int)strlen(buffer, 128);
+}
+
+Rict jestli ma kod nejakou slabinu a pokud ano tak jakou. Uvest priklad teto zranitelnosti.
+13) Doplnit tabulka podle Bibova modelu
+
+1. vysvětlete pojmy - autentizace, integrita, dostupnost, nepopiratelnost, autentizace
+2. co to je malware, virus, trojský kůň, spyware
+3. generujeme RSA klíče tak, že p a q vznikly vynásobením z prvočísel. Bude to fungovat? Jak to bude bezpečné?
+4. výpočet ALE, zadané ztráty za rok, 2 varianty řešení, výpočítejte ALE a úspory pro jednotlivá řešení, určete které řešneí je lepší
+5. čipové karty 2 typy útoků a 2 příklady ke každému typu útoku
+6. pasivní autentizace u pasů - jak to funguje, co to zajišťuje.
+7. popiště omezující bezp. opatření. co jsou personální a administrativní bezp. opatření, ke každému 2 příklady
+8. WEP co to je, slabiny. SSID hiding co to je, proč to není bezpečné
+9. Co to je footprinting? jak se postupuje u aktivního footprintingu
+10. banner grabbing - co tím jde zjistit, jak se dají tyto informace použít, jak se bránit
+11. porovnejte symetrickou a asymetrickou kryptografii z pohledů: počet klíčů, délka klíčů, rychlost, bezpečnostní funkce. 2 příklady sym. algoritmů
+12. kód zranitelný na buffer overflow - popište jak provézt útok
+13. doplňte tabulku kdo může zapisovat do jakého souboru, podle Bell Lapadulova modelu
+
+	
+1. Stručně popsat - honeypot, spyware, Google Hacking ...
+2. Když narazím na chybu v programu, o které nikdo neví a zveřejním ji na svém blogu, o jaký typ zveřejnění se jedná.
+3. Proč se již nepoužívá TCSEC
+4. Byl zadán popis nějakého systému a měli jsme vyjmenovat způsoby, kterými by se daly získat informace.
+5. Nakreslit a popsat Bibův model integrity.
+6. Popsat PEAP.
+7. Popsat Caffe Latte útok.
+8. Výjmenovat postranní kanály u bezkontaktních karet.
+9. Asymetrická kryptografie, nakreslit a vysvětlit proč záleží na pořadí šifrování - tímto si nejsem jistý.
+10. Popsat a nakreslit DES.
+11. Personální opatření popsat a výjmenovat.
+
+--------------------------
+2015/16
+1) [10b] Uživatel A chce poslat zprávu uživateli B. Musí být zaručena důvěrnost, integrita a autentizace. Uživatel A zná svůj SK a VK uživatele B, a naopak uživatel B zná svůj SK a VK uživatele A. Nic jiného o sobě neví, a nemůžou se předem nijak kontaktovat. Zpráva musí být zašifrována symetricky klíčem K, který uživatel B nezná.
+a) Proč se má zpráva šifrovat symetricky a ne asymetricky.
+b) Nakreslit schéma komunikace.
+c) Jaké byste použili šifrovací algoritmy a s jakými délkami klíčů.
+
+2) [5b] Bell-Lapadulův bezpečnostní model - 4 uživatelé s různou klasifikací, každý vytvoří jeden soubor. Do tabulky doplnit 1 pokud uživatel může do daného souboru zapisovat, jinak 0.
+A nejvyšší klasifikace, D nejnižsí klasifikace 
+(řádek uživatel, sloupec soubor)
+    A   B   C   D
+A   1   0   0   0
+B   1   1   0   0
+C   1   1   1   0
+D   1   1   1   1
+ 
+
+3) Algoritmus RSA - na čem je založen, výpočet VK a SK, co by se stalo kdyby generátory nebyly prvočísla.
+4) Pasivní autentizace u elektronických pasu - popsat, proti čemu chrání (resp. nechrání).
+5) Banner grabbing - co za informace se pomocí této techniky dá získat.
+6) Spocitat ALE (zadané ztráty, cena případných bezpečnostních opatření + jejich provoz), určit jestli se vyplatí, kolik ušetří, zdůvodnit.
+7) Máme zprávu délky M, která se šifruje pseudonáhodnou posloupností délky M, kterou generuje PRNG iniciovaný nějakým náhodným seedem K. Říct, jestli se jedná o Vernamovu šifru a tvrzení zdůvodnit.
+8) Čím můžeme zaručit důvěrnost a (integritu nebo autentizaci ?? už si přesně nepamatuji).
+9) Jaký je princip utoku Caffe Latte.
+10) Popsat útok Relay na čipové karty.
+11) Cookie httpOnly.
+12) Doplnění SQL injection (jako u skupiny B)
+SELECT * FROM usesrs WHERE 'id' = '$ID';
+-------------------------------------
+14/15
+řádný - už nevim skupinu
+1. Bob, Alice - zabezpečená komunikace....
+2. TCSEC
+3. Bell-LaPadův/ Bibův model
+4. Vypočítat ALE (zadané ztráty, atd...)
+
+zbytek už si nepamatuju...
+
+1. opravný - skupina A
+1. Napište 4 nejběžnější útoky na webové aplikace. Jeden popište + ochrana.
+2. Popište algoritmus Diffie-Hellman.
+3. WPA2 Enterprise nakreslit obrázek, popis. Uveďte dva protokoli pro autentizaci.
+4. Ochrana čipových karet proti fyzickým útokům.
+5. Celková bezpečnostní politika. (účel)
+6. Certifikaty - úrovně certifikátů. ??
+7. Napište 3 režimy blokových šifer. Jednu popište + nakreslete obrázek.
+8. Hashovací funkce - 3 kriteria co musi splnovat.
+
+1. opravný - skupina B
+1. Napište 4 nejběžnější útoky na webové aplikace. Jeden popište + ochrana.
+2. WPA,WPA2 PSK a WPA2 Enterprise, popsat rozdíly, výhody/nevýhody.
+3. Elektronicky podpis
+4. Napište 3 režimy blokových šifer. Jednu popište + nakreslete obrázek.
+5. Hashovací funkce - 3 kriteria co musi splnovat.
+6. ARP spoofing
+7. Popisat RSA
+8. systemova (?) bezpecnostna polika
+
+Není to vše + není to přené zadání, jen orientačně...
+
+2. opravný - skupina A
+1. Certificate revocation list
+2. Vermanova a Vignerova šifra
+3. Bell-LaPadův model
+4. Administrativní bezpečnostní opatření
+5. Diffie-Hellman
+6. Narozeninovy paradox
+7. Popsat penetrační testovaní
+8. Vypočet RSA
+9. už nevim
+
+-------------------------------------------
+13/14
+- Alica a Bob, maju svoje VK a SK, Bob chce prijmat iba to u coho je zarucena integrita, dovernost, nepopieratelnost, autentizace... nakreslit schematko, jake algoritmy by ste pouzili, ake dlzky klucov (iba zhruba, skrtka vediet ktore to sifrovanie co splnuje a dat to dokopy)
+- La-Pedalluv model (alebo jak sa to vola), zadany 4 ucastnici s inou urovnou, kazdy ma nejaky subor, doplnit tabulko kto kam moze zapisovat
+- spocitat ALE (zadane rocne ztraty, cena pripadnych bezpecnostnych opatreni)
+- birthday attack u hash funkcii
+- popisat pojmy (pseudonymita?, botnet, polyalfabeticka sifra,...)
+- typy rootkitov
+- oblasti overovane u mobilnych aplikacii (5)
+- nieco z projektu 2 (vsfpt2.3.4 tusim - iba testova otazka)
+- nakreslit a popis Stealth ARP spoofing s vyuzitim hole196
+- este nejake testovky
+- 3 utoky na postranne kanaly u cip. kariet, jeden popisat
+-popsat nejake personalne opatrenia pri prijmani novych zamestnancov
+
+nemyslim, ze to je vsetko... bolo toho celkom dost, tusim 12 otazok po max. 8b
+
+1. Bob chce poslat alici zprávu, 
+a) nakreslit schéma plně zabezpečené komunikace, Šifrování obsahu mělo být kvůli rychlosti vykonáno symetrickou šifrou 6
+b) jaké šifrovací algoritmy byste použili a jaká je jejich velikost v bitech 2
+2. 4 osoby, každý s jinou důvěrou vytvoří soubor. Doplnit tabulku podle Bell-Lapadula, kdo může modifikovat jaký soubor. 5
+3. Výpočet Ale 5
+4. Jaké jsou cíle bezpečnostních opatření, jaké jsou omezující, a popsat administrativní a fyzické 6
+5. Výpočet veřejného a soukromého klíče u RSA, jaký je princicp, Co by se stalo, pokud by generátory klíčů nebyly prvočísla? 6
+6. Rozdíly TCSEC oproti ITSEC 5 
+7. orange book, integrity, phishing, known plaintext attack, virus, hrozby - vysvětlit 6
+8. XSS útok pomocí phishingu za účelem získání SessionID - jakým způsobem 6
+9. Pasivní autentizace u elektronických pasů - popsat 5
+10. 6
+11. 5
+12. banner grabbing - co za informace se pomocí této techniky dá získat? 5 
+13. Jaký útok lze provést na WPA a WPA2 - 3
+

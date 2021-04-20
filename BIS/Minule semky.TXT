@@ -1,0 +1,211 @@
+****2014 
+pøedtermín
+- Alica a Bob, maju svoje VK a SK, Bob chce prijmat iba to u coho je zarucena integrita, dovernost, nepopieratelnost, autentizace... nakreslit schematko, jake algoritmy by ste pouzili, ake dlzky klucov (iba zhruba, skrtka vediet ktore to sifrovanie co splnuje a dat to dokopy)
+- La-Pedalluv model (alebo jak sa to vola), zadany 4 ucastnici s inou urovnou, kazdy ma nejaky subor, doplnit tabulko kto kam moze zapisovat
+- spocitat ALE (zadane rocne ztraty, cena pripadnych bezpecnostnych opatreni)
+- birthday attack u hash funkcii
+- popisat pojmy (pseudonymita?, botnet, polyalfabeticka sifra,...)
+- typy rootkitov
+- oblasti overovane u mobilnych aplikacii (5)
+- nieco z projektu 2 (vsfpt2.3.4 tusim - iba testova otazka)
+- nakreslit a popis Stealth ARP spoofing s vyuzitim hole196
+- este nejake testovky
+- 3 utoky na postranne kanaly u cip. kariet, jeden popisat
+-popsat nejake personalne opatrenia pri prijmani novych zamestnancov
+
+*****2012
+pøedn 9 - 03 malware, IDS - celkovì základní pojmy, rozdíly, ne detaily
+    * fáze útoèníka struènì
+    * rozdìlení malwarù (virus, èerv a spol)
+    * rootkity (typy, detekce)    
+    * obfuskaèní techniky, jejich rozdíly a principy
+    * vìdìt 0-day útok
+    * analıza malwaru
+    * signatury
+    * IDS a IPS znát rozdíly, princip, rozdìlení, nevıhody
+    * APT a NBA vìdìt co to je
+    * honeypot, honeynet, rozdíly interakce
+    * aplikaèní firewall        
+
+Take skupina A:
+1) narozeninovı paradox
+2) co je to exploit a jak zabránit SQL injection
+3) Fiestelova šifra, vysvìtlit + obrázek
+4) typy honeypotù (3)
+5) statickı malware a další typy
+6) aktivní/pasivní autentizace u pasu
+7) mode counter, obrázek + vysvìtlit (wifi - slajd 22 nejaky kec a 33 obrazek, ktery chteli)
+8) popsat GTK (Hole 196), jaké útoky lze na nìj provádìt. (wifi slajd 40)
+
+Skupina B:
+1) Vigenere & Vernam - i z hlediska analızy
+2) co je to exploit a jak zabránit SQL injection
+3) DES - obrázek vysvìtlit
+4) typy honeypotù (3)
+5) dynamickı malware a další typy
+6) Basic Access Control u elektron. pasù
+7) CBC, obrázek + vysvìtlit
+8) popsat GTK (Hole 196), jaké útoky lze na nìj provádìt.
+
+Opravny A:
+1 Co muze zarucovat dostupnost a duvernost
+2 Jak lze provest utok na pametovy skryty kanal
+3 Jaky je princip utoku Caffe Latte
+4 Vysvetlit strom CA a krizovou certifikaci
+5 Ktery z rezimu blokovych sifer lze pouzit jako PRNG a nakreslit a popsat
+6 Jake jsou zabezpecovaci protokoly standardu 802.1x, nejbezpecnejsi popsat a popsat utoky na nej
+7 Jak se muze malware vyhnout detekci
+8 Popsat utok Relay na cipove karty
+9 Vertical scan
+
+5 otazek po 10b, 4 po 5b.
+
+Opravny B:
+- co zaruèuje dostupnost a integritu
+- nakreslit a popsat strom CA a køíovou certifikaci
+- které reimy blokovıch šifer nezaruèují (nebo moná zaruèují) integritu a nakreslit schémata
+- popsat nebo nakreslit útok Caffe Latte
+- popsat èasovı skrytı kanál a monı útok
+- jake protokoly jsou pouity ve standardu 802.1x pro autentizaci, jakım zpùsobem autentizace probíhá a popsat útok na nejbezpeènìjší z nich
+- zpùsoby jakım se malware vyhıbá detekci (aspoò 3) a jeden detailnìji popsat
+- temper evident + priklad zarizeni
+- horizontalni skenovani, a na co se vyuziva
+
+RSA
+Ahoj, pokusím se, ale øekl bych, e to zadání má bıt trochu jinak: p a q by mìla bıt prvoèísla. Take bych to vidìl napø. takto:
+
+p = 11
+q = 7
+n = p * q = 77
+--------------------
+Phi(n) = (p-1) * (q-1) = 10 * 6 = 60
+volba 1 < e < Phi(n): 2 ne, 3 ne, 4 ne, 5 ne, 6 ne, 7 ok (60 % e != 0)
+vıpoèet d:
+
+(d * e) % Phi(n) = 1
+(7 * d) % 60 = 1
+Teï budu zkoušet násobky 60 (+ 1) a hledám takové èíslo, které bude dìlitelné 7.
+61 ne, 121 ne, 181 ne, 241 ne, 301 ano (301 / 7 = 43)
+Take: d = 43
+Pevnì vìøím, e to jde nìjak sofistikovanìji... :-)
+
+Teï jenom ovìøení, e to funguje (na to potøebuji kalkulaèku, take na zkoušce by to byl problém):
+Øeknìmì, e chceme m = 2
+
+1) m = 2
+c = m^e % n
+c = 2^7 % 77
+c = 51
+
+2) c = 51
+m = c^d % n
+m = 51^43 % 77
+m = 2    
+
+*****2013
+ jak a proè posílat SPAM
+- kterı typ blokové šifry se dá pouít jako PRNG
+- dešifrovat (byl to to caesar s posunem 3)
+- 3 zabezpeèení proti odcizení dat pøi ztrátì telefonu
+- popsat jeden typ modifikace malware proti odhalení (napø. šifrování)
+- (hrozby, aktiva, bezpeèností funkce) (státnicová otázka)
+- popsat útok na PEAP
+- proè se SSID hidding a MAC filtering nepovauje za zabezpeèení
+- 3 faktory autentice (heslo, klíè, biometrika)
+- cookie httpOnly (nelze zjistit napø. javascriptem)
+
+- jak a proè udìlat phishing útok
+- kterı reim blokové šifry lze pouít na PRNG + nakreslit schéma
+- dešifrovat caesara
+- 3 zabezpeèení proti odcizení dat pøi ztrátì telefonu
+- popsat jeden zpùsob obfuskace malware
+- popsat útok na PEAP ve vlastní síti
+- popsat útok na WPA/WPA2
+- 3 faktory autentizace
+- cookie Secure
+- co je to tamper evidence + jeho pøíklad
+- státnicová otázka stejná jako ve skupinì A
+- 3 podmínky nerozluštitelnosti Vernamovy šifry
+
+*******2011
+ Státnicová otázka: bezpeènostní cíle a funkce (nebo tak nìco - øízení pøístupu, …)
+- Popište, jak byste provedli útok na bezdrátovou sí chránìnou WPA
+- Popište, jaké nejdùleitìjší kroky musí administrátor sítì provést, aby zjistil, zda sí není napadena boty.
+- Pro zadané p,q,e vypoètìte d u RSA klíèe
+- Popište jakı sql-injection útok byste provedli na aplikaci, pouívající tento dotaz (SELECT ….)
+- Zabezpeèení databáze na síové vrstvì
+- Èím zajišujeme dùvìrnost a dostupnost?
+- Nakreslete/popište strukturu TPM èipu a k èemu se vyuívá.
+- Plaintext a zašifrovanı text, mìl jsi urèit, jakı reim bloková šifra pouívá a popsat ho.
+- Popište vztah NFC (near field communication) a èipovıch karet.
+- Které bezpeènostní funkce mohou poskytovat èipové karty?
+- Co znamenají AAA funkce RADIUS serveru pro uivatele?
+Popiste narozeninovy paradox a jeho vztah ke kryptografii
+- bezp. ciele cipovych kariet
+- typy rootkitov
+
+Státnicová otázka: kryptografie - symetrické, asymetrické šifrování, algoritmy, blokové šifry
+Slabiny WAP a jak je WPA, WPA2 odstraòují
+3 útoky na èipové karty pomocí kanálù, jeden popsat
+Skryté kanály
+Vıpoèet RSA, známe p,q,e vypoèítat d
+Popsat Caffe Latte
+Zakreslit do jednoho obrázku Bell-LaPadùv a Bibùv model
+Nakreslit strom CA a vyznaèit køíovou vazbu
+Spojení mezi rizikem, hrozbou, zranitelnım místem a aktiva
+Popsat dva principy jak se zaruèuje dùvernost¨
+Jaka je nejvetsi slabina TCSEC a jak se s tim vyporadava?
+Co je to inference databaze? (thx blazer)
+Co je to autorizace a na zaklade ceho se realizuje?
+Co musi splnovat DVB?
+Co musi system splnovat aby bylo mozne pouzit buffer overflow?
+Co je to tamper evidence a priklad zarizeni u ktereho se pouziva.
+
+
+otazka AAA z pohledu uzivatele:
+Pohled uzivatele
+Autentizace: musi se prihlasit do systemu
+Autorizace: musi mit dostatecne opravneni pro ruzné interakce se systemem
+Uctovatelnost: jeho akce jsou zaznamenavany a nasledne mohou byt napr. zpoplatneny
+
+Pohled administratora:
+Autentizace: musi zajistit prihlasovani do systemu, sprava databaze uzivatelu a pristupovych udaju (hesla, otisky prstu...)
+Autorizace: musi spravovat nastaveni opravneni jednotlivych uzivatelu
+Uctovatelnost: musi spravovat databazi akci provedenych v systemu
+
+Jeste takova otazka "Jak zabranit utoku typu buffer overflow a jak teoreticky toto zabezpeceni obejit ? " (tk nejak to tam bylo).
+Napsal jsem to co se muselo delat v projektu - zakazat spusteni kodu na zasobniku, pouzivat nahodna mista v pameti (tak nejak) .
+
+jak uz vyplyva ze samotneho prekladu:
+replay - opakovani, tj odchytnes posloupnost paketu - komunikaci a pri utoku pouzivas tu svoji cast paketu, ktera je porad stejna, obrana casova razitka, cislovani paketu, atp
+relay - predavani, mezi dva komunikujici konce je vlozen prostrednik, ktery modifikuje, predava, zamenuje zpravy, viz napr utok na rfid/platebni karty, jeden clovek je u terminalu s falesnou kartou, druhy clovek je na druhem konci sveta se cteckou u obeti, komunikace pres web -> dlouhe lagy, predavani prikazu a odpovedi, obrana je dusledna autentizace, zkraceni casu na odpovedi, atp
+
+ja som na to isiel zhruba takto, neviem ci spravne ci nie, urcite sa da aj inak..
+priklad z pisomky:
+
+q = 17
+p = 11
+e = 3
+
+mas vzorec:
+
+e x d mod (q-1)(p-1) = 1
+
+3 x d mod (17-1)(11-1) = 1
+3 x d mod 160 = 1
+
+a ja som si len dosadzoval kedy to plati, t.j. X mod 160 = 1 pro X = 161,321,481,... a zaroven hladas cislo delitelne 3 cize vysledok 321/3 = 107
+
+Zdravím mohl by mì prosím nìkdo vysvìtlit jak funguje ten útok na PEAP? (viz slajd 43 z wifi sítí) díky.
+V kadom kroku máš v zátvorke program, ktorım to robíš. Keï si o nich pogoogliš info, bude to jasnejšie.
+1. Zaèneš sa tvári ako AP.
+2. Spustíš si k tomu vlastnı RADIUS server. (klient v tomto prípade nekontroluje certifikát, prípadne uzná podvrhnutı)
+3. Klienta, ktorého chceš chyti, zhodíš z originál AP.
+4. Skúsiš asleap-om cracknú heslo.
+
+Netusi niekto ako funguje ta krizova certifikacia?
+
+Slajd 108 z bis03_all.pdf:
+
+Zo stromu B vedie šípka do stromu A v hladine 1 (ak 0 bude root). To znamená, e CA-B level 1 overuje (podpisuje, certifikuje) VK CA-A level 1 vpravo. Tım pádom všetci, ktorí dôverovali doteraz iba podpisom od CA-B level 1 (teda celı B strom okrem 2 userov, ktorí dôverujú iba root CA-B), budú od teraz dôverova aj podpisom od CA-A level 1 vpravo, lebo jej VK bol podpísanı od CA-B level 1.
+Ak by to malo fungova obojsmerne, musel by by ešte VK CA-B level 1 podpísanı od VK CA-A level 1 vpravo. Potom by si oba podstromy dôverovali navzájom.

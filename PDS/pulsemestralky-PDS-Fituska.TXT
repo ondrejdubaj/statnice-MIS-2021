@@ -1,0 +1,90 @@
+7-8
+1. Akou jednotkou sa meria entropia? Sh
+2. Symetricky binarny kanal, rychlost 9600 Bd, p()=1 error bitu, aka bude rychlost? 9600 Bd (asi)
+3. Vyrobit Huffmanov strom pre 5 pismen s danou pravdepodobnostou a spocitat strednu dlzku spravy.
+4. Podla stromu z 3. zakodovat spravu pozozstavajucu z 3 znakov.
+5. Konvolucny kod, zistit aka bola originalna sprava
+
+8-9
+1.	Sestrojit Huffmanùv kód
+2.	Princip distance vector
+3.	IP adresa - do jaké tøídy patøí, napsat NetID dekadicky a binárnì
+4.	Syndrom Hammingova kódu
+5.	Vrstvy modelu ISO/OSI
+
+10-11
+Skupina D:
+1) Detekcia straty paketov pomocou timeoutu (princip, schema, parametry,...)
+2) Vytvorit konecny automat podla schematu kodera (podobne ako v pds-02-bezpecnostnikody2.pdf, strana 64)
+3) Hammingov kod pomocou GF(8) telesa (pds-02-bezpecnostnikody2.pdf, strana 47)
+4) Vysvetlit MPLS-VPN a este nejaky podobny pojem
+
+1)spocitat CRC
+2)popsat label,bity v labelu,LDP,LSP
+3)spocitat huffmanuv kod,ucinnost a redundanci
+4)popsat Go-Back-N,ilustrace,vyhody/nevyhody
+
+11-12
+Skupina A:
+1) Entropie, co to je, k èemu, vzorec.
+2) CRC, z(x)=0xE5, g(x)=x^4+x^3+1.
+3) Jako C, ale smìrovaèe.
+4) Vše okolo kontextu paketu.
+
+skupina B:
+1. Èo je Hammingova vzdialenos, aká musí by ak chceme detekova (d = E + 1) a opravi (d = 2E + 1) chyby. (3b)
+2. Bola daná prenesená správa v hexa kóde a polynóm, pomocou CRC urèi èi sa správa preniesla bez chýb. (4b)
+3. Nakresli a struène popísa základné funkèné prvky smerovaèa. (4b)
+4. Vysvetli princíp pride¾ovania lístkov v switchi a ukáza na príklade. (4b)
+
+Skupina C:
+1) Tøi druhy chyb na úrovni paketu a struènì popsat
+2) CRC zprávy 0xE6 pomocí polynomu x^4 + x^3 + 1
+3) Nakreslit obecné schéma pøepínaèe, popsat jednotlivé funkèní bloky
+4) nìco s Slow Path a Fast Path
+
+skupina D
+- detekce chyby na urovni paketu
+- zkontrolovat CRC
+- jednotlive casti smerovace + nakreslit
+- napsat neco i PIM
+
+12-13
+Pùlsemestrální zkouška PDS 2012/2013 
+•	Pøíklad 1
+o	Jaká je spolehlivost pøenosu linky? (mìlo se poèítat PER = Packet Error Rate). Rychlost linky je 400Kb/s, velkost paketù je 500 bajtù, máme 8 chybných paketù za sekundu. Zpoždìní linky je 8 ms. 
+	Pozor! Parametr zpoždìní linky je nanic!
+•	Pøíklad 2
+o	Je dán konvoluèní kodér (viz obrázek). Poèáteèní stav registrù je 11. Prùchodem Trellisova diagramu zakódujete sekvenci bitù 1010.
+ 
+•	Pøíklad 3
+o	Jaké akce musí provést smìrovaè pøi pøijetí paketu a pøed jeho odesláním? 
+o	(5. pøednáška, slide 35) 
+•	Pøíklad 4
+o	Simulujte algoritmus iSLIP se 2 iteracemi, porty: A, B, C, D. 
+A>(1,3,3), B>(…), C>(…), D>(…) (pøesné zadání si bohužel nepamatuju)
+
+Pùlsemestrální zkouška PDS 2012/2013 
+•	Pøíklad 1
+o	Jaká je spolehlivost pøenosu linky? (mìlo se poèítat PER = Packet Error Rate). Rychlost linky je 2Mb/s, velkost paketù je 500 bajtù, máme 6 chybných paketù za sekundu. Zpoždìní linky je 16 ms. 
+	Pozor! Parametr zpoždìní linky je nanic!
+•	Pøíklad 2
+o	Je dán konvoluèní kodér (viz obrázek). Poèáteèní stav registrù je 01. Prùchodem Trellisova diagramu zakódujete sekvenci bitù 1001.
+ 
+•	Pøíklad 3
+o	Porovnat Process Switching, Fast Switching a Cisco Express Forwarding. 
+o	(5. pøednáška, slide 47) 
+•	Pøíklad 4
+o	Cosi s vytvoøením Clos(x,y,z) sítì, a nìco jestli je blokující nebo ne a proè. (pøesné znìní si nepamatuju)
+
+13-14
+1) CAM útok na switch popis, obrana
+2) Jak vzniká matice G a matice H u lin. kódù + pøíklad
+3) Napiš G matici pro Hamminga (7,4), zakóduj vektor
+4) CRC kontrola zadaného vektoru
+5) iSLIP do tabulky zanést poøadí pøidìlení výstupních portù pro dané vstupy
+Mezi nejèastìjší chyby patøilo:
+
+u zabezpeèení CRC zapomenutí "nafouknutí bitù" o stupeò polynomu;
+algoritmus iSLIP byl pro skupinu A smrtící, zato pøidìlování lístkù jde všem;
+násobení matic, transpozici naštìstí nezvládli jen ti matematicky nejrezistentnìjší z vás;

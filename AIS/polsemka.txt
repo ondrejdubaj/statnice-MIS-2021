@@ -1,0 +1,68 @@
+2018
+1. a 2. podobne zadane ako minule roky, diagram tried a diagram sekvencie nakreslit. Zadanie podobne tomu, co sme si precvicovali (vid uml_tasks.pdf), no na polsemke nebola ani staticka metoda, ani singleton :) 
+
+3. Teoreticka otazka za 3b
+jedna skupina mala: Popiste aspon 2 z 3 sposobov na overenie spravnosti use case (boss test, size test, EBP test..) + priklady na spravny, nespravny use case pre dany sposob
+druha skupina mala nieco s use case 2.0, user stories...
+----------------------------------
+
+2016
+
+Eshop:
+
+Třídy: Order, OrderItem, OrderService, OrderGood, Service, Good
+
+Order vidí kolekci objektů OrderItem, z OrderItem jdou OrderGood a OrderService, z OrderService jde Service, z OrderService jde Service
+
+Volána metoda z třídy Order, objekt Order volá metodu z OrderItem, OrderItem je kolekce, tedy je to v cyklu.
+getPrice() OrderService volá vlastní metodu a pak metodu get...() u Service.
+getPrice() OrderGood volá metodu get...() u Good.
+----------------------------------
+
+2015
+1. Máme konkrétní třídy A, B1, B2, C, D a pak abstraktní třídu B. Třída B1 a B2 implementují operace ob() a dědí od třídy B. Třída C „vidí“ díky asociaci na třídu B1 a implementuje operaci oc(). Třída D „vidí“ díky asociaci na třídu B2 a implementuje operaci od(). Třída A má přístup ke kolekci objektů třídy B.
+Napište název UML diagramu (0.5 b). Nakreslete diagram (6 b).
+--> Diagram tříd
+
+2. Uvažujte zadání z příkladu 1. Uvažujte realizaci operace oa(). Při realizaci operace mezi sebou objekty komunikují. Operace oa() je implementována ve třídě A. Pro její provedení je potřeba provést operaci b(). Operace ob() třídy B1 vyžaduje provedení operace oc() třídy C. Operace ob() třídy B2 vyžaduje provedení operace od() třídy D.
+Napište název UML diagramu (0.5 b). Nakreslete diagram (6 b).
+--> Diagram sekvence
+
+3. Vysvětlete pojmy "just barely good enough best practise", "just in time best practise", "multiple models best practise" v kontextu agilního programování (3 b).
+
+V trojce: Document late a rozdíl mezi dokumentováním a modelováním (co mají společné a čím se liší)
+
+forum 2015-16 pozret su tam vypracovane veci ak nebudes vedet
+------------------------------------------
+
+2013
+1. Máme konkrétní třídy A, B1, B2, C, D a pak abstraktní třídu B. Třída B1 a B2 implementují operace ob() a dědí od třídy B. Třída C „vidí“ díky asociaci na třídu B1 a implementuje operaci oc(). Třída D „vidí“ díky asociaci na třídu B2 a implementuje operaci od(). Třída A má přístup ke kolekci objektů třídy B. 
+Napište název UML diagramu (0.5 b). Nakreslete diagram (6 b).
+--> Diagram tříd
+
+2. Uvažujte zadání z příkladu 1. Uvažujte realizaci operace oa(). Při realizaci operace mezi sebou objekty komunikují. Operace oa() je implementována ve třídě A. Pro její provedení je potřeba provést operaci b(). Operace ob() třídy B1 vyžaduje provedení operace oc() třídy C. Operace ob() třídy B2 vyžaduje provedení operace od() třídy D. 
+Napište název UML diagramu (0.5 b). Nakreslete diagram (6 b).
+--> Diagram sekvence
+
+3. Vysvětlete pojem stereotypy v UML. K čemu se používají? Uveďte aspoň 2 příklady. (3 b).
+-------------------------------------
+
+2010
+
+1) Máme proces, který může být buď aktivní nebo neaktivní, když je aktivní tak pracuje, muže skončit pomocí signálů kill kdykoliv nebo když skončí práci. Při určitém signálech přechází mezi stavy. Vyberte vhodný diagram a namodelujte.
+
+2) Napište podstatu prototypování v životních modelech vývoje software. Kdy se používá proč, jaké jsou techniky, nástroje. Jaké fázi UP se vyskytuje.
+
+3) Byl zadaný diagram tříd studijní agendy (předmět, student, projekt, tým ...) a úkol byl najít chyby v diagramu a možné chyby.
+
+1. Vytvořit diagram objektů z diagramu tříd (šlo o studenty, předměty, apod.)
+
+2. Popsat FURPS+
+
+3. Nakreslit diagram pohybujícího se robota. Robot jezdil mezi dvěma body a něco nakládal. Použil jsem stavový diagram.
+
+1. nakreslit diagram: zapisany studenti, pomocou Collection triedy z javy, ktora implementuje dve rozhrania - tree and hash, a kazde rozhranie implmentuje 2 metody add and delete..nakreslit diagram a vyznacit kde bude metoda add deklarovana a kde implementovana
+
+2. popisat iteracny inkrementalny cyklus a rozdiel voci vodopadu
+
+3. nakreslit diagram: garazove vrata, motor, dialkove, spinac otvorenia; signaly dialkoveho up,down,; pre motor go_up(), go_down(), reverse(), stop(); signaly zo spinaca opend,closed

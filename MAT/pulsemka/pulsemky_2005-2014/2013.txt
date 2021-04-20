@@ -1,0 +1,73 @@
+2013:
+^^^^^
+zadání A - zelený papír
+
+1. Dokažte, Vx p(x,y) => Ey p(y,y)
+postup: použijte vhodný předpoklad,
+axiom substituce
+modus ponens
+lemma 5.5 ( fi x [t] => Ex fi )
+modus ponens
+věta o dedukci
+
+2. máme jazyk, 1 predik symbol a jeden fční symbol na univerzu všech maximálně dvouprvkových podmnožin Z. V realizaci M platí :
+p(x,y) <=> |X u Y| = 3 , f(x,y) = X prunik Y.
+Dokažte, že platí
+a) M |= Vx p(x,x) => (cosi, je to jedno, protože p(x,x) je vždy false a teda implikace vždy true, tedy je splněno)
+b) M |= p(x,y) => Vz(f(x,y) = f(f(x,y),z))
+
+3. výpočet výrazu v tělese F7 (těleso zbytkových tříd Z7)
+(3/4)*(6/5) - 6 (asi)
+
+4. Máme algebru A = (Z,f), kde f je realizována tak, že f(x)=|x|-10
+a) napište podalgebru algebry A, generovanou prvky {-53,10}
+b) mějme zobrazení g: Z->Z, kde g(x) = x+1 (operace + je klasický sčítání celých čísel)
+určete a zdůvodněte, zda g je endomorfismus
+c) mějme relaci ~ tak, 6e a ~ b <=> 10|(a-b)
+určete a zdůvodněte, zda ~ je kongruence na A
+
+-----------------------------------------------------------------------------
+
+Vzorové řešení:
+zadání A
+1. Dokažte, Vx p(x,y) => Ey p(y,y)
+postup: použijte vhodný předpoklad: Vxp(x,y)
+axiom substituce: vxp(x,y) => p(y,y)
+modus ponens: p(y,y)
+lemma 5.5 ( fi x [t] => Ex fi ): p(y,y) => Ey p(y,y)
+modus ponens: Vxp(x,y) |- Eyp(y,y)
+věta o dedukci: Vxp(x,y) => Eyp(y,y)
+
+2. máme jazyk, 1 predik symbol a jeden fční symbol na univerzu všech maximálně dvouprvkových podmnožin Z. V realizaci M platí :
+p(x,y) <=> |X u Y| = 3 , f(x,y) = X prunik Y.
+Dokažte, že platí
+a) M |= Vx p(x,x) => (cosi, je to jedno, protože p(x,x) je vždy false a teda implikace vždy true, tedy je splněno)
+b) M |= p(x,y) => Vz(f(x,y) = f(f(x,y),z))
+Neplatí - protipříklad x = {0,1} y = {1,2} z = {1,2}
+
+3. výpočet výrazu v tělese F7 (těleso zbytkových tříd Z7)
+(3/4)*(6/5) - 6 = 4
+
+4. Máme algebru A = (Z,f), kde f je realizována tak, že f(x)=|x|-10
+a) napište podalgebru algebry A, generovanou prvky {-53,10}
+<{-53, 10}> = {-53, 43, 33, 23, 13, 3, -7, -3, 10, 0, -10}
+b) mějme zobrazení g: Z->Z, kde g(x) = x+1 (operace + je klasický sčítání celých čísel)
+určete a zdůvodněte, zda g je endomorfismus
+g(f(x)) != f(g(x))
+g(|x|-10) != f(x+1)
+|x|-10+1 != |x+1|-10
+protipříklad: x = -1:
+|-1|-10+1 != |-1+1|-10
+8 != -10
+
+c) mějme relaci ~ tak, 6e a ~ b <=> 10|(a-b)
+určete a zdůvodněte, zda ~ je kongruence na A
+reflexivní, tranzitivní a symetrická platí
+
+a~b => f(a) ~ f(b)
+10 | (a-b) => (|a|-10) ~ (|b| - 10)
+10 | (a-b) => 10 | (|a| - |b|)
+obecně neplatí: protipříklad a = 1, b = -9
+a-b = 10: a~b
+|a|-|b| = -8: a !~ b
+není kongruence.

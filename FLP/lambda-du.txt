@@ -1,0 +1,229 @@
+DU 1
+
+LET Xor = (λ a b. a (Not b) b )
+LET Xor = (λu v. u (v False True) v) 
+LET Imp = (λ a b. Or (Not a) b)
+LET Imp = (λu v. u v True)
+
+DU2
+
+LET ?: = (λ c t f. c t f)
+LET , = (λ f s e. e f s)
+LET fst = (λ p. p True)
+LET snd = (λ p. p False)
+
+(True ? 1 : 0) = 
+(λ c t f. c t f) True 1 0 = 
+True 1 0 =
+1
+
+(False ? 0 : 3) = 
+(λ c t f. c t f) False 0 3 = 
+False 0 3 
+3
+
+fst (1,2) = 
+fst ((λ f s e. e f s) 1 2) =
+fst (λ e. e 1 2) =
+(λ p. p True) (λ e. e 1 2) =
+(λ e. e 1 2) True = 
+True 1 2 =
+1
+
+snd (True, False) = 
+snd ((λ f s e. e f s) True False) = 
+snd (λ e. e True False) = 
+(λ p. p False) (λ e. e True False) = 
+(λ e. e True False) False = 
+False True False = 
+False
+
+DU3
+
+iszero (succ 0) =
+iszero ((λ x g m. x g (g m)) 0) =
+iszero ((λ g m. 0 g (g m))) =
+iszero ((λ g m. (λ f n. n) g (g m))) =
+iszero (λ g m. g m) =
+(λ m. m (λ v. False) True) (λ g m. g m) =
+(λ g m. g m) (λ v. False) True =
+(λ v. False) True =
+False
+
+LET sub = (λ a b. b prev a)
+LET 4 = (λ f n. f (f (f (f n))))
+LET add = λ a b g m. a g (b g m)
+
+sub 2 4 =
+(λ a b. b prev a) 2 4 = 
+4 prev 2
+(λ f n. f (f (f (f n)))) prev 2 =
+prev (prev (prev (prev 2))) =
+prev (prev (prev 1)) =
+prev (prev 0) =
+prev 0 =
+0
+
+iszero (add 0 0) =
+iszero (add 0 0) =
+iszero ((λ a b g m. a g (b g m)) 0 0) =
+iszero ((λg m. 0 g (0 g m))) =
+iszero ((λg m. (λ f n. n) g ((λ f n. n) g m))) =
+iszero ((λg m. m)) =
+True
+
+LET eq = λ a b. and iszero(sub a b) iszero(sub b a) 
+
+DU4
+
+LET sqr = λ a. mult a a
+LET gt = λ a b. and iszero(sub b a) Not(iszero(sub a b))
+
+DU5
+
+Let sub = (λ a b. subfn a b) 
+LET subfn = Y subf
+LET subf = (λ f a b. (iszero b ? a: f (prev a) (prev b)))
+
+sub 5 2 = 
+(λ a b. subfn a b) 5 2 = 
+subfn 5 2 = 
+Y subf 5 2 =
+subf (Y subf) 5 2 =
+subf subfn 5 2 =
+(λ f a b. (iszero b ? a: f (prev a) (prev b))) subfn 5 2 =
+(iszero 2 ? 5: subfn (prev 5) (prev 2)) =
+subfn 4 1 =
+Y subf 4 1 =
+subf (Y subf) 4 1 =
+subf subfn 4 1 =
+(λ f a b. (iszero b ? a: f (prev a) (prev b))) subfn 4 1 =
+(iszero 1 ? 4: subfn (prev 4) (prev 1)) =
+subfn 3 0 =
+Y subf 3 0 =
+subf (Y subf) 3 0 =
+subf subfn 3 0 =
+(λ f a b. (iszero b ? a: f (prev a) (prev b))) subfn 3 0 =
+(iszero 0 ? 3: subfn (prev 3) (prev 0)) =
+3
+
+LET mult = (λ a b. multfn a b 0) 
+LET multfn = Y multf
+LET multf = (λ f a b c. (iszero b ? c: f a (prev b) (add c a) ))
+
+mult 3 2 =
+(λ a b. multfn a b 0) 3 2 =
+multfn 3 2 0 =
+Y multf 3 2 0 =
+multf (Y multf) 3 2 0 =
+multf multfn 3 2 0 =
+multf multfn 3 2 0 =
+(λ f a b c. (iszero b ? c: f a (prev b) (add c a) )) multfn 3 2 0 =
+(iszero 2 ? 0: multfn 3 (prev 2) (add 0 3) ) =
+multfn 3 1 3 =
+Y multf 3 1 3 =
+multf (Y multf) 3 1 3 =
+multf multfn 3 1 3 =
+(λ f a b c. (iszero b ? c: f a (prev b) (add c a) )) multfn 3 1 3 =
+(iszero 1 ? 3: multfn 3 (prev 1) (add 3 3) ) =
+multfn 3 0 6 =
+Y multf 3 0 6 =
+multf (Y multf) 3 0 6 =
+multf multfn 3 0 6 =
+(λ f a b c. (iszero b ? c: f a (prev b) (add c a) )) multfn 3 0 6 =
+(iszero 0 ? 6: multfn 3 (prev 0) (add 6 3) ) =
+6
+
+DU6
+
+LET head = λ l. (fst l ? fst (snd l) : ⊥ )
+head (1:2:3:[]) =
+head ((True,(1,(True,(2,(True,(3,(False, False)))))))) =
+λ l. (fst l ? fst (snd l) : ⊥ ) ((True,(1,(True,(2,(True,(3,(False, False)))))))) =
+(fst (True,(1,(True,(2,(True,(3,(False, False))))))) ? fst (snd (True,(1,(True,(2,(True,(3,(False, False))))))))) : ⊥ ) =
+1
+
+LET tail = λ l. (fst l ? snd (snd l) : ⊥ )
+tail (2:[]) =
+tail ( (True, (2, (False, False)))) =
+tail ( (True, (2, (False, False)))) =
+λ l. (fst l ? snd (snd l) : ⊥ ) (True, (2, (False, False))) =
+(fst (True, (2, (False, False))) ? snd (snd (True, (2, (False, False)))) : ⊥ ) =
+(False, False) = 
+[]
+
+LET null λ l. not (fst l)
+null (1:2:[]) = 
+null ((True, (1, (True, (2, (False, False)))))) =
+λ l. not (fst l) ((True, (1, (True, (2, (False, False)))))) =
+not (fst (True, (1, (True, (2, (False, False)))))) =
+not (True) =
+False
+
+LET length = λ l. lengthfn l 0
+LET lengthf = λ f l c. (null l ? c: f tail(l) (succ c) ) 
+LET lengthfn = Y lengthf 
+
+length (1:2:[]) =
+λ l. lengthfn l 0 (1:2:[]) =
+lengthfn (1:2:[]) 0 =
+lengthf (Y lengthf) (1:2:[]) 0 =
+lengthf lengthfn (1:2:[]) 0 =
+λ f l c. (null l ? c: f tail(l) (succ c) ) lengthfn (1:2:[]) 0 =
+(null (1:2:[]) ? 0: lengthfn tail((1:2:[])) (succ 0) ) =
+lengthfn tail((1:2:[])) (succ 0) =
+lengthfn (2:[]) 1 =
+lengthf lengthfn (2:[]) 1 =
+λ f l c. (null l ? c: f tail(l) (succ c) ) lengthfn (2:[]) 1 =
+(null (2:[]) ? 1: lengthfn tail((2:[])) (succ 1) ) =
+lengthfn [] 2 =
+lengthf lengthfn [] 2 =
+λ f l c. (null l ? c: f tail(l) (succ c) ) lengthfn [] 2 =
+(null [] ? 2: lengthfn tail([]) (succ 2) ) =
+2
+
+LET get = λ l n. getfn l n
+LET getfn = Y getf
+LET getf = λ f l n.(iszero n ? (head l): f (tail l) (prev n) )
+
+get (1:2:[]) 1 =
+λ l n. getfn l n (1:2:[]) 1 =
+getfn (1:2:[]) 1 =
+getf getfn (1:2:[]) 1 =
+λ f l n.(iszero n ? (head l): f (tail l) (prev n) ) getfn (1:2:[]) 1 =
+(iszero 1 ? (head (1:2:[])): getfn (tail (1:2:[])) (prev 1) =
+getfn (2:[]) 0 =
+getf getfn (2:[]) 0 =
+λ f l n.(iszero n ? (head l): f (tail l) (prev n) ) getfn (2:[]) 0 =
+(iszero 0 ? (head (2:[])): getfn (tail (2:[])) (prev 0) ) =
+2
+
+Úkol
+
+LET K = (λ x y. x)
+LET S = (λ f g x. (f x) (g x))
+LET I = λ x. x
+
+S K K = 
+λ f g x. (f x) (g x) K K =
+λ x. (K x) (K x) =
+λ x. ((λ a y. a) x) (K x) =
+λ x. (λ y. x) (K x) =
+λ x. x =
+I
+
+LET B = λ x y z. x (y z)
+LET C = λ x y z. x z y
+LET K = λ x y. x
+LET W = λ x y. x y y
+
+S (K S) K =
+S (λ y. S) K =
+S (λ y. S) K =
+(λ f g x. (f x) (g x)) (λ y. S) K =
+(λ g x. S (g x)) K =
+(λ x. S (K x)) =
+(λ x. S ((λ y. x))) =
+(λ a. (λ g x. a (g x)) ) =
+(λ a g x. a (g x) ) =
+B

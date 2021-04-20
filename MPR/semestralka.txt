@@ -1,0 +1,95 @@
+2017
+- Pojmy trojimperativ, role a jeste nejake dva pojmy
+- Spocitat kritickou cestu
+- Vypocet odchylky (neco o nakladech a cene)
+- Popsat 7S
+- Popsat chyby (komplikace) v komunikaci behem projektu
+- Popsat logicky ramec
+
+------------------------------------------
+2016
+1. Podle IPMA definovat a. Trojimperativ, b. Řídící výbor projektu, c. Akceptační kritéria, d. Milník, e. Celková rezerva
+2. Logický rámec
+3. CMM 
+4. 7S
+5. FPA
+6. Simplexova metoda
+
+----------------------------------------
+2015
+1. Definuje:
+Portfolio projektů
+Rizika
+Role
+Rozsah projektu
+Kritická cesta
+
+2. Kategorie ryzik - ke každému 2 příklady a 2 prevence
+
+3. CMM - co to je, úrovně a podmínky pro přechod do další úrovně
+
+4. 7S - napsat všechny faktory a 2-3 větami každý popsat (za každý faktor 0.5bodů, za popis 1.5bodů) - 14 bodů
+
+5. Vývojové fáze týmu - popsat fáze a ke každé min. 2 činnosti , k poslední (5.té) 1dna činnost
+
+6. a) Nakreslit síťový model a vyznačit kritickou cestu
+b) Spočítat nekratší dobu trvání
+c) Vypsat kritické činnosti
+d) U nekritických činností spočítat Celkovou rezervu (CR)
+- celkem za 6b
+
+------------------------------------------
+2014
+1) podle slovníku IPMA definujte pojmy
+a) portfolio projektů
+b) role
+c) riziko
+d) kritická cesta
+e) a ještě jeden pojem...
+
+2) Popište druhy rizik v IT, ke každému alespoň 2 příklady a možnost prevence (nb tak nějak)
+
+3) popsat a definovat stupně CMM
+
+4) popsat a definovat 7S
+
+5) popsat 4 úrovně vývoje týmu a ke každé úrovni alespoň 3 aktivity
+
+6) 6 aktivit, udělat uzlový graf, najít kritickou cestu, spočítat časové rezervy
+
+opravny:
+1. Podľa IPMA definovať:
+a. Trojimperativ
+b. Řídící výbor projektu
+c. Akceptační kriteria
+d. Milník
+e. Celková rezerva
+
+2. Logický rámec - Čo to je? Na čo sa to používa? Popísať každý riadok a každý stĺpec.
+
+3. CMM - Čo to je? Na čo sa používa? Napísať typy procesov a čo sa musí pridať pre prechod na vyššiu úroveň. 
+
+4. 7S - Čo to je? Na čo sa používa? 2-3 vetami popísať každý faktor.
+
+5. FPA - Čo to je? Na čo sa to používa? Aký je postup výpočtu?
+
+6. Simplexová metóda - Napísať rovnice. Obmedzenie - tri zdroje, z toho jeden musí byť plne využitý.
+
+------------------------------------------------
+2013
+1. Pojmy (Rozsah projektu, portfoliu projektů, kritická cesta, riziko, a ještě jeden)
+2. Vyjmenujte 5 projektových rizik a stručně charakterizujte + přidejte dva konkrétní případy a jejich protiopatření
+3. CMM jak minulé roky - vyjmenovat typy procesů a co se k nim musí přidat, aby se proces dostal na vyšší úroveň
+4. 7S
+5. Fáze týmu a ke každé napsat tři činnosti té fáze
+6. Nakreslit síťový graf a k němu celková rezerva, kritická cesta, nejkratší doba trvání
+
+-----------------------------------------------------------
+2012
+1. vysvetliť nejaké pojmy [10b]
+2. logický rámec - čo to je, charakterizovať riadky a stĺpce [9b]
+3. CMM - čo to je, úrovne + prechody [10b]
+4. topológie projektu - aké sú, výhody + nevýhody [9b]
+5. FPA [12b]
+6. simplexová metóda - napísať rovnice a tú maticu podľa zadaného príkladu [6b]
+

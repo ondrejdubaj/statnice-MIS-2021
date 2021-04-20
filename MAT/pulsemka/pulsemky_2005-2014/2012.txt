@@ -1,0 +1,38 @@
+2012:
+^^^^^
+Skupina C:
+1) Dokázat že A->((negB -> negA) -> B) z predpokladu A a (negB -> negA) pouzitim A3, MP, MP, VD, VD
+2) převést na prenexní tvar a posléze vyjádřit bez implikací
+(∃xp(x,y) -> ∀yq(y,x)) -> ∀z (∃yr(x,z) -> ∀xs(z,x))
+3) nějaký *morfismy
+4) vypočítat v Z7: ((2/3 * 1/4)/(-(1/2)))^3
+5) Vytvořit podalgebru <9> na algebře (Z,^,*) typu (1,2)
+a^=-a ; a*b = max(a,b) - 3
+
+
+Modrý papier:
+1) Dokazať A -> ( (-B -> -A) -> B)
+1) A je predpoklad
+2) -B -> -A je predpoklad
+3) A3
+4) MP
+5) MP
+6) dedukce
+7) dedukce
+
+2) Previesť na prenexný tvar a potom znegovať:
+Vz (Ey p(x,z) -> Vx q(z,x)) -> (Ex r(x,y) -> Vy s(y,x))
+
+3) (G, *, -1, e), f(x) = x*x
+Dokázať:
+a) f nie je endomorfizmus
+b) f je endomorfizmus, ale nie je automorfizmus
+c) f je automorfizmus
+
+4) Z5:
+((3/4 - 3/2)/(4/3))^3
+
+5) (Z,^,*)
+a^ = -a
+a * b = min (a,b) + 4
+Generovať algebru <-12>

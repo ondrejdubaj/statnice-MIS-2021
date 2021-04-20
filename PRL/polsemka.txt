@@ -1,0 +1,51 @@
+2018
+2A
+1. Jak se určuje třída ceny pro paralelní algoritmy a kdy je tato třída považováná za optimální
+2. Nakreslit strukturu systému pro roztřídění 8 prvků pomocí Odd-even merge sort, jako základní prvek berte CE porovnavačku 
+
+2B
+1. Flynnova klasifikace
+2. Odd-even transposition sort
+
+1B
+1. Popisat architekturu PRAM + obrazok
+2. Algoritmus nasobenia matic na mriezke + obrazok, ktory demonstruje ako algoritmus funguje
+
+1A
+1. Popsat diametr, konektivitu a šířku bisekce. Napsat jejich hodnoty pro N-rozměrnou krychli (hyperkostka). 
+2. Pipeline Merge sort, popsat algoritmus a odvodit složitost.
+---------------------------------
+2017
+Prvý beh skupina B:
+1. vybrať si jendu ne-von neumanovsku architektúru a popísať.
+2. Popísať algoritmus Mege-spliting sort, odvodiť zložitosť a počet procesorov.
+
+Druhý běh, A:
+
+1. Flynnova kategorizace - ke každému jedna věta
+2. Pipeline merge sort - popsat algoritmus, odvodit složitost
+
+První běh, A (znělo nějak tak):
+
+1. Co je diameter, bisekce a konektivita a určit pro 2D mřížku o 16 uzlů
+2. Nakreslit Odd-even merge sort pro porovnávání 8 prvků
+
+Druhy beh B z Facebooku: PRAM a takový ten přesun matice ze sloupců na řádky (napsat algoritmus a znázornit na příkladu)
+---------------------------------------------
+2016
+1.běh, skupina tuším 2_A
+
+1) Popsat PRAM
+2) Algoritmus násobení matic na mřížce - nakreslit, popsat, napsat algoritmus
+
+A druhá skupina měli tuším něco s architekturami propojovacích sítí - průměr, bisekce, atd na 3D kostce a druhý příklad pipeline merge sort
+
+1. běh skupina B:
+1) Co je diameter, bisekce a konektivita a určit pro topologii N-rozměrné krychle
+2) Pipeline merge sort + složitost
+
+1. běh skupina B:
+1) Co je diameter, bisekce a konektivita a určit pro topologii N-rozměrné krychle
+2) Pipeline merge sort + složitost
+
+

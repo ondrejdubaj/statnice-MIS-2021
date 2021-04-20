@@ -1,0 +1,26 @@
+øádný termín 12.5.2008
+
+skupina B
+---------
+1) Vypocetni model PRAM s N procesory. Jaka bude cena optim. alg. posloupnosti s N prvkù pro n=N
+2) Mìjme výpoèetní model PRAM s N procesory. Jaká bude èasová složitost opt. algoritmu, který má zjistit, zda se prvek x (který všechny procesory znají) nachází v seøazené posloupnosti (ve které nejsou prvky se stejnou hodnotou) n prvkù (pro n=N) v pøípadì: a) EREW b) CREW c) common CRCW
+3) Vypocetni model PRAM s N procesory. Jaka bude slozitost optim. algoritmu, ktery ma najit minimum posloupnosti n prvkù.
+4) Popište možná øešení konfliktù zápisù v CRCW architektuøe
+5) Popište princip obecného semaforu, definujte strukturu S a operace P(S) a V(S).
+6) Packing problem v sumì prefixù - popis + ilustrace
+7) Pipeline mergesort, S=(9,8,4,2,3,10,5,7,6). Topologie + vstup na branach procesorù po 7 krocích.
+8) Paralelní algoritmem vypoètìte Eulerovu cestu grafem.
+9) V jazyce PM2 naprogramujte logický souèet hodnot. Každý procesor zná jednu hodnotu uloženu v "i". Výsledek uložte do sdílené promìnné "result". Uvažujte architekturu ERCW
+
+--------------------------------------------------------------------------------
+skupina A (co jsem si zapamatoval)
+první tøi otázky - zakroužkovat (1 a 3 èasová složitost, 2 cena) u EREW, CREW, common? CRCW
+1) prùmìr hodnot (u dìlení uvažujeme konst. složitost)
+2) zda-li je hodnota v neseøazené posloupnosti (procesory znají svou hodnotu)
+3) logický souèet
+4) popište cenu a zrychlení ve vztahu k paralelním algoritmùm, uveïte vzorce
+5) popište monitor, hlavnì operace wait a signal (+ obrázek)
+6) popište využití sumy prefixù pro øešení úlohy viditelnosti bodu (popište problém, øešení, obrázky, ...)
+7) enumeration sort pro lineární topologii, seøaïte hodnoty S = {1, 9, 4, 2, 3}, ukažte stav po 7. kroku, nakreslete topologii
+8) eulerova cesta, V = (v1, v2, v3, v4), E = (e1, e2), (e2, e1), (e1, e3), (e3, e1), (e1, e4), (e4, e1). vytvoøte tabulku souslednosti a na základì té udìlejte Etour.
+9) v PM2 naprogramujte optimální algoritmus pro souèin, každý procesor zná svoji hodnotu i, výsledek se ukládá do sdílené promìnné result, architektura ERCW 

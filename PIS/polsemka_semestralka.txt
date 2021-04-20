@@ -1,0 +1,153 @@
+2018/19
+
+1) co je obecne dedicnost v objektovem modelu. definice jednoduche a vicenasobne dedicnosti + jejich grafy.
+2) co je dokumentova NoSQL databaze, jakou maji strukturu, jak se ukladaji. Jak probiha dotazovani. Nejaky priklad takove databaze.
+3) jak je resena dedicnost objektove relacnich mapovanich v relacnich tabulkach (nepamatuju si jak to presne bylo formulovane)
+4) otazka na JSF. V jake je vrstve atd (nepamatuju si uplne)
+
+1, Co su metadata v objektovom db modeli, co obsahuju, ako su reprezentovane vztahy medzi entitami a kardinalita. Uvedte priklad vztahu 1:n
+2, Popiste dokumentove nosql db. Na com je model db zalozeny, ako su data ulozene, atd. Dalej, ako prebieha dotazovanie. Priklad takejto dokumentovej nosql db.
+3, Co je servlet v java EE, na co sluzi, ako sa znaci, ako sa vytvaraju instance. Popiste priebeh spracovania http poziadavku.
+4, Popiste CDI, ako sa definuju CDI objekty, kto ich vytvara. Popiste pojem scope v tomto kontexte, vysvetlite request, session, application scope.
+
+1. Definujte dimenziu a multidimenzionalnu kocku. Definujte sucet. Nakreslite kocku pre cas, miesto, zbozi, dodavatel.
+2. Co to RDF, popiste RDF trojice. Popiste serializaciu a napiste dva sposoby serializacie. Nakreslite priklad nejakeho RDF graf s 5-6 uzlami.
+3. Popiste klientske a vyvolavane aplikacie vo WF. Popiste aplikacne, vecne, riadace data vo WF. Napiste, ktore casti WF pracuju s akymi datami.
+4. Autentizacia v RESTe. Preco nie je mozne pouzit sessions? Uvedte mechanizmy autentizacie pre REST. Popiste JSON Web Token, co to je, z coho sa sklada a ako prebieha autentizacia pomocou JWT.
+5. Definujte zotavitelnu frontu. Uvedte, aka je jej suvislost s procesom a transakciami. Popiste zakladne operacie nad touto frontou. Uvedte jej vlastnosti. Uvedte jednoduchy priklad jej pouzitia.
+6. Definujte pojmy proces, uloha, pripad, zdroj, pracovna polozka, aktivita. Uvedte ako spolu suvisia.
+7. Mikrosluzby. Popiste architekturu s mikrosluzbami, uvedte jej vyhody a nevyhody. Porovnajte mikrosluzby s monolotickou architekturou. Nakreslite schemu tejto architektury s webovym rozhranim.
+----------------------------------------------------------
+2017/18
+
+1. Nakrelsite a popiste tabulku popisujucu meta0data až meta4data pre databazove systemy. Ku kazdej urovni metadat napiste popis a priklad pre relacnu a objektovu databazu (ak na danej urovni existuje). (5b)
+2. Vysvetlite datovy model dokumentovej NoSQL databazy. Akym sposobom su reprezentovane data a ako sa v databaze uladaju? (4b)
+3. Vysvetlite pojem abstraktneho a konkretneho objektu (naozaj tam bol napisane objekt ;)). Uvedte, k comu rozlisenie sluzi. Ako sa tieto pojmy viazu k extentu? (5b)
+4. Vysvetlite pojem Enterprise Java Bean (EJB) v Java EE. Charakterizujte strucne zakladne typy EJB, uvedte ich ucel, aku vrstvu aplikacie reprezentuju, akym sposobom sa vytvara prislusna trieda, ako vznikaju instancie (objekty) tejto triedy a ako suvisia metody tejto triedy a databazove transakcie. (5b)
+
+1) obecná definice multidimenzionální kostky, nakreslit součet pro 4 zadané hodnoty
+2) meta^0 - meta^4 tabulka
+3) sekvenční vs hierarchické procesy - popsat, definice v UML, ...
+4) 1:M v Javě (JPA), princip, příklad, jak se to mapuje v relační databázi
+5) schéma WF
+6) Gestaltovy principy - vypsat, zakreslit
+7) prvky řízení toku ve WF - AND Split, AND join, XOR split, XOR merge - vysvětlit, popsat
+------------------------------------------------------------
+2016/17
+
+Skupina B (druhý termín od 11:00):
+1.) (5b)
+a) Vysvětlete otázku vnoření objektů, kolekce objektů, prosté struktury, kolekce prostých struktur do struktury.
+b) Nakreslete vysvětlující obrázky.
+c) Napište, ve kterém z případů vznikají vztahy a jaké.
+d) Pro každou z možností uveďte příklad CDL a zdůvodněte
+2.) (4b)
+a) Vysvětlete pojem backing bean v JSF.
+b) O jakou vrstvu se jedná.
+c) Jak se definuje v Javě a jaká je jeho úloha.
+d) Vysvětlete pojem scope v daném kontextu a rozdíl mezi request, session a application scope.
+3.) (5b)
+a) Vysvětlete pojem obecného dědění.
+b) Popište otázku dědičnosti pomocí pojmu relace.
+c) Jak se dědění zapisuje v programovacích jazycích (uveďte příklad v CDL)
+d) Jak se řeší otázka přímých následníků a následníků (použijte pojem tranzitivní relace)
+e) Jaké vznikají problémy, pokud se při dědění vlastnosti pouze nepřidávají (uveďte příklad)
+4.) (5b)
+a) Popište způsob vytvoření persistentní třídy v JPA.
+b) Jak se liší od standartní třídy v Javě.
+c) Jak je popsáno mapování na tabulky v relační databázi?
+d) Popište jak vzniká identifikátor objektu.
+ps: Otázky nebyly přímo rozděleny na a,b,.. ale rozdělil jsem to takto pro přehlednost.
+
+1. Obecně definovat multidimenzionální kostku a nakreslit pro čtyři dané hodnoty
+2. Nakreslit tabulku meta0 - meta4dat
+3. Gestalt principy - nazev a obrazek
+4. Sekvenční vs hierarchické procesy
+5. Workflow - nakreslit schema a popsat
+6. Workflow - popsat klientske a vyvolané aplikace; a data
+-------------------------------------------------------------
+2015/16
+
+1. objekt / kolekce prostých struktur / kolekce objektů / prostá struktura ve struktuře
+- obrázek (grafy s barevnými kolečky)
+- příklad v CDL (concept...)
+
+2. globály v Caché
+
+3.
+definovat dědičnost za pomocí relace
+jaké problémy vznikají pokud při dědění jenom nepřidáváme + příklad
+CDL příklad dědičnosti
+
+Vícetypovost - k čemu je potřeba, jaký je s ní spojen problém, jak se řeší, uvést příklad
+Jak vypadá Bullet graf, co z něj lze vyčíst
+Nakreslit tabulku která bude výsledkem MDX dotazu ve stylu:
+SELECT [Measures].[Amount] ON COLUMNS FROM [Sales]
+(Výsledkem bude jediná hodnota představující součet všech prodejů napříč celou databází)
+Definovat funkce pro map a reduce pro vytvoření tabulky součtů group by (Product, Country) z multidimenzionální kostky (Time, Product, Country, ...)
+Popište prvky Workflow systému a s jakými daty pracují (řídící/věcná/aplikační)
+Nakreslete a popište co dělají jednotlivé prvky řízení toku ve workflow: AND-split, AND-join, XOR-split, XOR-merge
+-----------------------------------------------------------------------------
+2014/15
+
+- globály v Caché, k čemu, jak se zapisují, jak jsou strukturované
+- meta0 - meta4 tabulka komplet
+- dedičnost obecně + v tom jeho jazyce z přednášek
+- JPA, k čemu, jak se zapisuje, jak se liší od class v klasické Jave
+
+1) Definujte multidimenzionalni kostku součtu. Nakreslete svaz pro 4 dimenze, nad touto kostkou definujte operaci rollUp (8b)
+2) Zadány Dimenze (lokace, produkty, množství - viz PIS300OLAP.pdf slajd 32 a 34 a 43) a v jazice MDX (asi) napsat dotaz, který pro danou lokaci, daný produkt vypíše součet množství (7b)
+3) Gestalt principy, vyjmenovat a nakreslit a popsat (7b)
+4) Popsat rozhraní a prvky WorkFlow (7b)
+5) Popsat RDF, RDF trojici, Graf, Serializaci a význam ontologie (8b)
+6) Co je to SPARQL, nad jakými daty pracuje, jaký tvar má Select, jaká data vrací? (7b)
+7) Zadán objektový model (obrázek s třídama, šipkama...) a v ODMG popsat jeden objekt (7b)
+-----------------------------------------------------------
+
+2013/14
+
+1) popisat meta^0 az meta^4 data
+2) vysvetlit abstraktny a konkretny objekt
+3) popisaj EJB
+4) co je global v cache
+
+1)definujte: uspořádání, spojení, průsek, minimální a maximální bod
+2)dashboard - gestalt principy - co to je a další otázky...
+3)vícetypovost a role a jaké jsou s tím problémy a jejich řešení (může být i z přednášek)
+4)rozdíl mezi hiearchickým a sekvenčním procesem a jak se to modeluje v UML
+5)jaká jsou data ve Workflow, jaký je vztah mezi case, work item, task a activity a co jednotlivé položky jsou
+6)?
+7)vztah 1:N v Java EE - popsat, jak se zapisuje, jak se modeluje, jak se mapuje do db, uvést příklad (dal jsem diagram tříd a pak zápis těch anotací do kódu)
+8)jaký má význam ontologie s použitím RDF, rdf trojice, rdf graf, jakým způsobem probíhá export?
+-------------------------------------------
+2012/13
+
+Dané entity (ekonomický subjekt, fyzická osoba, právnická osoba, partner, objekt so spojením, občan, banka, ...) - príklad z ekonomickej oblasti zo slidov, nakresliť objektovú štruktúru DB a vyznačiť dedičnosť + napísať čo ktorý objekt pridáva (odoberá) do DB. (6b)
+Čo je extent + problémy (efektívnosť) pri dedičnosti. (4b)
+Čo je perzistentná trieda v Caché + ako sa vytvára a ukladá nový objekt do DB (aspoň približne napísať príkazy). (5b)
+EJB - čo to je, typy, vlastnosti, niečo s metódami, čosi s transakciami, ... . (4b)
+
+1.
+nieco taketo:
+concept A
+B: C
+end concept
+popisat, ak je C a) jednoducha struktura b) kolekcia struktur c) objekt d) kolekcia objektov
+2. ako je v cache reprezentovany extent, ako ho ziskat a prechadzat cez jeho polozky (napisat priblizny kod)
+3. nakreslit tabulku meta^0 data az meta^4 data - popisat a uviest priklad pre relacny model a objektovy model
+4. ako je reprezentovana trieda v JPA, ako sa lisi od javovskej triedy, ako sa mapuje na db a ako sa riesia identifikatory
+
+- popsat multidimenzionalni kostku + ty dalsi terminy k tomu kuboid, usporadani, svaz...
+- k cemu je vitypovost a jake jsou s ni problemy
+- nakreslit vnorenou strukturu, kolekci struktur, odkaz na objekt a kolekci objektu
+- sekvencni transakce a savepointy, co to je a ukazat na prikladu
+- jake jsou jazyky pro popis Workflow + popsat, rozdily
+- co to je ontologie, RDF, RDF Schema, OWL
+- vztah 1:N v Java EE
+-------------------------------------------------
+2011/12
+
+
+
+
+

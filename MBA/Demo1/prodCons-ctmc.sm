@@ -1,0 +1,64 @@
+ctmc
+
+const int max_buffer = 5;
+const int requests_to_send = 20;
+
+const double produce = 0.2;
+const double consume = 0.05;
+
+
+
+
+module producent
+
+   request: [0..requests_to_send] init requests_to_send;
+
+   [to_buffer]  (request > 0) ->  produce : (request'= request - 1) ;
+
+endmodule 
+
+
+
+module buffer
+   buffer: [0..max_buffer] init 0;
+   lost: [0..requests_to_send] init 0;
+
+   [to_buffer] (buffer < max_buffer) ->  1 : (buffer' = buffer + 1);
+   //[to_buffer] (buffer = max_buffer) ->  receive : true;
+   //[to_buffer] (buffer = max_buffer) & (lost < requests_to_send) ->  1 : (lost' = lost + 1);
+
+
+   [consume] (buffer > 0) ->  consume : (buffer' = buffer - 1);
+endmodule 
+
+
+
+module consumer
+   [consume] (true) -> 1:true;
+endmodule 
+
+rewards "buffer"
+ true:buffer;
+endrewards
+
+rewards "max_buffer"
+ max_buffer=buffer:1;
+endrewards
+
+rewards "consume"
+[consume] true:1;
+endrewards
+
+rewards "lost"
+[to_buffer] buffer = max_buffer:1;
+endrewards
+
+
+
+
+
+
+
+
+
+

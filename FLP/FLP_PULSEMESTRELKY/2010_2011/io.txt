@@ -1,0 +1,92 @@
+import IO
+
+{-
+-- Jen pro pripomenuti:
+data IOMode =  ReadMode | WriteMode | AppendMode | ReadWriteMode
+getLine :: IO String
+putStrLn :: String -> IO ()
+type FilePath = [Char] -- tj. jméno souboru
+openFile :: FilePath -> IOMode -> IO Handle
+hIsEOF :: Handle -> IO Bool
+hGetLine :: Handle -> IO String
+hClose :: Handle -> IO ()
+hGetContents :: Handle -> IO String
+readFile :: FilePath -> IO String
+lines :: String -> [String]
+unlines :: [String] -> String
+words :: String -> [String]
+unwords :: [String] -> String
+-}
+
+-- Spocte pocet radku v souboru.
+countLines file = do
+  content <- readFile file
+  putStrLn $ show $ length $ lines content
+
+-- Spocte pocet slov v prvnich n radcich v souboru.	
+countWordsN file n = do
+    content <- readFile file
+    putStrLn $ show $ length $ words $ unlines $ take n $ lines content
+
+-- Prokladane vypise obsah souboru na vystup.    
+prokladane file1 file2 = do
+     h1 <- openFile file1 ReadMode
+     h2 <- openFile file2 ReadMode
+     c1 <- hGetContents h1
+     c2 <- hGetContents h2
+     write (lines c1) (lines c2)  
+     hClose h1
+     hClose h2
+   where 
+    write [] _ = return ()
+    write _ [] = return ()      
+    write (x:xs) (y:ys) = do
+      putStrLn x
+      putStrLn y
+      write xs ys
+
+-- Vypise obsah souboru s cisly radky.
+printWithLineNumber file = do
+    h <- openFile file ReadMode
+    c <- hGetContents h
+    write (lines c) 1 
+    hClose h
+  where 
+    write [] _ = return ()
+    write (x:xs) n = do
+      putStrLn $ (show n) ++ ". " ++ x
+      write xs (n+1)
+
+-- Vypise radky na vystup, ktere jsou v obou souborech, ve stejnem poradi.
+copyOut file1 file2 = do
+    h1 <- openFile file1 ReadMode
+    h2 <- openFile file2 ReadMode
+    c1 <- hGetContents h1
+    c2 <- hGetContents h2
+    putStr $ unlines $ [x | x <- lines c1, y <- lines c2, x == y]
+    hClose h1
+    hClose h2
+
+-- Nacte radek a slova vypise v opacnem poradi.
+reverseOut = do
+  line <- getLine
+  if null line 
+    then return ()
+    else do
+      putStrLn $ rev line
+      reverseOut
+  where rev l = unwords $ foldl (\acc x -> x : acc) []  (words l)
+   
+        
+etaRed :: LE -> LE
+etaRed l@(LAbs v (LApp e (LVar v'))) = 
+    if v == v' && isNotFree then e else l
+  where isNotFree = not $ elem v (freeVars e)
+ 
+subst :: LE -> LE -> String -> LE
+subst lexp lexp' v = if isValidSub lexp lexp' v 
+    then doSubst lexp 
+    else error "Substituce neni validni"
+  where doSubst lvar@(LVar var) = if var == v then lexp' else lvar
+        doSubst (LApp e1 e2) = LApp (doSubst e1) (doSubst e2)
+        doSubst (LAbs var e) = LAbs var (doSubst e)

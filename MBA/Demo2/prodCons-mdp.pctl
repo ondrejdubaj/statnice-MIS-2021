@@ -1,0 +1,16 @@
+const int T;
+
+R{"consume"}min=? [ C<=T ]
+
+R{"consume"}min=? [ F request=0&buffer=0&buffer_fast=0 ]
+
+// Try [10,500]
+Pmin=? [ F[0,T] request=0&buffer=0&buffer_fast=0 ]
+
+R{"consume"}max=? [ F request=0&buffer=0&buffer_fast=0 ]
+
+R{"consume"}max=? [ C<=T ]
+
+// Try [10,500]
+Pmax=? [ F[0,T] request=0&buffer=0&buffer_fast=0 ]
+

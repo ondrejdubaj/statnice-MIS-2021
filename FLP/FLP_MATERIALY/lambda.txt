@@ -1,0 +1,117 @@
+------------------------------------------
+Logika:
+------------------------------------------
+
+LET True   = \x y . x
+LET False  = \x y . y
+LET Not    = \x . x False True
+
+LET And    = \x y . x y False
+LET Or     = \x y . x True y  
+LET Xor    = \x y . x (Not y) y
+LET Xor    = \x y . x (y False True) y
+LET Eq     = \x y . x y (Not y)
+LET Nor    = \x y . x False (Not y)
+LET Nor    = \x y . x False (y False True)
+LET Nand   = \x y . x y False False True
+LET Nand   = \x y . y (Not x) True
+LET Imp    = \x y . (Not x) True y
+LET Imp    = \x y . (x False True) True y
+LET Imp    = \x y . x y True
+
+------------------------------------------
+Definice vlastnich True, False:
+------------------------------------------
+
+LET True   = \x y . x y
+LET False  = \x y . y x
+LET Not    = \x y . x (\f . False) (\f . True)
+LET And    = \x y . x (y (\f . False)) (\g . True)
+LET Or	   = \x y . x (\f . True) (\g. y)
+LET Xor    = \x y . a (\f. (NOT y)) (\g. y)
+
+------------------------------------------
+Aritmetika:
+------------------------------------------
+
+LET 0      = \f n . n
+LET 1      = \f n . f n
+LET 2      = \f n . f (f n)
+LET 3      = \f n . f (f (f n)) 
+...
+
+LET Succ   = \x g m . x g (g m)
+LET IsZero = \m . m (\v . False) True
+LET GT     = \x y . IsZero (Sub x y) False True
+LET Leq    = \x y . IsZero (Sub x y)
+LET Eq     = \x y . IsZero (Sub x y) IsZero (Sub y x) False
+LET (_,_)  = \f s e . e f s
+LET (? :)  = \c t f . c t f
+LET Fst    = \d . d True
+LET Snd    = \d . d False
+LET Prefn  = \f p . (Fst p ?
+	     (False, Snd p) :
+	     (False, f (Snd p))) 
+LET Prev   = \x g m . Snd (x (Prefn g) (True, m))
+
+LET Add    = \x y g m . x g (y g m)
+LET Add 	 = \x y . x Succ y
+LET Sub    = \x y . y Prev x
+LET Mult   = \x y . x (Add y) 0
+LET Pow    = \x y . y (Mult x) 1
+LET Div    = \x y . (IsZero y ?  : divfn x y 0)
+LET Divfn  =  YDivf
+LET Divf   = \f x y r . (GT y x ? r : f (Sub x y) x (Succ r)))  
+
+------------------------------------------
+Operator pevneho bodu:
+------------------------------------------
+
+LET 	   =  Y (\f x . f)
+LET Y      = \f . (\x . f (x x)) (\x . f (x x))
+LET Y      = \f x . f 
+
+-- funkce faktorialu
+Fakt 		 = \x . IsZero (Prev x) ? 1 : Faktf x (Prev x) 
+Fn 		 = \f x y . IsZero y ? x : f (x Mult y) (Prev y)
+Faktf 		 =  Y Fn 
+
+-- funkce odecitani
+LET Sub 	 = \x y . IsZero y ? x : Subf (Prev x) (Prev y)
+LET Fn 		 = \f x y . IsZero y ? x : f (Prev x) (Prev y)
+LET Subf 	 = Y Fn 
+
+-- funkce mult
+LET Mult 	 = \a b . Multf a b 0
+LET Multf  	 =  Y (Multfn)
+LET Multfn 	 = \f a b c . (IsZero b) ? c : f a (Prev b) (Add a c)
+
+-- funkce modulo
+LET Mod 	 = \a b . (IsZero b ? Bottom : Modfn a b)
+LET Modfn  	 =  Y Modf
+LET Modf 	 = \f a b . (GT b a ? a : f (Sub a b) b)
+
+-- funkce mocnina
+LET Pwr 	 = \a b . Pwrfn a b 1
+LET Pwrfn  	 =  Y Pwrf
+LET Pwrf 	 = \f a b r . (IsZero b ? r : f a (Prev b) (Mult a r)) 
+
+------------------------------------------
+Seznamy:
+------------------------------------------
+
+LET []     =  (False, False)
+LET (:)    = \h t . (True, (h, t))
+LET Head   = \l . (Fst l ? Fst (Snd l) : )
+LET Tail   = \l . (Fst l ? Snd (Snd l) : )
+LET Null   = \l . Not (Fst l)
+
+-- funkce vraci delku seznamu vlozeneho jako parametr
+LET Lenf   = \f l c . Null l ? c : f (Tail l) (Succ c)
+LET Lenfn  =  Y Lenf
+LET Length = \l . Lenfn l 0
+
+-- funkce vracejici n-ty prvek seznamu delky n
+LET Itemf  = \f l n . IsZero n ? Head l : f (Tail l) (Prev n)
+LET Itemfn =  Y Itemf
+LET Item   = \l n . GT (Succ n) (length l) ?  : Itemfn l n

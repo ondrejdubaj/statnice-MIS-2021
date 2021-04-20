@@ -1,0 +1,61 @@
+-----------------------------------
+---------- LAMBDA KALKUL
+-----------------------------------
+
+data LE = LVar String -- V
+  | LApp LE LE        -- (E1 E2)
+  | LAbs String LE    -- (\V . E)
+  deriving (Show, Eq)
+
+-- Vrátí seznam všech volných promìnných v lambda výrazu.  
+freeVars :: LE -> [String]
+freeVars lexp = fv lexp []
+  where fv (LVar v) xs = if elem v xs then [] else [v]
+        fv (LApp lexp1 lexp2) xs = (fv lexp1 xs) ++ (fv lexp2 xs)
+        fv (LAbs v lexp) xs = fv lexp (v:xs)
+        
+-- Vrátí seznam všech vázaných promìnných v lambda výrazu.
+boundVars :: LE -> [String]
+boundVars lexp = bv lexp []
+  where bv (LVar v) xs = if elem v xs then [v] else []
+        bv (LApp lexp1 lexp2) xs = (bv lexp1 xs) ++ (bv lexp2 xs)
+        bv (LAbs v lexp) xs = bv lexp (v:xs) 
+
+-- Zjistí zda-li je možné provést substituci.
+-- isValidSub lexp lexp' v === lexp [lexp' / v]
+isValidSub :: LE -> LE -> String -> Bool
+isValidSub lexp lexp' v = validate lexp [] 
+  where validate (LVar var) xs = if (var == v) -- Jestli jde o promìnnou co se nahrazuje, 
+            -- musí být volná v lexp, a žádná volná v lexp' se nesmí stát vázanou.
+            then (isFree var) && (check xs fv') 
+            --  Ostatní promìnné jsou OK.
+            else True
+        validate (LApp e1 e2) xs = (validate e1 xs) && (validate e2 xs)
+        validate (LAbs var e) xs = validate e (var:xs)
+        fv' = freeVars lexp'
+        fv = freeVars lexp
+        -- Zkontroluje zda prùnik seznamù je prázdný
+        check as bs = [ a | a <- as, b <- bs, a == b ] == [] 
+        isFree f = elem f fv
+
+alfaRed :: LE -> String -> LE
+alfaRed (LAbs v lexp) v' = if isFree v' lexp 
+      then error "Neplatna substituce (volna by se stala vazanou)"
+      else (LAbs v' $ doAlfa lexp v' v)   
+  where isFree var lexp = elem var $ freeVars lexp
+        doAlfa (LVar x) v' v = if x == v then (LVar v') else (LVar x)
+        doAlfa (LApp lexp1 lexp2) v' v = LApp  (doAlfa lexp1 v' v) (doAlfa lexp2 v' v)
+        doAlfa (LAbs var lexp) v' v = LAbs var (doAlfa lexp v' v)   
+
+
+betaRed :: LE -> LE
+betaRed  (LApp (LAbs v e1) e2) = if isValidSub e1 e2 v 
+    then doBeta e1 e2 v
+    else error "Neplatna substituce"
+  where doBeta (LVar x) e v = if v == x then e else (LVar x)
+        doBeta (LApp e1 e2) e v = LApp (doBeta e1 e v) (doBeta e2 e v)
+        doBeta (LAbs x e1) e v = LAbs x (doBeta e1 e v)
+        
+etaRed :: LE -> LE
+etaRed l@(LAbs v (LApp e (LVar v'))) = 
+  if v == v' then e else l

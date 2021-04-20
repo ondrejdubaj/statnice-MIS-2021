@@ -1,0 +1,41 @@
+značení volných alokačních bloků na disku
+
+• lineární seznam volných bloků (UFS) – nelze
+• bitová mapa – pro celý disk je příliš velká, nelze udržovat trvale v paměti, ani prohledávat na disku
+• skupiny cylindrů, pro každý samostatná bitová mapa a sumární statistika – jedna bitová mapa rozumné velikosti, lze v ní hledat optimální skupinu volných AB (UFS velikost rovna AB*8)
+• index-sekvenční organizace – volnou část disku popsat jako soubor se seřazenými volnými úseky podle čísla AB (B-strom)
+---------------------------
+Synchronní vs. asynchronní V/V, co se používá v Unixu, jak lze emulovat asynchronní V/V.
+
+Synchronní V/V - po dobu V/V je proces pozastaven
+Asynchronní V/V – proces může mít více zahájených V/V operací, dokončení lze testovat nebo je oznámeno signálem
+a) simulace pomocí neblokující operace (POSIX) - Příznak otevření O_NONBLOCK pri read, Test připravenosti na operaci select
+b) asynchronní operace POSIX - aio_read, aio_write
+
+---------------------------
+Podmínky pro sdílené prostředky
+
+
+-------------------------
+Implementace podmíněné kritické sekce
+
+region r when C do KS;
+
+resource sem::value: integer;
+procedure down;
+begin
+region sem when value > 0 do value:=value-1;
+end;
+procedure up;
+begin
+region sem do value:=value+1;
+end;
+
+implementacia jak v prvom projekte
+---------------------
+
+Graf alokace prostredku
+
+pozret obrazok
+
+

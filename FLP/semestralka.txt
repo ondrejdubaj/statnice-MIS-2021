@@ -1,0 +1,218 @@
+2018
+riadny
+1) /6b/ Op. pevneho bodu - MINUS x y. Nadefinovat True + False. K dispozici isZero, prev. Pripadne si dodefinovat dalsi funkce.
+2) /7b/ Dukaz: foldr (&&) True xs = all xs. Byla zadana definice funkce all.
+3) /4b/ Funkce sort v holem Haskellu, bere seznam hodnot nad tridou Ord a vraci serazene od nejmensiho po nejvetsi. K dispozici fold*, map a operace nad tridou Ord.
+4) /13b/ Nadefinovat funkciu pt, ktora berie nazov suboru ako argument. Z tohoto suboru nacita zaznamy ve formatu Cislo_typu_Integer#String, pripadne prazdny riadok. Zaznam reprezentovat datovym typom DLog. Vypsat zaznamy s cisly, ktere jsou nasobkem 5 (cislo mod 5 == 0). Odelene budu tentoraz dvojbodkou (:).
+Je potrebne uviest typove defincie pre kazdu pouzitu funkciu.
+Zadane byly typove definicie nekterych funkci pro praci s IO (openFile, hGetContents, lines, unlines, ReadMode, WriteMode, atp.).
+5) /6b/ BONUS otazka - Vytvorit datovou strukturu pro reprezentaci stromu. Vytvorit funkci initTree, ktera dostane jako parametr hodnotu a vytvori nekonecny strom, kde vsechny uzly obsahuji tuto hodnotu. Vytvorit funkci takeLev, ktera vrati strom az po urcitou uroven danou parametrem.
+
+1) /6b/ Flatten seznamu - vytvorit predikat e, ktery bere 2 argumenty. Prvni je seznam libovolne zanorenych seznamu (i prazdnych), napr. [[], [1, 2], [[[[]]],[atom, atom]]]. Druhy argument je vysledny seznam bez zanoreni.
+2) /7b/ Funkce XOR, ktera vraci symterickou diferenci dvou mnozin (sjednoceni mnozin bez jejich pruseciku). Bere prvni a druhy parametr mnozinu reprezentovanou seznamem, treti parametr je vysledna mnozina reprezentovana seznamem.
+3) /9b/ Napisat predikat search(PocatecniPozice, SeznamCest), ktory najde vsechny cesty z dane pozice zpet do teto pozice, delky 20 az 22 kroku (netrapit se tim, jestli vracet prvni/posledni prvek ci ne). Kazdy prvok je mozne nastivit len jeden krat vyjma prveho (== posledneho). Definicia pozicie je neznama, napiste funkci nextStep(Pos, NewPos) nad neznamym a NEKONECNYM stavovym priestorom. Mozno pouzit retract*, assert*, bagof, setof, length.
+4) /8b/ Napisat predikat lookup. Prvy arguement vhodne reprezentovana tabulka symbolov, 2-hy argument kluc, 3-ty argument hodnota. A posledny a vysledny argument je modifikovana, pripadne vstupna tabulka symbolov.
+Predikat pracuje v dvoch rezimoch. Ak je zadana hodnota, tak sa modifikuje pripadne modifikuje zaznam (klic -> hodnota?) v tabulke symbolov. Ak nie je zadana hodnota, tak vyhladavame v tabulku hodnotu so zadanym klucom. Ak sa nemylim, tak bolo mozne pouzit vsetko zo zakladnej kniznice Prologu. Ja som pouzil var(), nonvar() na zistenie, ci (nie) je zadana hodnota a nemyslim si, ze by to bolo v zadani spomenute. -- priklad byl mozna lehce modifikovany?
+-----------------------------------------------
+1opravny
+Haskell
+1. Holý Haskell. Definovat datovou strukturu pro reprezentaci Lambda kalkulu pro dvě proměnné nedefinovaného typu. Dále funkci subst, která provede subtituci.
+2. Důkaz, že: length 0 xs = foldl (\	a _ -> a+1) 0 xs. Bylo dáno: 
+length a [] = a
+length a (_:xs) = length (a+1) xs a indukční předpoklad pro všechny konečné seznamy: forall k in N: length k as = foldl (\a _ -> a+1) k as.
+3. Vytvořit nekonečný seznam prvočísel.
+4. Haskell s dostupnými IO funkcemi. Napsat funkci mkR, která dostane jméno souboru. V řádcích souboru se nachází buď FIT login, nebo prázdný řádek, nebo nějaký jiný text. Funkce má vypsat nejdříve počet řádků s validními loginy, pak počet textových řádků, pak počet prázdných řádku a nakonec vypsat všechny tyto validní loginy v náhodném pořadí. Pro generování náhodných čísel je k dispozici funkce randomRIO :: Random a => (a, a) -> IO a.
+
+Prolog
+1. Holý Prolog. Napsat predikát mkTrans(ListOfLists,ListOfLists), která dostane v 1. argumentu matici, kterou transponovanou unifikuje do 2. argumentu.
+2. Holý Prolog. Napsat predikát subseq, který v 1. argumentu dostane seznam a do 2. argumentu unifikuje seznam všech jeho podseznamů, tedy jde tam o prefix a suffix matching.
+3. Prolog s bagof, setof, assert, retract atp. Prohledávání stavového prostoru. Napsat predikát search(Start,Cíl, Nejkratší_cesta), který dostane nějakou startovní a koncovou pozici a unifikuje do 3. argumentu nejkratší cestu mezi nimi. Napsat také predikát nextStep, který bude vracet další novou pozici. úkolem není napsat optimální řešení, ale využít elegantnosti Prologu.
+4. Prolog s celočíselným dělením, dělením a is. Napsat Prologovou reprezentaci racionálních čísel a operaci násobení a sčítání nad nimi.
+HOWK.
+------------------------------------------------
+2017
+Haskell + Lambda
+1) Ukázat vlastnost operátoru pevného bodu. V lamda kalkulu definovat násobení (MUL) s dvěma parametry pomocí prev, add, iszero a ternárního operátoru (6b)
+2) Dokázat, že sum xs = foldr (+) 0 xs, kde funkce sum je definovaná jako:
+- sum [] = 0
+- sum (x:xs) = x + sum xs
+(8b)
+3) Holý Haskell. Definovat datový typ pro asociativní pole. Dále napsat funkci test, která ověří, že klíče v asociativním poli jsou unikátní. (7b)
+4) Haskell + prelude (kromě readFile) + nějaké IO funkce jako (hGetContents, hClose, openFile, hPutStr). Napsat funkci fdup, která načte soubor jehož nazev je v jejím parametru a potom tento soubor vypíše na výstup, ale s tím, že pokud j	sou na začátku řádku dva znaky +, tak se tento řádek vypíše 2x, ale už bez těchto dvou plusových znaků. Nesmí se změnit pořadí řádků. (6b)
+5) Bonus: Definujte strukturu pro termy v prologu a následně funkci unify s dvěma parametry, která vratí nejobecnější unifikátor dvou termu (8b)
+
+Prolog:
+1) Prohledávání stavového prostoru. Napsat predikát getPath, který má jako první parametr startovní bod a jako druhý cílový bod a do třetího unifikuje nejkratší (s nejmenší cenou) cestu mezi těmito body. Předpokládejte, že stavový prostor je konečný. Máte k dispozici predikát nextStep(X, XX, P), který jako první parametr dostane nějaký stav stavového prostoru a v druhém vrátí další stav a ve třetím bude výsledná cena tohoto kroku. (14b)
+2) Holý prolog (unifikace, základní práce se seznamy, + řez tuším). Navrhnout strukturu pro ukládání boolovských výrazů (pro and, or, not) nad proměnnými a literály true/false. Dále strukturu pro ukládání hodnot proměnných. Dále napsat predikát eval(Table, Expr, Res), která vyhodnotí daný bool výraz. V table je tabulka hodnot proměnných. Expr je vyhodnocovaný výraz. Do Res se unifikuje výsledek. (6b)
+3) Holý prolog (unifikace, základní práce se seznamy). Implementujte predikát msort, který provádí merge sort řazení seznamu hodnot. Musí to být merge sort s jeho klasickou složitostí (ne kvadratickou...). (7b)
+4) Cely prolog, ale nesmi se pouzit vestaveny append a jeste 2 veci co si nepamatuju. Mame predikat, kde prvni parametr je predikat (dvouparametrovy - tedy jeden vstup a výsledek) a druhy je seznam seznamu. Z druheho parametru se postupně berou seznamy a ma se provest aplikace predikatu na vsechny hodnoty v seznamu a dat dohromady vysledky do jednoducheho seznamu (tedy ne seznam seznamu). (6b)
+-------------------------------------------------------
+2016
+Haskell:
+1) [8b] Popsat operátor pevného bodu, jeho vlastnost. Pomocí něj a předdefinovaných funkcí iszero, add a ternárního operátoru vytvořit výraz SUM (funkce fungují tak jak čekáme, ale mají nám neznámou implementaci, taky čísla mají neznámou implementaci). Výraz SUM vezme dvě čísla, x a y, a pokud je y=0, vrátí x, jinak vrátí SUM (x+y) (tedy částečně aplikovaného sama sebe). Ukázat vyhodnocení SUM 2 3 0.
+
+2) [8b] Důkaz foA f x a = foldr f a x, kde foA je definována jako foA f [] = id, foA f x:xs = f x . foA f xs (Btw id je identita, . je skládání funkcí, to ale v zadání nebylo.)
+
+3) [11b] Funkce flns, která dostane jméno vstupního souboru a výstupního souboru, ze vstupního souboru načte všechny řádky a očísluje je. Očíslování bude zarovnané doleva na 3 místa a mezi číslem a textem na řádku bude vždy mezera. Očíslované řádky uloží do výstupního souboru. Lze použít Prelude. Příklad:
+1␣␣␣text 1. řádku
+12␣␣text 12. řádku
+345␣text 345. řádku
+19545␣text 19545. řádku
+
+4) [6+4b] Prémie: Cyklický obousměrně vázaný seznam v Haskellu, napsat funkci, která... hmm... asi vrátí n prvků v daném směru? Už to v nějakém starém zadání bylo. Kdyžtak mě někdo doplňtě. Za ty další 4b definovat ukázkovou strukturu toho seznamu.
+
+
+Prolog:
+1) [9b] Definovat v prologu strukturu pro reprezentaci binárního stromu (ne jako seznam), který bude mít v nelistových uzlech data. Nad naší definicí stromů definovat predikát substIFsubtr(+Tree, +Subtree, +Pred, +Val, ?NewTree), který zjistí, jestli se ve stromě Tree nachází podstrom SubTree a pokud ano, tak ve všech nelistových uzlech stromu Tree, pro jejichž data platí predikát Pred, nastaví hodnotu jejich dat na Val. Výsledný strom uloží do NewTree. Pokud strom Tree neobsahuje podstrom SubTree, NewTree je Tree.
+
+2) [11b] Napsat predikát, který vrátí počet acyklických cest na šachovnici z bodu A do bodu B s maximálně 3mi změnami směru (lze předpokládat, že body jsou zadány správně). Hýbat se lze jen svisle a vodorovně, nikoliv do diagonály. Napsat i predikát pro pohyb na šachovnici (stačí pro 1 směr). Lze použít holý prolog + assert*, retract*, setof, bagof, length a ještě pár dalších, ach ta skleróza... Jo a ještě is a operátor řezu.
+
+3) [9b] Napsat predikát, který vrátí seznam všech palindromů délky nejméně 3, které jsou podřetězci zadaného řetězce. K dispozici holý prolog + length, append, možná ještě cosik a filter(+Goal, +List, ?Holding_List), v zadání bylo, že funguje jako v Haskellu.
+
+4) [4b] Napsat predikát union, který provede sjednocení dvou množin reprezentovaných seznamy. K dispozici holý prolog.
+
+opravny
+Otázky z prvního opravného termínu
+Haskell:
+1. Je dáno Let TRUE = \xy.xy. Definujte False standardního významu dle libosti. Je s pomocí nich definujte IMP (implikace zleva doprava) standardního významu. Dále po krocích vyhodnoťte IMP True False = False. (6b.)
+
+2. Definujte typ Days reprezentující jména v týdnu. Dále definujte konstantu calendar2016 :: [(Days, Int, Int)] obsahující všechny dny v letošním roce, jak jdou za sebou od 1.1.2016, což byl pátek, a jedná se o přestupný rok. Druhá položka je číslo dne v měsíci, poslední je číslo měsíce v roce. Dále definujte funkci p13 :: [(Days, Int, Int)] -> [(Days, Int, Int)], která vrátí všechny pátky 13. z daného seznamu. Lze využít volně funkce z Prelude. (8b.)
+
+3. Nechť je funkce length :: [a] -> Int definovanána takto:
+
+length a [] = a
+length a (_:xs) = length (a+1) xs
+
+Ukažte, že length xs = foldl (\a _ -> a+1) 0 xs pro všechna konečná xs. Využijte jako indukční předpoklad , že for all k: length k as = foldl (\a _ -> a+1) k as. (7b.)
+
+4. Definujte funkci prAno, která dostane jako parametr jméno vstupního souboru, ten může být i prázdný. Na standardní výstup ho po řádcích vypíše s tím, že na začátek každého řádku napíše v absolutní hodnotě rozdíl počtu znaků na daném řádku a na nejdelším a nejkratším řádku v souboru. Odděleno mřížkou. Např 10#20: text zde. Běžný haskell s prelude, plus IO funkce - byly zadané. (8b.)
+
+
+Prolog:
+1. Definujte v Prologu predikát assocList(+Al, ?K, ?V, -NAL), který vždy musí dostat jako parametr AL seznam dvojic klíč-hodnota reprezentovaných vhodným termem. Pokud dále dostanete klíč K i hodnotu V zadány, tak v případě, že pod daným klíčem se v seznamu Al nic nenachází, tak vloží nový pár do seznamu dvojic a vrátí jako parametr NAL. Pokud tam pod daným klíčem je už hodnota, tak tuto hodnotu změní na V a jako NAL vrátí takto upravený seznam AL. V případě, že je krom AL zadán jen klíč K, tak vrátí do V příslušnou hodnotu a do NAL původní AL. Pokud pod daným klíčem hodnota není, selže. Pokud je naopak zadána hodnota V, ale nikoliv klíč K, je do K vrácen seznam všech klíčů, co se pojí s danou hodnotou (může být i prázdný, pokud taková hodnota není). Do NAL je opět vložen původní AL. Pokud krom prvního argumentu není zadáno nic, predikát selže (12b.).
+
+2. V holém prologu definujte predikát getPaths, který dostane jako parametr dva termy reprezentující pozici ve stavovém prostoru / stavy (reprezentace je neznáma, ale stavový prostor je konečný) a do třetího se unifikuje seznam všech cest vedoucích z pozice dané prvním parametrem a do pozice dané druhým parametrem, kdy pro všechny cesty, které obsahují alespoň 3 stavy/pozice, musí pro každé 3 po sobě jdoucí stavy/pozice uspívat predikát testWay/3. Pro generování následného kroku z dané pozice slouží predikát nextStep(+Pos, -NewPos). Můžete použít assert, retract, setof, bagof, not a operátor řezu. (8b.)
+
+3. Definujte predikát atMost, kterému je dán seznam predikátů, seznam parametrů (jeden seznam parametrů pro všechny predikáty v prvním seznamu) a číslo N. Ověřte, zda nejvýše N ze zadaných predikátů je splněno pro seznam zadaných parametrů - například atMost([ge, eq, gt, le, lt], [5,4], 2) uspěje (ge: >=, eq: ==, ...). (5b.)
+
+4. Definujte v holém prologu vhodný způsob reprezentace pro výrazy v lambda kalkulu. Nad holou reprezentací definujte predikát fv, který jako první parametr dostane výraz v lambda kalkulu dle vaší specifikace, nazveme ho Where, v druhém parametru, nazvěme jej FreeVars, se unifikuje výsledek, tedy množina volných proměnných v parametru Where. Množinu reprezentujte seznamem. Nad holý prolog lze použít unifikaci, zakladní operace se seznamy, práci s termy, member a operátor řezu. (6b.)
+-----------------------------------------------------
+2015
+Lambda kalkul / Haskell:
+1. Definicia vlastnosti operatoru pevneho bodu. Potom pomocou tohoto operatoru, iszero a prev nadefinovat minus, ktore berie 2 cisla a odcita ich a - b, pricom vysledok je nezaporny (tj. ==0 ak je b vacsie ako a).
+Mali sme zohladnit, ze iszero, prev a cisla maju neznamu definiciu, ale znamy vyznam. True a False je mozne si nadefinovat podla seba. 
+[pribl. 6 bodov]
+2. Napisat funkciu sort v holom Haskellu, ktora berie zoznam hodnot nad triedou Ord a vracia zordene od najmensieho po najvacsie.
+ -- len pre ujasnenie typova definicia. V zadani nebola, ale bolo podrobnejsie popisane
+sort :: Ord a => [a] -> [a]
+
+Mohli sme pouzit konstrukcie zoznamu, fold*, map a operacie nad triedov Ord.
+[pribl. 4 bodov]
+
+3. Nadefinujte funkciu f, aby platilo zip xs ys = zipW f xs ys a nasledne dokazte:
+ zip [] _ = []
+zip _ [] = []
+zip (x:xs) (y:ys) = (x,y) : zip xs ys
+ 
+zipW _ [] _ = []
+zipW _ _ [] = []
+zipW f (x:xs) (y:ys) = f x y : zipW f xs ys
+
+[8 bodov]
+
+4. V Haskellu nadefinovat funkciu pt, ktora berie nazov suboru ako argument. Z tohoto suboru nacita zaznamy v tomto formate Cislo_typu_Integer#String, pripadne prazdny riadok. Zaznam reprezentovat datovym typom DLog. Nasledne vypisat tie zaznamy, ktore su maju prve cislo nasobkom 10 oddelene koncom riadku. Odelene budu tentoraz dvojbodkou (:).
+Je potrebne uviest typove defincie pre kazdu pouzitu funkciu. 
+Poskytnute typove definicie pre pracu s IO (openFile, hGetContents, lines, unlines, print, ...)
+[10 bodov]
+
+Prolog:
+1. Vytvorit predikat e, ktory berie 2 argumenty. Prvym argumentom je lubovolne zanoreny zoznam zoznamov (aj prazdnych) napr. [[], [1, 2], [[[[]]],[atom, atom]]] 
+Druhy argument je vystupny zoznam hodnot bez zanorenia.
+[pribl. 6 bodov]
+
+2. Napisat predikat add, ktory berie 2 vstupne argumenty. Prvy argument je zoznam cislic (neomezenej dlzky), druhy argument cislo a vysledkom je sucet opat reprezentovany zoznamom cislic napr add([1, 1], 99, X). X = [1,1,0].
+Pouzit je mozne operator rezu, konstrukcie zoznamov, unifikaciu, aritmeticke operacie, reverse a to je tusim vsetko(viac som ani nepotreboval)
+[pribl. 7 bodov]
+
+3.Napisat predikat lookup. Prvy arguement vhodne reprezentovana tabulka symbolov, 2-hy argument kluc, 3-ty argument hodnota. A posledny a vysledny predikat je modifikovana, pripadne vstupna tabulka symbolov. 
+Predikat pracuje v dvoch rezimoch. Ak je zadana hodnota, tak sa modifikuje pripadne modifikuje zaznam v tabulke symbolov. Ak nie je zadana hodnota, tak vyhladavame v tabulku hodnotu so zadanym klucom.
+Ak sa nemylim, tak bolo mozne pouzit vsetko zo zakladnej kniznice Prologu. Ja som pouzil var(), nonvar() na zistenie, ci (nie) je zadana hodnota a nemyslim si, ze by to bolo v zadani spomenute.
+[pribl. 8 bodov]
+
+4. Napisat predikat search(Pozice, Cesty), ktory najde vsetky cesty od pozicie a naspat dlzky 20 az 22 (netrapit sa tym, ci prvy a posledny prvok zaratat). 
+Definicia pozicie je neznama, k dispozici je nextStep(Pos) nad neznamym a nekonecnym stavovym priestorom. Kazdy prvok je mozne nastivit len jeden krat vyjma prveho (== posledneho).
+Mozno pouzit retract*, assert*, bagof, length, ? 
+[pribl. 11 bodov]
+
+
+5. Bonusovy priklad v Haskellu napisat funkciu isPrv, ktora berie ako argument cislo a vracia True, ak je to prvocislo. 
+2 body, pri pouziti "memoization" za pribl. 7 bodov, pri pouzit "memoization" a zaroven 3 efektivne riadky za 10 bodov
+
+2opravny
+Priblizne zadanie 2. opravneho terminu:
+Haskell
+1. LET False = \xy.yx, nadefinovat True, Nand a ukazat Nand T F [5b]
+2. Nadefinovat typ pre "shodne", "ruzne", "odlisne", a typ pre binarny strom pricom hodnota je iba v listoch a typ hodnoty je neznamy. Vytvorit fciu compareT, kt porovna dva stromy a vrati:
+"Shodne" ak su stromy rovnake v strukture a aj v hodnotach na listovej urovni
+"Odlisne" ak maju stromy rovnaku strukturu ale lisia sa hodnotami listov
+inak "ruzne" [6b]
+3. dokaz, zadana fcia any, bolo treba vediet definiciu a typ foldr [7b]
+4. vytvorit fciu ktora dostane retazec, odstrani vsetky medzery na zaciatku a konci a ak sa vo vnutri retazca nachadza viac ako jedna medzera za sebou, ponecha iba jednu. " a b " -> "a b" [6b]
+5. Otvorit subor, na kazdy riadok aplikovat fciu z prikladu 4. Pred kazdy riadok pridat <cislo_riadku:>...Na posledny riadok pridat celkovy_pocet_riadkov/pocet_prazdnych_riadkov...vystup na stdout [6b]
+
+Prolog
+1. V holom prologu nadefinovat predikat pre symetricky rozdiel dvoch mnozin reprezentovanych zoznamom [8b]
+2. Predikat, kt dostane ako parameter predikat a zoznam a na vystupe budu dva zoznamy. Rozdelit zoznam tak, ze v prvom budu prvky pre kt. predikat neplati az po prvy, kt plati. Prvy kt. plati a vsetky dalsie budu v druhom zozname [4b]
+3. vyhladavanie v strome [8b]
+4. prehladavanie stavoveho priestoru search(start_pos, end_pos, barier(pos), Res). barier bol predikat, kt vrati true ak sa na danu poziciu nemoze vstupit, vysledok v Res ako zoznam pozicii [6b]
+5. predikat, kt dostane dva zoznamy a vrati true ak je prvy zoznam podretazec druheho [4b]
+--------------------------------------------
+2014
+riadny
+1. pevny bod, nadefinovat GE
+2. dokaz
+3. parsovanie suboru do struktury (na kazdom riadky je meno,id, cas procesu - tvar casu h:m:s, struktura pracuje iba so sekundami)
+
+1. v prologu najvacsi spolocny delitel (gxd)
+2. binarna scitacka (vstup su 2 polia roznej dlzky)
+3. lambda vyraz a freeVars
+4. pocet ciest (stejny start/end suradnice, 20-22 skokov)
+
+Bonus: haskell - cykklicky obojsmerne viazany zoznam, nadefinovat vyber n prvkov smerom doprava
+
+1opravny
+1. Lambda nadefinovat False a EQU funkci pro porovnání dvou hodnot, a demostrovat nad EQU False False
+2. Nadefinovat vlastní strukturu pro seznam a udělat fibonačiho posloupnost nad tímto typem
+3. Důkaz len(xs ++ ys) = len xs + len ys
+4. funkci pro zjištění zda je prvni seznam prefixem druhého nebo naopak
+5. číst soubor a vypisovat pouze řádky, které nejsou prefixem předcházejícího ani následujícího
+
+1. udělat databázovou projekci tabulky
+2. substituce lambda kalkulu v prologu
+3. prohledávání stavového prostoru
+4. šílenost s vyhodnocováním jednoduchých rovnic
+5. test jestli je množina podmnožinou druhé
+----------------------------------------------------
+{
+  "logins": [
+    {
+      "username": "nesAtFit",
+      "password": "kolize311"
+    },
+    {
+      "username": "coffeeAtC308",
+      "password": "coffee"
+    },
+    {
+      "username": "user",
+      "password": "tansy"
+    }
+  ],
+  "anonymous": false,
+  "customize": {
+    "active": false,
+    "folder": "mosquitto"
+  },
+  "certfile": "fullchain.pem",
+  "keyfile": "privkey.pem"
+}

@@ -1,0 +1,100 @@
+2018
+
+1) Zadefinujte si libovolně výrazy pro True a False. Definujte funkci XOR a ukažte její funkčnost na příkladu XOR True False (vše v Lambda kalkulu)
+2) Navrhněte datovou strukturu pro vyjádření konstant a proměnných nad celými čísly a operací sčítání nad nimi. Dále implementujte funkci simplify, která zadaný výraz zjednodušší (nejsou očekávány žádné složitější optimalizace, pouze vyhodnocení konstantních podstromů).
+3) Mějme:
+and [] = True
+and x:xs = x && and xs
+
+Dokažte, že and xs = foldr (&&) True xs
+
+1) definovat libovolně True, False a eq. Ukázat eq True True
+2) tady nevím, jestli jsem to správně pochopil - zadefinovat strukturu pro práci s výrazy nad celými čísly a proměnnými nad operací plus. Dále napsat funkci subst, která v zadaném stromě nahradí hodnotu proměnné
+3) dokažte, že sum (xs ++ ys) == sum xs + sum ys
+--------------------------------------------------------------
+2017
+
+1) to stejný jako nahoře, ale GTE (greater or equal). (6 b)
+2) binární vyhl. strom + funkce find, která vrací hodnotu podle klíče. Měli jsme vhodně ošetřit situaci, kdy klíč ve stromě není (Maybe - Nothing/Just?). (6 b)
+3) Dokažte, že sum(xs ++ ys) == sum xs + sum ys, pro všechny konečné seznamy xs a ys. (8 b)
+
+1) False = \xy.yx, dodefinujte True a potom ternární operátor. Následně definijte pomocí (?:, T, F, iszero, sub) LTE - lower or equal. (6 b)
+2) Definujte strukturu pro binární vyhledávací strom kde jeho prvky obsahují klíč a data. Následně napište funkci insert, která přidá prvek do stromu. Pokud už je ve stromu hodnota se stejným klíčem, tak se jen aktualizují data. Bonusový jeden bod za správný typ funkce insert. (6 b)
+3) Dokažte, že length(xs ++ ys) == length xs + length ys, pro všechny konečné seznamy xs a ys. (8 b)
+--------------------------------------------------------------------------
+2016
+
+1) Lambda kalkul [6b]. Bylo definováno True = \xy.xy. Libovolně dodefinovat False a poté NOR. Detailně ukázat NOR True False.
+2) Haskell (Prelude a IO, u IO byl dán seznam signatur) [14b]. Zhruba:
+Definovat datový typ pro uložení řádku textového soubor (číslo řádku + text) a souboru tvořeného řádky. U obou typů možnost porovnání a zobrazení. Napsat funkci, která má parametr jméno souboru, a která do definovaného typu načte daný soubor. Funkce vynechává (neukládá) prázdné řádky. U každého řádku odstraní mezery na konci. Nakonec vypíše (při zachování správného pořadí) všechny sudé řádky.
+
+1) Lambda kalkul - definováno False = \xy.yx, definujte True (libovolně), pomocí nich definujte NAND. Ukažte NAND True False.
+2) Haskell + Prelude + nektere IO funkce (byly napsane, ktere muzeme pouzit i se signaturami)
+Definovat si datový typ pro uložení časového razítka (hodiny, minuty, sekundy), dále datový typ pro soubor (myšleno množinu) těchto razítek.
+Napsat funkci readF, která načte soubor, ve kterém na každém řádku je čas ve formátu hh:mm:ss (lze se spolehnout, že vždy bude korektně na každém řádku) do datového typu pro soubor razítek. Dále má funkce vypsat (ve stejném pořadí jako byly na vstupu) ty řádky, kde jsou nesmyslná razítka (např. 70:15:15). Lze použít funkci t2s, která z libovolného námi definovaného typu pro razítko udělá string hh:mm:ss.
+-------------------------------------------------------------------------------
+2015
+
+První běh:
+1. Lambda kalkul: definovat True, False, EQU (porovnání nad True a False), detailně popsat vyhodnocování EQU False False
+2. Haskell, za pomocí [], (:), head, tail:
+a) definujte funkci, která bere prvních X prvků seznamu: (je-li X záporné, vrací prázdný seznam)
+takeN :: Int -> [a] -> [a]
+
+b) předpokládejte, že existuje funkce beroucí seznam bez prvních X prvků:
+dropN :: Int -> [a] -> [a]
+
+c) definujte za pomocí (a) a (b) funkci nahrazující znak A za B na X. pozici v každém řetězci seznamu:
+replac :: Int -> Char -> Char -> [String] -> [String]
+
+3. definujte datový typ pro výrazy nad hodnotami 0, 1 s operacemi logického součinu a součtu
+- definujte show pro tento datový typ
+- definujte eval, funkci vyhodnocující výraz (zkrácené vyhodnocení, nevyhodnocovat zbytečně podvýrazy)
+
+1) asi úplně stejné - libovolně si definovat True a False a na jejich základě vyjádřit NEQ + ukázat na příkladně (podrobně rozepsat)
+2) u tohohle příkladu bylo důležité, že se nemohlo skoro nic používat (jako věci z PRELUDE), ten příklad byl právě o tom sestrojit nějakou funkci z prelude. Používat se mohl čistý Haskell + nějaké drobnosti se seznamy: [], (:), head, tail apod. My jsme měli sestrojit funkci SplitAt (rozdělení seznamu/řetězce na dva kusy na dané pozici) a to pak použít ve funkci, která prochází seznam řetězců a v každém řetězci zjistí výskyt určitého řetězce na zadané pozici a případně ho nahradí jiným řetězcem.
+3) Datový typ pro výrazy s True, False, log. součet, log. součin. Potom taky fci eval se zkraceným vyhodnocováním.
+---------------------------------------------------------------------------------
+2014
+
+1. a) Zadáno LET False = \xy.yx, definujte True
+b) operátor pevného bodu, ukázat vlastnost
+c) pomocí iszero a prev a operátoru nadefinovat neq (nerovno)
+2. čistý Haskell - zadání jsem pochopil takto:
+a) funkce splitW, která rozdělí vstupní seznam na základě podmínky na dvojci, prefix == vše co splňuje podmínku do daného místa , sufix=zbytek od prvního 
+místa co nesplňovalo podmínku.
+b) funkce wrds, která dostane na vstup String, který rozseká na jednotlivé slova, oddělovačem je mezera nebo tabulátor, s využitím splitW
+Moje implementace (není sice úplně efektivní a na písemce mi tam toho hodně chybělo, snad ocení aspoň myšlenku, ale s GHCi jsem to dal doma do nějaké funkční podoby, možná to není 100%):
+
+Číslování řádků on/off | Rozbalit/Sbalit | Vybrat vše
+ 
+splitW :: (a->Bool)->[a]->([a],[a])
+splitW p xs = (pF p xs, sF p xs) where
+    pF _ [] = []
+    pF p (x:xs)
+        | p x = x : pF p xs
+        | otherwise = []
+    sF _ [] = []
+    sF p (x:xs)
+        | p x = sF p xs
+        | otherwise = (x:xs)
+ 
+myIsNotSpace :: Char -> Bool
+myIsNotSpace a
+    | a == ' ' = False
+    | a == '\t'= False
+    | otherwise = True
+ 
+wrds:: [Char] -> [[Char]]
+wrds xs = wr (splitW myIsNotSpace xs) where
+    wr (a,[]) =[a]
+    wr (a,b:bs) = [a]++ wrds bs
+ 
+
+3. dokázat sum xs = foldr (+) 0 xs
+byla zadaná definice sum, to bylo celkem snadné
+-----------------------------------------------------------------------
+2013
+
+	
+

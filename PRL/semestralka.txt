@@ -1,0 +1,179 @@
+2018
+skupina C
+1) PRAM tipovačka - posloupnost XOR, zjištění monotónnosti, nevím
+2) základní Test&Set
+3) problémy při paralelizaci prohledávání stavového prostoru + metody kterými se přiděluje práce procesům
+4) Máme Euler tour - využít Suffix Sum k tomu, abychom spočítali počet následníků uzlu, algoritmus, okecat + časová složitost 
+5) Zadán graf, udělat Euler tour (zapsat i Adjacency list atd.)
+6) CLA parallel binary adder - zadány dvě čísla, spočítat to s postupem
+7) Dva diagramy broadcastů - vyznačit, jestli porušuje F, C nebo A a opravit
+8) MPI - naprogramovat součet minimálních a maximálních prvků
+
+Skupina B
+1) Klasika PRAM - OR, něco, něco
+2) DataFlow - popsat + příklad
+3) Petersnův alg. - napsat alg. + vysvětlit, a zaměřit se jak se zabraňuje vyhladovění
+4) Strom a zanoření uzlů - alg. + popsat + výsledná cena
+5) Enumerate list na lineární topologii - 6 čísel, byly nakresleny procesory s registry a mělo se zapsat jak to bude vypadat po 7. kroce
+6) Diagramy broadcastů - mělo se napsat zda splnují nebo porušují FIFO + KAUZALITU + ATOMICITU, vyznačit kde se to porušuje a do vedlejšího se pak mělo překlesit správné přijetí zpráv (pokud to porušovalo více než 1, tak stačilo opravit jenom jeden problém - porušovalo to F a A?, stačí opravit F a na A se vykašlat)
+7) Paralelní binární sčítačka s dopředným carry přenosem + 2 čísla = popsat alg a při jednom vypočítat
+8) MPI - součet čísel nad přůměrem posloupnosti, či nějak tak, naprogramovat, mohlo se použít Broudcast a Reduce
+
+Skupina A
+1) tipovačka PRAM - čas AND, cena 2. najväčší prvok, čas či je postupnosť zoradená [6b]
+2) Popísať VLIW, problémy, riešenia a obrázky
+3) OCCAM - popsat + příklad [8b]
+4) Strom a niečo s ním (zanoření uzlů, počet následníkov?) - alg. + popsat + výsledná cena; vedeli sme Etour a či je hrana dopredná
+5) Pipeline Merge Sort - 6 čísel, nakreslená schéma a doplniť stav po 10 kroku. [10b]
+6) Diagramy broadcastov - tohtoročná novinka, malo se napísať či splňujú alebo porušujú FIFO + KAUZALITU + ATOMICITU, vyznačiť kde sa to porušuje a do vedľajšieho prekresliť opravené.
+7) carry look ahead binary paralel adder alebo niečo ine s carry
+8) MPI - súčin súčtov lichých a sudých čísel v postupnosti. Mohlo sa použiť Bcast a Reduce, ktore boli deklarované a výsledok vypísať na štandardný výstup. [10b]
+
+opravny
+
+1. PRAM tipovačka.
+2. Architektura Dataflow - popis a ukázka na příkladu.
+3. Detekce ukončení pomocí stromu (s váhovanými uzly) + znázornit. 
+4. Stejná sčítačka jako na prvním termíně.
+5. Diagram broadcastů.
+6. Producent-konzument pseudokód algoritmu.
+7. Prescan algoritmus (tuším) - Bylo zadáno pole 16 čísel a měli jsme napsat jak toto pole vypada po první iteraci upsweep, po ukončení upsweep, po první iteraci downsweep a po ukončení downsweep.
+8. MPI. Docela lahůdka. Posloupnost čísel se měla rozdělit na poloviny (numprocs/2), vypočítat v každé polovině průměrnou hodnotu, sečíst jednotlivé hodnoty, které jsou vyšší než průměrná hodnota v dané(!) polovině. Nakonec vám tedy vyjdou dvě čísla, jejichž součet je finální výsledek.
+----------------------------
+2017
+Zadání skupiny A:
+1. tipovačka PRAM
+V tipovačce PRAM skupiny A bylo:
+1. časová složitost algoritmu AND n prvků 
+2. cena optimálního algoritmu pro výpočet sumy posloupnosti n prvků
+3. časová složitost algoritmu pro vyhledání čísla v posloupnosti n prvků
+2. Popsat VLIW, zařadit v rámci Flynnovy klasifikace, doplnit vhodnými obrázky 
+plus chtěl popsat jakési konflikty a jak se jim předchází (vůbec nemám páru co tam chtěl)
+3. Napsat kod z přednášek od Petersona, slovně popsat + napsat výhody nevýhody
+4. Rozdělování stavového prostoru - v 1. části popsat problémy a ve 2. části vypsat mechanismy alokace / volby procesorů pro rozdělování úloh (náhodný, asynchr round robin, glob round robib)
+5. Pipelined Merge sort po 10. kroku (čisla +- 5,2,4,7,9,8,5,3)...řazení zprava (první půjde 3jka) s tím, že úplně na konci zadání bylo napsané, že první se vybírá menší číslo
+
+6. Tohle byla avizovaná inovace zadání (vyloženě libovka)... Uvažujte distribuovaný systém s 5ti uzly. Je zde tabulka se zpožděními zprávy při komunikaci. Formát zprávy: msg(p,i,t) kde p je číslo procesoru, i je i. část zprávy (např 1. část...) v čase t. Pro zadané zprávy určete v jakém pořadí budou doručeny v systému ABCAST procesem 3 a 5 a dále jak jednotlivé zprávy označil nebo navrhl označit každý z procesů.
+Pak popsána nějaká priorita přijímání zpráv ve stejném čase - pak je klíč číslo procesu (menší má přednost) a případně pokud i to je stejné, tak má přednost nižší index zprávy
+
+zprávy : msg(1,1,1), msg(5,1,2), msg(1,3,3), msg(5,2,3), msg(3,1,4), msg(3,2,6)
+
+tabulka:
+----- 1 - 2 - 3 - 4 - 5
+-1-- 0 - 3 - 4 - 3 - 3
+-2-- 3 - 0 - 2 - 3 - 3
+-3-- 4 - 2 - 0 - 1 - 6
+-4-- 3 - 3 - 1 - 0 - 1
+-5-- 3 - 3 - 6 - 1 - 0
+
+předpřipravené pole:
+PROCES 1: U(msg(1,1,1))=
+PROCES 2: 
+PROCES 3:
+PROCES 4:
+PROCES 5:
+pořadí u procesu 3
+pořadí u procesu 5
+
+7. Napsat proceduru v OCCAM, která má jako parametry 3 kanály integerů IN, OUT, REL. Procedura sčítá hodnoty, které přijdou z kanálu IN, pokud je součet > 100, tak pošle na OUT hodnotu 100 a odečte od součtu stejnou hodnotu. Pokud na kanálu REL přijde jakékoliv číslo, procedura pošle aktuální součet na OUT a součet vynuluje.
+8. MPI napsat algoritmus (Možné využít Bcast, Reduce), který vypočítá rozdíl součtů první a druhé poloviny (snad jsem to nepopletl) a výsledek vypsat. Procesory znají svůj rank (proměnná rank) svou hodnotu (value) a znají počet procesorů numprocs
+
+Skupina B
+
+1. Tipovačka složitosti optimálního algoritmu v PRAM (pro EREW, CREW, common CRCW): 
+1.1 )XOR
+1.2) průměr všech prvků n pro počet procesorů N kde n=N
+1.3) zjištění monotónnosti posloupnosti
+2. Zřetězené procesory - vysvětlit, nakreslit obrázek, popsat na nějakém příkladu algoritmu
+3. Napsat implementaci monitoru pomocí semaforů (entry, wait, signal, exit), včetně deklarace a inicializace semaforů a proměnných
+4. už si nepamatuju
+5. Enumeration sort na lineárním poli procesorů - zadána vstupní posloupnost 6 prvků, napsat stav všech registrů po 8 krocích algoritmu
+- bylo napsáno: algoritmus řadí tak, že ze dvou vybere dříve toho s menší hodnotou (snad jsem to při řešení pochopil dobře)
+6. Obdobně jako ostatní skupiny, letošní vychytávka se zasíláním zpráv v systému ABCAST, napsat jak jednotlivé procesory zprávy označily a v jakém pořadí přišly zprávy na procesory 2 a 3.
+7. Napsat proceduru v OCCAM: 2 vstupní kanály a jeden výstupní. Procedura představuje procesor - jeden z bloků pipeline merge sort, který řadí posloupnosti o 4 prvcích ze vstupních kanálů a na výstupní produkuje seřazenou posloupnost 8 prvků. Na vstupní kanály přicházejí prvky asynchronně.
+8. Pomocí MPI_Bcast a MPI_Reduce napsat algoritmus s logaritmickou složitostí, který na výstup vypíše součin všech takových prvků pole, které jsou kladné a zároveň jsou větší, než průměr všech prvků onoho pole. Procesory již znají svůj rank, počet procesorů, vstupní pole hodnot ve kterém je hodnota daného procesoru uložena v pole[rank]
+
+1. PRAM (6b) - OR n prvků; počet nul v posloupnosti n prvků; druhý největší v posloupnosti n prvků
+2. Granuralita paralelismu (8b)
+3. Dijk. alg. s tokeny pro detekci ukončení výpočtu procesy při para. zpracování úloh - princip + ilustrace (8b)
+4. čtenáři - písaři pomocí semaforů (10b)
+5. Eulerova cesta (8b)
+6. ABCAST (10b)
+7. OCCAM (10b)
+8. C++ a MPI za pomocí MPI_Bcast a MPI_Reduce - max. součet 2 různých čísel posloupnosti (10b)
+
+opravny
+
+Nepamatam si presne hodnoty zadania ale snad to niekomu pomoze:
+1. Pram
+2. algoritmus vzajomneho vylucenia pomocou test and set(detailne popisat princip)
+3. Pomocou sumy suffixov implementovat algoritmus, ktory pre uzol v Eulerovom grafe urci jeho zanorenie(bolo tam tiez mozne pouzit "if e dopredna then".
+4. Vysvetlit algoritmus vyberu k-teho prvku z postupnosti cisiel(SELECT(k,n)).
+5. pipeline merge-sort -> stav po 10 iteraciach
+6. ABcast, podobne ako na riadnom termine.
+7. Pomocou lubovolneho jazyka a nadstavby Linda implementovat algortimus, ktory ma zadany jednosmerne viazany zoznam a dvojicu "(POD, VALUE)"
+odstrani zo zoznamu vsetky prvky ktore su mensie ako hodnota VALUE.
+8. Pomocou MPI v jazyku c++ implementovat algoritmus, ktory vypise vzdialenost(teda rozdiel indexov) medzi prvym maximom a poslednym minimom v zadanej postupnosti cisiel.
+------------------------------
+2016
+Pro další ročníky, zadání zkoušky - skupina A:
+1. PRAM - jakábude cena a časová složitost pro dané úlohy na EREW, CREW, CRCW - testovky
+2. Zapište algoritmus a demonstrujte Dijkstrův algoritmus pro detekci ukončení
+3. Zapište a ilustrujte algoritmus Bounded test-and-set.
+4. Napište a ilustrijte zjištění úrovně zanoření uzlu ve stromu, když známe Eulerovu cestu a mohu řict, jeslti je hrana dopředná nebo ne.
+5. Zapište v C++ a MPI program, který zjistí jestli je maximum pole v horní nebo dolní polovině pole (jeden proces má 1 prvek pole), povoleno použít MPI procedury reduce a broadcast.
+6. Enumeration sort na lineární architektuře, zadána vstupní posloupnost, zapište stav registrů po 7 krocích.
+7. OCCAM - napsat proceduru, která má parametry CHN[1..10],IN,ADR při vstupu ADR <1..10> přepne aktivní výstup na tento, při jiném vstupu na ADR pošle na aktivní výstup 0. Při přijetí hodnoty na IN, pošle na aktivní výstup průměr přijatých hodnot
+8. Nakreslená topologie, určen kauzalní systém broadcastů - zapsat v jakém čase který uzel pošle a přijme jakou zprávu.
+
+skupina B:
+1. PRAM - jaká bude cena a časová složitost pro dané úlohy na EREW, CREW, CRCW - testovky
+2. Něco s paralelním prohledávání stavového prostoru
+3. Zapište a ilustrujte algoritmus test-and-set s aktivním čekáním.
+4. Napište a popište algoritmus pro preorder pomocí eulerovy cesty
+5. Zapište v C++ a MPI program, který zjistí, zda posloupnost 16 prvků alternuje - střídá se sudá/lichá hodnota. Začíná se sudou. Bylo možné použít broadcast a reduce
+6. Random Mating
+7. OCCAM
+8. Nakreslená topologie, určen kauzalní systém broadcastů - zapsat v jakém čase který uzel pošle a přijme jakou zprávu.
+
+B skupina
+1. PRAM - jakábude cena a časová složitost pro dané úlohy na EREW, CREW, CRCW - testovky
+Bola tam cena hladania minima na N procesoroch, cena vyxorovania vsetkych prvkov na procesoroch
+a casova zlozitost (tu si nepametam)
+
+2.Problemy, ktore mozu nastat pri pararelnom prehladavani stavoveho priestoru + vysvetlit ako je vhodne pridelovat ulohy jednotlivym procesorom (/edit: bola tam otazka na sposby pridelovania uloh (nahodne, local round robin, global round robin...))
+
+3.Implementacia vzajomneho vylucenia s pouzitim Test&Set a aktivnym cakanim + obkec
+
+4. Nieco z eulerovou cestou + Suffix sum + doprednostou hran + preorder
+
+5. Zapište v C++ a MPI program, ktorý overí či je pole 16 prvkov zložené zo sudych a lichych cisiel (na striedacku, zacinajuc sudym, takze +-+-+-...). Algoritmus musi mat O(log(n)) zlozitost. Z MPI sa mohol sa pouzit iba Reduce a Broadcast
+
+6. Nejaka aplikacia random matingu
+
+7.Occam,napisat proceduru, ktorá má parametre CHN[0..9],IN,ALT. Ked prisiel vstup na kanali IN malo sa to dat na prvy (s indexom 0) vystup defaultne, pri prichode ALT=1 sa po kazdom vystupe index kanala IN inkrementoval (takze ked prisiel ALT1 a index bol defaultny, cize 0, tak po prichode IN sa IN poslal na CHN[0], ale ked prisiel dalsi IN tak sa poslal na CHN[1] atd ...,) po prichode ALT=0 sa index nastavil na defaultny index a po vystupe sa neinkrementoval.
+
+8. Klasicky broadcast priklad zo zapisom casov kde co kedy pride a kde co kedy sa broadcastne
+
+1) PRAM tipovačka
+2) Popsat FIFO broadcast + relace kauzality (Happens-before)
+3) Monitor pomocí semaforů - popsat operace entry, exit, wait, signal, případně init a popsat použité semafory
+4) ADA - princip, popsat Accept a Select
+5) MPI - klasika, pomocí MPI_Reduce/Bcast spočítat, kolik čísel v posloupnosti je maximem nebo minimem
+6) Najít eulerovu cestu dle zadaného stromu
+7) OCCAM - přepínání výstupu na základě vstupu (něco podobného už bylo)
+8) Linda - reverzace listu, jenž je uložen v poli
+
+1.) Standardne PRAM tipmix
+2.) Zretěžené Procesory + Vhodně zvolenej příklad
+3.) Euler Cestra + víš že dobredná hrana, myslím to jisté co na řádným
+4.) Carry Look Ahead Parallel Binary Adder, popsat jak funguje + příklad 90+139
+5.) --
+6.) R-A
+7.) Occam: Producer-Connsumer. Procedura argumenty: Dva chanely: kz, pc Byte: Size, ked prijde hodnota po pc tak to ukladat do array s velikosti SIZE, jestli tam neni misto nebo cislo neni kladne posli -1 po pc. Kanal kz ked pride 0 tak posli aktualnu hodnotu z array, ked neni hodnota k posilani nebo prisla jina hodnota nez 0, pak posli -1 po channel kz.
+8.) MPI: Napsat Downsweep. numprocs, rank standardne pristupne. lson,rson na hodnoty leveho a praveho syna. val na puvodni hodnotu. val=lson+rson. Stav je po ukonceni UpSweep (neutralni prvek si tam musel napsat)
+
+--------------------------------------------
+2015
+
+

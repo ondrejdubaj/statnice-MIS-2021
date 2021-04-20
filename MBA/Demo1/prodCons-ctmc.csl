@@ -1,0 +1,23 @@
+const int T;
+const int L;
+
+// try [0,100]
+P=? [ F[0,T] buffer=max_buffer ]
+
+R{"max_buffer"}=? [ C<=T ]
+
+R{"consume"}=? [ C<=T ]
+
+R{"consume"}=? [ F request=0&buffer=0 ]
+
+// Try [10,500]
+P=? [ F[0,T] request=0&buffer=0 ]
+
+R{"max_buffer"}=? [ F request=0&buffer=0 ]
+
+P=? [ F[0,T] lost=L ]
+
+P=? [ F lost=L ]
+
+R{"lost"}=? [ C<=T ]
+

@@ -1,0 +1,41 @@
+2014:
+^^^^^
+Zadani C, bily papir:
+
+(1) Mejme jazyk L nad univerzem {a, b, c, d}, s binarnim predikatovym symbolem p a unarnim funkcnim symbolem u a teorii T = { p(x,u(x)), u(u(x))=x, p(x,y) -> (x = y v x = u(y)) }.
+--- a) Naleznete realizaci R tohoto jazyka takovou, ze je modelem teorie T. Meli jsme to zadat tabulkou, tj. 4x4 pro predikat (zapisujte 0 a 1) a 4x1 pro unarni operaci.
+--- b) Rozhodnete, zda T |= p(x, y) => (x = y)
+
+(2) S vyuzitim predem dokazane formule α = "(A => ¬B) => (B => ¬A)" dokazte φ, ψ |- ¬(φ => ¬ ψ).
+--- 1) predpoklad φ => ¬ψ
+--- 2) α
+--- 3) MP -- toto nedavalo smysl. Aspon mne ne. Vypadalo to, jako kdyby tu chtel proste napsat (A, A=>B) => B
+--- 4) MP 1,2
+--- 5) VD, presunte antecendent do predpokladu
+--- 6) VD, odstrante (φ => ¬ψ) z predpokladu
+--- 7) α
+--- 8) MP 6,7
+--- 9) VD
+
+3) V zbytkove tride modulo 41 vyreste rovnici:
+18x - 1 = x + 1
+
+4) Uvazte algebru A = (Σ*, cat, δ, b) typu (3,1,0), kde nosic je nam dobre znamy univerzalni jazyk nad Σ, cat(x, y, z) = xyz, δ(w) je retezec vznikly nahradou vsech 'a' v w retezcem "ab" a b je vyber prvku b, b ≠ a. Uvazte relaci ~ nad Σ* definovanou takto: u ~ v <=> |u| = |v|. Rozhodnete, zda je ~ kongruence nad algebrou A. Pokud neni, naleznete podalgebru B, ze prislusne zuzeni ~ kongruenci bude.
+
+-------------------------------------------------------------------------------
+
+zadání D - už nevím, co to bylo za barvu (já to každopádně viděl černě =D )
+
+1) jako výše uvedené C, na binární operaci taky tabulka, unární se měla popsat nějak slovně
+2) též důkaz formule výrokové logiky, ale postup nebyl přesně popsán (!!!), bylo uvedeno jen něco jako "na začátku si stanovte vhodné předpoklady, na ty několikrát použijte pravidlo odloučení a pak několikrát větu o dedukci"
+3) zbytková třída byla 37, rovnice tuším 22x - 1 = x + 1
+4) opět analogie C, v operaci δ se za "a" nahrazovalo řetězcem "aa"
+
+-------------------------------------------------------------------------------
+
+skupina ? - oranzovy papier (ak niekto viete, hodte mi spravu, editnem)
+
+1.) totozne s bielym (vid prvy post) (moja realizacia bola ze predikat p je predikat rovnosti a operacia u je identita, a dana formula teda plati v tejto teorii pri mojej realizacii)
+2.) opat myslim ze totozne, ale nepamatam presne, kazdopadne bol ten postup extremne detailne popisany v zadani
+3.) v Z31 vyriesit rovnicu: 22x - 1 = x + 1 (vyslo mi to 23 ak by si to niekto chcel skusit)
+4.) analogicky s bielym papierom, akurat u nas delta(w) nahradila vo "w" kazdy vyskyt "a" retazcom "aa" (vyslo mi ze to kongruencia nie je, prave na tej delte to stroskota)
